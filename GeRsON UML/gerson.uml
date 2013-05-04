@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_18FtsLNbEeKU_Yk_EI4bcA" name="GeRsON">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_zwELNbEeKU_Yk_EI4bcA" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hELNbEeKU_Yk_EI4bcA" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hEbNbEeKU_Yk_EI4bcA" name="Boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hErNbEeKU_Yk_EI4bcA" name="UnlimitedNatural"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hE7NbEeKU_Yk_EI4bcA" name="Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hFLNbEeKU_Yk_EI4bcA" name="Double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hFbNbEeKU_Yk_EI4bcA" name="Time"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hFrNbEeKU_Yk_EI4bcA" name="Date"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1_9hF7NbEeKU_Yk_EI4bcA" name="DateTime"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__PDKALNfEeKU_Yk_EI4bcA" name="Gerente" powertypeExtent="_fQwPILNkEeKU_Yk_EI4bcA">
+    <generalization xmi:id="_-T7zULNkEeKU_Yk_EI4bcA" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_YNcH8LNlEeKU_Yk_EI4bcA" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_OkPjoLNmEeKU_Yk_EI4bcA" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_lvBXcLOCEeKhjePjj4jG6Q" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_CcFwoLTHEeK5A5WRyf2dHg" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_Eqr5sLTIEeK5A5WRyf2dHg" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_FpoOMLTIEeK5A5WRyf2dHg" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <ownedOperation xmi:id="_SRBPsLTMEeK5A5WRyf2dHg" name="cadastrarFunconario"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DzTGYLNiEeKU_Yk_EI4bcA" name="asd">
+    <generalization xmi:id="_YSAmQLNiEeKU_Yk_EI4bcA" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_7yOEgLNkEeKU_Yk_EI4bcA" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6VHfQLNiEeKU_Yk_EI4bcA" name="Funcionario">
+    <eAnnotations xmi:id="_F3evMLNjEeKU_Yk_EI4bcA" source="es.cv.gvcase.mdt.uml2.UMLElementDescription">
+      <details xmi:id="_F3ogMLNjEeKU_Yk_EI4bcA" key="es.cv.gvcase.mdt.uml2.Description" value=""/>
+    </eAnnotations>
+    <generalization xmi:id="_9lPzQLNiEeKU_Yk_EI4bcA" general="_DzTGYLNiEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_83se0LNkEeKU_Yk_EI4bcA" general="_DzTGYLNiEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_CHoHYLNlEeKU_Yk_EI4bcA" general="_DzTGYLNiEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_XT20kLNlEeKU_Yk_EI4bcA" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_PpIIELNmEeKU_Yk_EI4bcA" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_lHv8ELOCEeKhjePjj4jG6Q" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_Aj4R0LTHEeK5A5WRyf2dHg" general="_6VHfQLNiEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_BuGpQLTHEeK5A5WRyf2dHg" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_GgousLTIEeK5A5WRyf2dHg" general="__PDKALNfEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_1ckUQLTIEeK5A5WRyf2dHg" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_sU3MELTMEeK5A5WRyf2dHg" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <ownedAttribute xmi:id="_EVT5MLNgEeKU_Yk_EI4bcA" name="cargo" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EZengLNgEeKU_Yk_EI4bcA" name="horaSemanal" visibility="protected" type="_1_zwELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Ejv90LNgEeKU_Yk_EI4bcA" name="RG" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_ElPLkLNgEeKU_Yk_EI4bcA" name="dataExpedicao" visibility="protected" type="_1_9hFrNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Em3jQLNgEeKU_Yk_EI4bcA" name="CTPS" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EoWxALNgEeKU_Yk_EI4bcA" name="PIS" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_-4rb8LNgEeKU_Yk_EI4bcA" name="dataNascimento" visibility="protected" type="_1_9hFrNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_-82KQLNgEeKU_Yk_EI4bcA" name="enderecoResidencial" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EIw1gLNhEeKU_Yk_EI4bcA" name="telefoneCelular" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EoJgMLNhEeKU_Yk_EI4bcA" name="telefoneResidencial" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedOperation xmi:id="_fSLP0LOCEeKhjePjj4jG6Q" name="getTelefoneCelular"/>
+    <ownedOperation xmi:id="_O8tdQLOCEeKhjePjj4jG6Q" name="getCargo"/>
+    <ownedOperation xmi:id="_PctzALOCEeKhjePjj4jG6Q" name="getHoraSemanal"/>
+    <ownedOperation xmi:id="_PhoIMLOCEeKhjePjj4jG6Q" name="getDataExpedicao"/>
+    <ownedOperation xmi:id="_PfZTkLOCEeKhjePjj4jG6Q" name="getRG"/>
+    <ownedOperation xmi:id="_PkAt0LOCEeKhjePjj4jG6Q" name="getCTPS"/>
+    <ownedOperation xmi:id="_PmFxcLOCEeKhjePjj4jG6Q" name="getPIS"/>
+    <ownedOperation xmi:id="_PqjasLOCEeKhjePjj4jG6Q" name="getEnderecoResidencial"/>
+    <ownedOperation xmi:id="_PonhALOCEeKhjePjj4jG6Q" name="getDataNascimento"/>
+    <ownedOperation xmi:id="_fVJrULOCEeKhjePjj4jG6Q" name="getTelefoneResidencial"/>
+    <ownedOperation xmi:id="_e_cSILNjEeKU_Yk_EI4bcA" name="setCargo">
+      <ownedParameter xmi:id="_Rgzl8LNnEeKU_Yk_EI4bcA" name="cargo" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rgzl8bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rgzl8rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fEysMLNjEeKU_Yk_EI4bcA" name="setHoraSemanal">
+      <ownedParameter xmi:id="_VjrlgLNnEeKU_Yk_EI4bcA" name="horaSemanal" type="_1_zwELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VjrlgbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VjrlgrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fThrwLNjEeKU_Yk_EI4bcA" name="setRG">
+      <ownedParameter xmi:id="_gMeJILNnEeKU_Yk_EI4bcA" name="RG" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gMeJIbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gMeJIrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HAB2MLNkEeKU_Yk_EI4bcA" name="setDataExpedicao">
+      <ownedParameter xmi:id="_icMJALNnEeKU_Yk_EI4bcA" name="dataExpedicao" type="_1_9hFrNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_icMJAbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_icMJArNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HFF8YLNkEeKU_Yk_EI4bcA" name="setCTPS">
+      <ownedParameter xmi:id="_j7sz8LNnEeKU_Yk_EI4bcA" name="CTPS" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j7sz8bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j7sz8rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HIEX4LNkEeKU_Yk_EI4bcA" name="setPIS">
+      <ownedParameter xmi:id="_k3NZ8LNnEeKU_Yk_EI4bcA" name="PIS" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k3NZ8bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k3NZ8rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HL7kMLNkEeKU_Yk_EI4bcA" name="setDataNascimento">
+      <ownedParameter xmi:id="_l1jRgLNnEeKU_Yk_EI4bcA" name="dataNascimento" type="_1_9hFrNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l1jRgbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l1jRgrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GYcjsLNiEeKU_Yk_EI4bcA" name="setEnderecoResidencial">
+      <ownedParameter xmi:id="_r_UeYLNiEeKU_Yk_EI4bcA" name="enderecoResidencial" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r_UeYbNiEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r_UeYrNiEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RiHm0LNiEeKU_Yk_EI4bcA" name="setTelefoneCelular">
+      <ownedParameter xmi:id="_tN38MLNiEeKU_Yk_EI4bcA" name="telefoneCelular" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tN38MbNiEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tN38MrNiEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RmuaALNiEeKU_Yk_EI4bcA" name="setTelefoneResidencial">
+      <ownedParameter xmi:id="_ulDxkLNiEeKU_Yk_EI4bcA" name="telefoneResidencial" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ulDxkbNiEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ulDxkrNiEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fzNCULTMEeK5A5WRyf2dHg" name="Funcionario"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eD-6ALNkEeKU_Yk_EI4bcA" name="Entidade" powertypeExtent="_XFVskLTHEeK5A5WRyf2dHg">
+    <ownedAttribute xmi:id="_EHCMoLNgEeKU_Yk_EI4bcA" name="matricula" visibility="protected" isStatic="true" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EPgzMLNgEeKU_Yk_EI4bcA" name="dataAdmissao" visibility="protected" type="_1_9hFrNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_ESMTwLNgEeKU_Yk_EI4bcA" name="dataDesligamento" visibility="protected" type="_1_9hFrNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_ETrhgLNgEeKU_Yk_EI4bcA" name="status" visibility="protected" type="_1_9hEbNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EWzG8LNgEeKU_Yk_EI4bcA" name="salario" visibility="protected" type="_1_9hFLNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Ea91QLNgEeKU_Yk_EI4bcA" name="enderecoFuncional" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EcT5ELNgEeKU_Yk_EI4bcA" name="telefoneComercial" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EdzG0LNgEeKU_Yk_EI4bcA" name="tipoPessoa" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EgxiULNgEeKU_Yk_EI4bcA" name="nome" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_EiQwELNgEeKU_Yk_EI4bcA" name="CPF" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Eu1-ELNhEeKU_Yk_EI4bcA" name="email" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_-8ZeULNgEeKU_Yk_EI4bcA" name="senha" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedOperation xmi:id="_GUkwULNiEeKU_Yk_EI4bcA" name="setEmail">
+      <ownedParameter xmi:id="_pKaGwLNiEeKU_Yk_EI4bcA" name="email" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pKaGwbNiEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pKaGwrNiEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GPXgMLNiEeKU_Yk_EI4bcA" name="setSenha">
+      <ownedParameter xmi:id="_iaEbYLNiEeKU_Yk_EI4bcA" name="senha" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iaEbYbNiEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iaEbYrNiEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KeEkMLOBEeKhjePjj4jG6Q" name="getMatricula">
+      <ownedParameter xmi:id="_zAmXsLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KgN5QLOBEeKhjePjj4jG6Q" name="getDataAdmissao">
+      <ownedParameter xmi:id="_z6lTsLOBEeKhjePjj4jG6Q" name="return" type="_1_9hFrNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KhUsgLOBEeKhjePjj4jG6Q" name="getDataDesligamento">
+      <ownedParameter xmi:id="_0tQGwLOBEeKhjePjj4jG6Q" name="return" type="_1_9hFrNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Ktcc8LOBEeKhjePjj4jG6Q" name="getStatus">
+      <ownedParameter xmi:id="_1u6_ILOBEeKhjePjj4jG6Q" name="return" type="_1_9hEbNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_KwX1ILOBEeKhjePjj4jG6Q" name="getSalario">
+      <ownedParameter xmi:id="_3TX0cLOBEeKhjePjj4jG6Q" name="return" type="_1_9hFLNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_K1ovoLOBEeKhjePjj4jG6Q" name="getEnderecoFuncional">
+      <ownedParameter xmi:id="_4zqigLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_LAU8sLOBEeKhjePjj4jG6Q" name="getTelefoneComercial">
+      <ownedParameter xmi:id="_6HwnoLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mZ3gsLOBEeKhjePjj4jG6Q" name="getTipoPessoa">
+      <ownedParameter xmi:id="_7BwxwLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mcaeYLOBEeKhjePjj4jG6Q" name="getNome">
+      <ownedParameter xmi:id="_9FztILOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mfKQYLOBEeKhjePjj4jG6Q" name="getCPF">
+      <ownedParameter xmi:id="_97G9cLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_mlAZsLOBEeKhjePjj4jG6Q" name="getEmail">
+      <ownedParameter xmi:id="_-kVgoLOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uXSqQLOBEeKhjePjj4jG6Q" name="getSenha">
+      <ownedParameter xmi:id="__Nl5ALOBEeKhjePjj4jG6Q" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_IV7HkLNjEeKU_Yk_EI4bcA" name="setMatricula">
+      <ownedParameter xmi:id="_McU_cLNnEeKU_Yk_EI4bcA" name="matricula" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_McU_cbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_McU_crNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_e6-o4LNjEeKU_Yk_EI4bcA" name="setDataAmissao">
+      <ownedParameter xmi:id="_N8cHULNnEeKU_Yk_EI4bcA" name="dataAdmissao" type="_1_9hFrNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N8cHUbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N8cHUrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_e-P_ULNjEeKU_Yk_EI4bcA" name="setDataDesligamento">
+      <ownedParameter xmi:id="_O-MfQLNnEeKU_Yk_EI4bcA" name="dataDesligamento" type="_1_9hFrNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O-MfQbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O-MfQrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_e-srQLNjEeKU_Yk_EI4bcA" name="setStatus">
+      <ownedParameter xmi:id="_QJB6sLNnEeKU_Yk_EI4bcA" name="status" type="_1_9hEbNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QJB6sbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QJB6srNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fCatoLNjEeKU_Yk_EI4bcA" name="setSalario">
+      <ownedParameter xmi:id="_So0W4LNnEeKU_Yk_EI4bcA" name="salario" type="_1_9hFLNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_So0W4bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_So0W4rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fGbq8LNjEeKU_Yk_EI4bcA" name="setEnderecoFuncional">
+      <ownedParameter xmi:id="_bG9A0LNnEeKU_Yk_EI4bcA" name="enderecoFuncional" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bG9A0bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bG9A0rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fJHLgLNjEeKU_Yk_EI4bcA" name="setTelefoneComercial">
+      <ownedParameter xmi:id="_cJATsLNnEeKU_Yk_EI4bcA" name="telefoneComercial" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cJATsbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cJATsrNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fMrc4LNjEeKU_Yk_EI4bcA" name="setTipoPessoa">
+      <ownedParameter xmi:id="_dLg5kLNnEeKU_Yk_EI4bcA" name="tipoPessoa" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dLg5kbNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dLg5krNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fN3vsLNjEeKU_Yk_EI4bcA" name="setNome">
+      <ownedParameter xmi:id="_eFFl4LNnEeKU_Yk_EI4bcA" name="nome" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eFFl4bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eFFl4rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fQsaMLNjEeKU_Yk_EI4bcA" name="setCPF">
+      <ownedParameter xmi:id="_fAJf8LNnEeKU_Yk_EI4bcA" name="CPF" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fAJf8bNnEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fAJf8rNnEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_bwTNkLTMEeK5A5WRyf2dHg" name="Entidade"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_fQwPILNkEeKU_Yk_EI4bcA" isDisjoint="true" powertype="__PDKALNfEeKU_Yk_EI4bcA">
+    <eAnnotations xmi:id="_fRo_9LNkEeKU_Yk_EI4bcA" source="Position">
+      <details xmi:id="_fRo_9bNkEeKU_Yk_EI4bcA" key="Position" value="4"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lCOpELNlEeKU_Yk_EI4bcA" name="Empresa">
+    <generalization xmi:id="_FP9U0LNmEeKU_Yk_EI4bcA" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="_M3fG4LNmEeKU_Yk_EI4bcA" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <generalization xmi:id="__kO9QLTHEeK5A5WRyf2dHg" general="_eD-6ALNkEeKU_Yk_EI4bcA"/>
+    <ownedAttribute xmi:id="_mq0XgLNlEeKU_Yk_EI4bcA" name="responsavel" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_muiZ4LNlEeKU_Yk_EI4bcA" name="telefoneResponsavel" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedAttribute xmi:id="_mu_F0LNlEeKU_Yk_EI4bcA" name="descricaoServico" visibility="protected" type="_1_9hELNbEeKU_Yk_EI4bcA" isUnique="false" aggregation="composite"/>
+    <ownedOperation xmi:id="_WAn1oLNmEeKU_Yk_EI4bcA" name="getResponsavel">
+      <ownedParameter xmi:id="_g-iUsLNmEeKU_Yk_EI4bcA" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_WkU_oLNmEeKU_Yk_EI4bcA" name="setResponsavel">
+      <ownedParameter xmi:id="_tgbvALNmEeKU_Yk_EI4bcA" name="responsavel" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tgbvAbNmEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tgbvArNmEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_W6pN4LNmEeKU_Yk_EI4bcA" name="getTelefoneResponsavel">
+      <ownedParameter xmi:id="_f3RxsLNmEeKU_Yk_EI4bcA" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_W_G3ILNmEeKU_Yk_EI4bcA" name="setTelefoneResponsavel">
+      <ownedParameter xmi:id="_v2Zg0LNmEeKU_Yk_EI4bcA" name="telefoneResponsavel" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v2Zg0bNmEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v2Zg0rNmEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_XD3bULNmEeKU_Yk_EI4bcA" name="getDescricaoServico">
+      <ownedParameter xmi:id="_e6k44LNmEeKU_Yk_EI4bcA" name="return" type="_1_9hELNbEeKU_Yk_EI4bcA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_XHIxwLNmEeKU_Yk_EI4bcA" name="setDescricaoServico">
+      <ownedParameter xmi:id="_ylgycLNmEeKU_Yk_EI4bcA" name="descricaoServico" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ylgycbNmEeKU_Yk_EI4bcA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ylgycrNmEeKU_Yk_EI4bcA" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_blpwMLOBEeKhjePjj4jG6Q" name="setTelefoneComercial">
+      <ownedParameter xmi:id="_jqS8ELOBEeKhjePjj4jG6Q" name="telefoneComercial" type="_1_9hELNbEeKU_Yk_EI4bcA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jqS8EbOBEeKhjePjj4jG6Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jqS8ErOBEeKhjePjj4jG6Q" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZRZiMLTMEeK5A5WRyf2dHg" name="Empresa">
+      <ownedParameter xmi:id="_Z3M98LTMEeK5A5WRyf2dHg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_XFVskLTHEeK5A5WRyf2dHg" isDisjoint="true" powertype="_eD-6ALNkEeKU_Yk_EI4bcA">
+    <eAnnotations xmi:id="_XGeVALTHEeK5A5WRyf2dHg" source="Position">
+      <details xmi:id="_XGeVAbTHEeK5A5WRyf2dHg" key="Position" value="4"/>
+    </eAnnotations>
+  </packagedElement>
+</uml:Model>
