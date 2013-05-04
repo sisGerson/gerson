@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_FbDKMLTJEeKwxKlajUl4wg" name="Model">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdQwsLTJEeKwxKlajUl4wg" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM8LTJEeKwxKlajUl4wg" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM8bTJEeKwxKlajUl4wg" name="Boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM8rTJEeKwxKlajUl4wg" name="UnlimitedNatural"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM87TJEeKwxKlajUl4wg" name="Float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM9LTJEeKwxKlajUl4wg" name="Double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM9bTJEeKwxKlajUl4wg" name="Time"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdTM9rTJEeKwxKlajUl4wg" name="Date"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FdT0ALTJEeKwxKlajUl4wg" name="DateTime"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Gxgm0LTJEeKwxKlajUl4wg" name="Funcionario">
+    <generalization xmi:id="_CxbAELTKEeKwxKlajUl4wg" general="_6qgjULTJEeKwxKlajUl4wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_JQd8kLTJEeKwxKlajUl4wg" name=""/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_LAAnkLTJEeKwxKlajUl4wg" name="UseCase2_Funcionario" memberEnd="_LACcwLTJEeKwxKlajUl4wg _LADq4rTJEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_LACcwLTJEeKwxKlajUl4wg" name="src" type="_JQd8kLTJEeKwxKlajUl4wg" association="_LAAnkLTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LADq4bTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LADq4LTJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_LADq4rTJEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_LAAnkLTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LAER8LTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LADq47TJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_WtPDsLTJEeKwxKlajUl4wg" name="Solicitar Folha de Ponto"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cAz2ILTJEeKwxKlajUl4wg" name="Solicitar Relatórios Pessoais_Funcionario" memberEnd="_cA0dMLTJEeKwxKlajUl4wg _cA0dM7TJEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_cA0dMLTJEeKwxKlajUl4wg" name="src" type="_WtPDsLTJEeKwxKlajUl4wg" association="_cAz2ILTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cA0dMrTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cA0dMbTJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_cA0dM7TJEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_cAz2ILTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cA1EQLTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cA0dNLTJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_fyZRYLTJEeKwxKlajUl4wg" name="Solicitar Contra-cheque"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mUwyMLTJEeKwxKlajUl4wg" name="Solicitar Contra-cheque_Funcionario" memberEnd="_mUwyMbTJEeKwxKlajUl4wg _mUyAUbTJEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_mUwyMbTJEeKwxKlajUl4wg" name="src" type="_fyZRYLTJEeKwxKlajUl4wg" association="_mUwyMLTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mUyAULTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mUxZQLTJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_mUyAUbTJEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_mUwyMLTJEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mUynYbTJEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mUynYLTJEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_qSRJkLTJEeKwxKlajUl4wg" name="Controlar Almoxarifado"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_uEsSULTJEeKwxKlajUl4wg" name="Pedir Férias"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_xGDKgLTJEeKwxKlajUl4wg" name="Atualizar Dados"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zdFTULTJEeKwxKlajUl4wg" name="Preencher Folha de Ponto"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_6qgjULTJEeKwxKlajUl4wg" name="Gerente">
+    <generalization xmi:id="_HsCf8LTKEeKwxKlajUl4wg" general="_Gxgm0LTJEeKwxKlajUl4wg"/>
+    <generalization xmi:id="_PKtQ8LTKEeKwxKlajUl4wg" general="_Gxgm0LTJEeKwxKlajUl4wg"/>
+    <generalization xmi:id="_GvQ5MLTLEeKwxKlajUl4wg" general="_Gxgm0LTJEeKwxKlajUl4wg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_TLKOoLTKEeKwxKlajUl4wg" name="Manter Funcionário"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_VbVhgLTKEeKwxKlajUl4wg" name="Emitir Relatório"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_vSYYALTKEeKwxKlajUl4wg" name="Liberação de Férias"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PIGzcLTLEeKwxKlajUl4wg" name="Bater Ponto_Funcionario" memberEnd="_PIHagLTLEeKwxKlajUl4wg _PIIooLTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_PIHagLTLEeKwxKlajUl4wg" name="src" type="_zdFTULTJEeKwxKlajUl4wg" association="_PIGzcLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PIIBkbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PIIBkLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_PIIooLTLEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_PIGzcLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PIJPsLTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PIIoobTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_R-bgULTLEeKwxKlajUl4wg" name="Controlar Almoxarifado_Funcionario" memberEnd="_R-bgUbTLEeKwxKlajUl4wg _R-cucbTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_R-bgUbTLEeKwxKlajUl4wg" name="src" type="_qSRJkLTJEeKwxKlajUl4wg" association="_R-bgULTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R-cucLTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R-cHYLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_R-cucbTLEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_R-bgULTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R-dVgbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R-dVgLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_S8V6ELTLEeKwxKlajUl4wg" name="Atualizar Dados_Funcionario" memberEnd="_S8V6EbTLEeKwxKlajUl4wg _S8WhIrTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_S8V6EbTLEeKwxKlajUl4wg" name="src" type="_xGDKgLTJEeKwxKlajUl4wg" association="_S8V6ELTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S8WhIbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S8WhILTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_S8WhIrTLEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_S8V6ELTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S8XvQLTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S8XIMLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_U70egLTLEeKwxKlajUl4wg" name="Pedir Férias_Funcionario" memberEnd="_U70egbTLEeKwxKlajUl4wg _U71FkbTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_U70egbTLEeKwxKlajUl4wg" name="src" type="_uEsSULTJEeKwxKlajUl4wg" association="_U70egLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U71FkLTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U70egrTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_U71FkbTLEeKwxKlajUl4wg" name="dst" type="_Gxgm0LTJEeKwxKlajUl4wg" association="_U70egLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_U71Fk7TLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_U71FkrTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_a8WdkLTLEeKwxKlajUl4wg" name="Liberação de Férias_Gerente" memberEnd="_a8XEoLTLEeKwxKlajUl4wg _a8YSwLTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_a8XEoLTLEeKwxKlajUl4wg" name="src" type="_vSYYALTKEeKwxKlajUl4wg" association="_a8WdkLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8XrsbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a8XrsLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_a8YSwLTLEeKwxKlajUl4wg" name="dst" type="_6qgjULTJEeKwxKlajUl4wg" association="_a8WdkLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8Y50LTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_a8YSwbTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ePBIMLTLEeKwxKlajUl4wg" name="Visualizar Relatório_Gerente" memberEnd="_ePBIMbTLEeKwxKlajUl4wg _ePCWUbTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_ePBIMbTLEeKwxKlajUl4wg" name="src" type="_VbVhgLTKEeKwxKlajUl4wg" association="_ePBIMLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ePCWULTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ePBvQLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ePCWUbTLEeKwxKlajUl4wg" name="dst" type="_6qgjULTJEeKwxKlajUl4wg" association="_ePBIMLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ePC9YbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ePC9YLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fL6OQLTLEeKwxKlajUl4wg" name="Manter Funcionário_Gerente" memberEnd="_fL6OQbTLEeKwxKlajUl4wg _fL7cYLTLEeKwxKlajUl4wg">
+    <ownedEnd xmi:id="_fL6OQbTLEeKwxKlajUl4wg" name="src" type="_TLKOoLTKEeKwxKlajUl4wg" association="_fL6OQLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fL61UbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fL61ULTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_fL7cYLTLEeKwxKlajUl4wg" name="dst" type="_6qgjULTJEeKwxKlajUl4wg" association="_fL6OQLTLEeKwxKlajUl4wg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fL8DcbTLEeKwxKlajUl4wg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fL8DcLTLEeKwxKlajUl4wg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
