@@ -11,6 +11,7 @@ public class Dependentes {
 	private Funcionario funcionario;
 
 	public Dependentes(Funcionario funcionario) {
+		//Mostrar que essa é a classe parte da classe todo que a compôs logo na instancia
 		this.funcionario = funcionario;
 	}
 

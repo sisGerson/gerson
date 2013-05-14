@@ -331,20 +331,24 @@ public class Funcionario extends Entidade{
 	public Dependentes[] getDependentes() {
 		return dependentes;
 	}
-
+	
+	//Apenas com esse método será possível acessar a classe Dependentes
 	public void setDependentes(Dependentes[] dependentes) {
 		this.dependentes = dependentes;
 	}
 
-	//
+	//Método para criar dependentes do funcionário
 	public void criarDependentes() {
 		Dependentes novoDependente = new Dependentes(this);
+		
+		//Vetor temporário para receber o objeto novoDependente
 		Dependentes[] tempDependentes = new Dependentes[this.dependentes.length+1];
 		
 		for(int i = 0; i < this.dependentes.length; i++){
 			tempDependentes[i] = this.dependentes[i];
 		}
 		tempDependentes[this.dependentes.length] = novoDependente;
+		//Mandar o novo dependente cadastrado para o vetor real de dependentes
 		this.dependentes = tempDependentes;
 	}
 }
