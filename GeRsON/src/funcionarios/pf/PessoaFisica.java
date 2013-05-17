@@ -3,7 +3,7 @@ package funcionarios.pf;
 import java.util.Date;
 
 import funcionarios.Funcionario;
-import funcionarios.dependentes.*;
+import funcionarios.pf.dependentes.*;
 
 public class PessoaFisica extends Funcionario{
 	

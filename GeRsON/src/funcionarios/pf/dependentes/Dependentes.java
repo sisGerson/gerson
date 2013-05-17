@@ -1,4 +1,4 @@
-package funcionarios.dependentes;
+package funcionarios.pf.dependentes;
 
 import funcionarios.pf.*;
 
