@@ -1,6 +1,6 @@
-package entidades.funcionarios;
+package funcionarios.pf;
 
-public class Gerente extends Funcionario {
+public class Gerente extends PessoaFisica {
 
 	public Gerente() {
 		super();

@@ -1,6 +1,6 @@
-package entidades.dependentes;
+package funcionarios.dependentes;
 
-import entidades.funcionarios.*;
+import funcionarios.pf.*;
 
 public class Dependentes {
 	private String nomeDependente;
@@ -8,11 +8,11 @@ public class Dependentes {
 	private String dataNascimentoDependente;
 	private boolean IRRF;
 	private boolean salarioFamilia;
-	private Funcionario funcionario;
+	private PessoaFisica pessoaFisica;
 
-	public Dependentes(Funcionario funcionario) {
+	public Dependentes(PessoaFisica pessoaFisica) {
 		//Mostrar que essa é a classe parte da classe todo que a compôs logo na instancia
-		this.funcionario = funcionario;
+		this.pessoaFisica = pessoaFisica;
 	}
 
 	public String getNomeDependente() {
@@ -55,8 +55,8 @@ public class Dependentes {
 		this.salarioFamilia = salarioFamilia;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public PessoaFisica getPessoaFisica() {
+		return pessoaFisica;
 	}
 
 }

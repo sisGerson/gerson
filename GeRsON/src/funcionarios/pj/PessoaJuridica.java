@@ -1,14 +1,14 @@
-package entidades.empresa;
+package funcionarios.pj;
 
-import entidades.Entidade;
+import funcionarios.*;
 
-public class Empresa extends Entidade{
+public class PessoaJuridica extends Funcionario{
 	
 	private String responsavel;
 	private String telefoneResponsavel;
 	private String descricaoServico;
 	
-	public Empresa() {
+	public PessoaJuridica() {
 		super();
 	}
 

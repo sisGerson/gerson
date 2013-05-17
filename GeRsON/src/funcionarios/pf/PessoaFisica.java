@@ -1,11 +1,11 @@
-package entidades.funcionarios;
+package funcionarios.pf;
 
 import java.util.Date;
 
-import entidades.Entidade;
-import entidades.dependentes.Dependentes;
+import funcionarios.Funcionario;
+import funcionarios.dependentes.*;
 
-public class Funcionario extends Entidade{
+public class PessoaFisica extends Funcionario{
 	
 	protected String cargo;
 	protected int horaSemanal;
@@ -44,7 +44,7 @@ public class Funcionario extends Entidade{
 	protected String nacionalidadeConjuge;
 	protected Dependentes[] dependentes = {};
 	
-	public Funcionario() {
+	public PessoaFisica() {
 		super();
 	}
 	
