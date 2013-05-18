@@ -3,7 +3,7 @@ package funcionarios;
 import java.util.Date;
 
 public abstract class Funcionario {
-	protected String empresa;
+
 	protected String matricula;
 	protected Date dataAdmissao;
 	protected Date dataDesligamento;
@@ -23,14 +23,6 @@ public abstract class Funcionario {
 	
 	
 	public Funcionario() {
-	}
-
-	public String getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(String empresa) {
-		this.empresa = empresa;
 	}
 
 	public String getMatricula() {
