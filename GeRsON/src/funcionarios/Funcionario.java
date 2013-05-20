@@ -3,26 +3,39 @@ package funcionarios;
 import java.util.Date;
 
 public abstract class Funcionario {
-
+	
+	protected int id;
+	protected String area;
 	protected String matricula;
 	protected Date dataAdmissao;
 	protected Date dataDesligamento;
-	protected boolean status;
+	protected boolean status_2;
 	protected double salario;
 	protected String enderecoFuncional;
 	protected String telefoneComercial;
-	protected String tipoPessoa;
+	protected String tipoFuncionario;
 	protected String nome;
 	protected String CPF_CNPJ;
 	protected String email;
 	protected String senha;
-	protected String horarioTrabalho;
-	protected String CEP;
-	protected String cidade;
-	protected String UFCidade;
+	protected String CEPFuncional;
+	protected String cidadeFuncional;
+	protected String UFCidadeFuncional;
 	
 	
 	public Funcionario() {
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
 	}
 
 	public String getMatricula() {
@@ -49,12 +62,12 @@ public abstract class Funcionario {
 		this.dataDesligamento = dataDesligamento;
 	}
 
-	public boolean isStatus() {
-		return status;
+	public boolean isStatus_2() {
+		return status_2;
 	}
 
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setStatus_2(boolean status_2) {
+		this.status_2 = status_2;
 	}
 
 	public double getSalario() {
@@ -81,12 +94,12 @@ public abstract class Funcionario {
 		this.telefoneComercial = telefoneComercial;
 	}
 
-	public String getTipoPessoa() {
-		return tipoPessoa;
+	public String getTipoFuncionario() {
+		return tipoFuncionario;
 	}
 
-	public void setTipoPessoa(String tipoPessoa) {
-		this.tipoPessoa = tipoPessoa;
+	public void setTipoFuncionario(String tipoFuncionario) {
+		this.tipoFuncionario = tipoFuncionario;
 	}
 
 	public String getNome() {
@@ -121,36 +134,27 @@ public abstract class Funcionario {
 		this.senha = senha;
 	}
 
-	public String getHorarioTrabalho() {
-		return horarioTrabalho;
+	public String getCEPFuncional() {
+		return CEPFuncional;
 	}
 
-	public void setHorarioTrabalho(String horarioTrabalho) {
-		this.horarioTrabalho = horarioTrabalho;
+	public void setCEPFuncional(String cEPFuncional) {
+		CEPFuncional = cEPFuncional;
 	}
 
-	public String getCEP() {
-		return CEP;
+	public String getCidadeFuncional() {
+		return cidadeFuncional;
 	}
 
-	public void setCEP(String cEP) {
-		CEP = cEP;
+	public void setCidadeFuncional(String cidadeFuncional) {
+		this.cidadeFuncional = cidadeFuncional;
 	}
 
-	public String getCidade() {
-		return cidade;
+	public String getUFCidadeFuncional() {
+		return UFCidadeFuncional;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setUFCidadeFuncional(String uFCidadeFuncional) {
+		UFCidadeFuncional = uFCidadeFuncional;
 	}
-
-	public String getUFCidade() {
-		return UFCidade;
-	}
-
-	public void setUFCidade(String uFCidade) {
-		UFCidade = uFCidade;
-	}
-	
 }

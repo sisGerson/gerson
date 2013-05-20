@@ -5,17 +5,16 @@ import java.util.Date;
 import funcionarios.Funcionario;
 import funcionarios.pf.dependentes.*;
 
-public class PessoaFisica extends Funcionario{
-	
+public class PessoaFisica extends Funcionario {
+
 	protected String cargo;
-	protected int horaSemanal;
+	protected int totalHoraSemanal;
 	protected String RG;
 	protected String orgaoEmissor;
 	protected Date dataExpedicao;
 	protected String CTPS;
 	protected String PIS;
 	protected Date dataNascimento;
-	protected String enderecoResidencial;
 	protected String telefoneCelular;
 	protected String telefoneResidencial;
 	protected String estadoCivil;
@@ -42,12 +41,17 @@ public class PessoaFisica extends Funcionario{
 	protected String grauInstrucao;
 	protected String nomeConjuge;
 	protected String nacionalidadeConjuge;
+	protected String horarioTrabalho;
+	protected String enderecoResidencial;
+	protected String cidadeResidencial;
+	protected String UFResidencial;
+	protected String CEPResidencial;
 	protected Dependentes[] dependentes = {};
-	
+
 	public PessoaFisica() {
 		super();
 	}
-	
+
 	public String getCargo() {
 		return cargo;
 	}
@@ -56,12 +60,12 @@ public class PessoaFisica extends Funcionario{
 		this.cargo = cargo;
 	}
 
-	public int getHoraSemanal() {
-		return horaSemanal;
+	public int getTotalHoraSemanal() {
+		return totalHoraSemanal;
 	}
 
-	public void setHoraSemanal(int horaSemanal) {
-		this.horaSemanal = horaSemanal;
+	public void setTotalHoraSemanal(int totalHoraSemanal) {
+		this.totalHoraSemanal = totalHoraSemanal;
 	}
 
 	public String getRG() {
@@ -110,14 +114,6 @@ public class PessoaFisica extends Funcionario{
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-
-	public String getEnderecoResidencial() {
-		return enderecoResidencial;
-	}
-
-	public void setEnderecoResidencial(String enderecoResidencial) {
-		this.enderecoResidencial = enderecoResidencial;
 	}
 
 	public String getTelefoneCelular() {
@@ -328,27 +324,62 @@ public class PessoaFisica extends Funcionario{
 		this.nacionalidadeConjuge = nacionalidadeConjuge;
 	}
 
+	public String getHorarioTrabalho() {
+		return horarioTrabalho;
+	}
+
+	public void setHorarioTrabalho(String horarioTrabalho) {
+		this.horarioTrabalho = horarioTrabalho;
+	}
+
+	public String getEnderecoResidencial() {
+		return enderecoResidencial;
+	}
+
+	public void setEnderecoResidencial(String enderecoResidencial) {
+		this.enderecoResidencial = enderecoResidencial;
+	}
+
+	public String getCidadeResidencial() {
+		return cidadeResidencial;
+	}
+
+	public void setCidadeResidencial(String cidadeResidencial) {
+		this.cidadeResidencial = cidadeResidencial;
+	}
+
+	public String getUFResidencial() {
+		return UFResidencial;
+	}
+
+	public void setUFResidencial(String uFResidencial) {
+		UFResidencial = uFResidencial;
+	}
+
+	public String getCEPResidencial() {
+		return CEPResidencial;
+	}
+
+	public void setCEPResidencial(String cEPResidencial) {
+		CEPResidencial = cEPResidencial;
+	}
+
 	public Dependentes[] getDependentes() {
 		return dependentes;
 	}
-	
-	//Apenas com esse método será possível acessar a classe Dependentes
-	public void setDependentes(Dependentes[] dependentes) {
-		this.dependentes = dependentes;
-	}
 
-	//Método para criar dependentes do funcionário
+	// Método para criar dependentes do funcionário
 	public void criarDependentes() {
 		Dependentes novoDependente = new Dependentes(this);
-		
-		//Vetor temporário para receber o objeto novoDependente
-		Dependentes[] tempDependentes = new Dependentes[this.dependentes.length+1];
-		
-		for(int i = 0; i < this.dependentes.length; i++){
+
+		// Vetor temporário para receber o objeto novoDependente
+		Dependentes[] tempDependentes = new Dependentes[this.dependentes.length + 1];
+
+		for (int i = 0; i < this.dependentes.length; i++) {
 			tempDependentes[i] = this.dependentes[i];
 		}
 		tempDependentes[this.dependentes.length] = novoDependente;
-		//Mandar o novo dependente cadastrado para o vetor real de dependentes
+		// Mandar o novo dependente cadastrado para o vetor real de dependentes
 		this.dependentes = tempDependentes;
 	}
 }
