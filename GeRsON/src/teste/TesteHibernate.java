@@ -9,7 +9,7 @@ import funcionarios.pj.PessoaJuridica;
 public class TesteHibernate {
 	
 	public static void main(String[] args) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("gerson");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
 		EntityManager em = factory.createEntityManager();
 		
 		PessoaJuridica p = new PessoaJuridica();
