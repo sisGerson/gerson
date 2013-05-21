@@ -2,7 +2,7 @@ package funcionarios;
 
 import java.util.Date;
 
-public abstract class Funcionario {
+public class Funcionario {
 	
 	protected int id;
 	protected String area;

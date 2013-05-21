@@ -1,15 +1,30 @@
 package funcionarios.pj;
 
-import funcionarios.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+import funcionarios.Funcionario;
+
+@Entity
 public class PessoaJuridica extends Funcionario{
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private String responsavel;
 	private String telefoneResponsavel;
 	private String descricaoServico;
 	
 	public PessoaJuridica() {
 		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getResponsavel() {
