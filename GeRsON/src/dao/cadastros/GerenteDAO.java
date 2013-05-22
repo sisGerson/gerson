@@ -1,8 +1,7 @@
 package dao.cadastros;
 
 import javax.persistence.*;
-
-import funcionarios.Funcionario;
+import funcionarios.pf.PessoaFisica;
 
 public class GerenteDAO {
 
@@ -11,14 +10,14 @@ public class GerenteDAO {
 	}
 
 	//Método para cadastrar funcionário!
-	public void cadastrarFuncionario(Funcionario funcionario) {
+	public void cadastrarPessoaFisica(PessoaFisica pessoaFisica) {
 		//Fazer conexão  com o banco de dados
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
 		//Criar entidade para persistir no banco
 		EntityManager em = factory.createEntityManager();
 		
 		em.getTransaction().begin();
-		em.persist(funcionario);
+		em.persist(pessoaFisica);
 		em.getTransaction().commit();
 	}
 }
