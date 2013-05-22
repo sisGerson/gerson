@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.cadastros.GerenteDAO;
+
 import funcionarios.pj.PessoaJuridica;
 
 /**
@@ -64,6 +66,9 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setResponsavel(request.getParameter("responsavel"));
 		pessoaJuridica.setTelefoneResponsavel(request.getParameter("telefoneResponsavel"));
 		pessoaJuridica.setDescricaoServico(request.getParameter("descricaoServico"));
+		
+		GerenteDAO gerente = new GerenteDAO();
+		gerente.cadastrarPessoaJuridica(pessoaJuridica);
 	}
 
 }
