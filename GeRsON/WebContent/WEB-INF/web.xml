@@ -29,4 +29,14 @@
     <servlet-name>ServletCadastroPessoaFisica</servlet-name>
     <url-pattern>/ServletCadastroPessoaFisica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletCadastroPessoaJuridica</display-name>
+    <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
+    <servlet-class>servlets.cadastro.ServletCadastroPessoaJuridica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
+    <url-pattern>/ServletCadastroPessoaJuridica</url-pattern>
+  </servlet-mapping>
 </web-app>

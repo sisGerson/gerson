@@ -9,7 +9,7 @@ public class GerenteDAO {
 
 	}
 
-	//Método para cadastrar funcionário!
+	//Método para cadastrar PessoaFisica!
 	public void cadastrarPessoaFisica(PessoaFisica pessoaFisica) {
 		//Fazer conexão  com o banco de dados
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
