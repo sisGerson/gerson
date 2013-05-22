@@ -1,10 +1,7 @@
 package funcionarios.pf.dependentes;
 
-import javax.persistence.Entity;
-
 import funcionarios.pf.PessoaFisica;
 
-@Entity
 public class Dependentes {
 	private String nomeDependente;
 	private String parentesco;

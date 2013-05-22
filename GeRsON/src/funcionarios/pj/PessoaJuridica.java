@@ -7,21 +7,12 @@ import funcionarios.Funcionario;
 @Entity
 public class PessoaJuridica extends Funcionario{
 	
-	private int id;
 	private String responsavel;
 	private String telefoneResponsavel;
 	private String descricaoServico;
 	
 	public PessoaJuridica() {
 		super();
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getResponsavel() {

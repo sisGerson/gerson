@@ -1,13 +1,9 @@
 package funcionarios.pf;
 
 import java.util.Date;
-
-import javax.persistence.Entity;
-
 import funcionarios.Funcionario;
 import funcionarios.pf.dependentes.Dependentes;
 
-@Entity
 public class PessoaFisica extends Funcionario {
 
 	protected String cargo;
