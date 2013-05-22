@@ -13,7 +13,7 @@ public class TesteHibernate {
 		EntityManager em = factory.createEntityManager();
 		
 		PessoaJuridica p = new PessoaJuridica();
-		p.setResponsavel("Jefferson");
+		p.setResponsavel("Isaac");
 		p.setTelefoneResponsavel("3333-4444");
 		p.setDescricaoServico("Engenheiro");
 		
