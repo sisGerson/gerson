@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="Banco">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>funcionarios.pj.PessoaJuridica</class>
+		<class>funcionarios.Funcionario</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

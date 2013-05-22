@@ -2,8 +2,15 @@ package funcionarios;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Funcionario {
 	
+	@Id
+	@GeneratedValue
 	protected int id;
 	protected String area;
 	protected String matricula;
