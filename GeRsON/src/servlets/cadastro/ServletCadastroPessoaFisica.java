@@ -1,11 +1,14 @@
 package servlets.cadastro;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import dao.cadastros.GerenteDAO;
 import funcionarios.pf.PessoaFisica;
 
@@ -30,24 +33,24 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setArea(request.getParameter("area"));
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
 		
-		/*String dataAdmissaoTexto = request.getParameter("dataAdmissao");
+		String dataAdmissaoTexto = request.getParameter("dataAdmissao");
 		Date dataAdmissao;
 		try {
 			dataAdmissao = new SimpleDateFormat("dd/MM/yyyy").parse(dataAdmissaoTexto);
 			pessoaFisica.setDataAdmissao(dataAdmissao);
 		} catch (ParseException e1) {
 			e1.printStackTrace();
-		}*/
+		}
 
 		
-		/*String dataDesligamentoTexto = request.getParameter("dataDesligamento");
+		String dataDesligamentoTexto = request.getParameter("dataDesligamento");
 		Date dataDesligamento;
 		try {
 			dataDesligamento = new SimpleDateFormat("dd/MM/yyyy").parse(dataDesligamentoTexto);
 			pessoaFisica.setDataDesligamento(dataDesligamento);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		pessoaFisica.setStatus_2(Boolean.parseBoolean(request.getParameter("status_2")));
 		//pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
@@ -66,7 +69,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setRG(request.getParameter("RG"));
 		pessoaFisica.setOrgaoEmissor(request.getParameter("orgaoEmissor"));
 		
-		/*
+		
 		String dataExpedicaoTexto = request.getParameter("dataExpedicao");
 		Date dataExpedicao;
 		try{
@@ -74,25 +77,25 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 			pessoaFisica.setDataNascimento(dataExpedicao);
 		} catch(ParseException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		pessoaFisica.setCTPS(request.getParameter("CTPS"));
 		pessoaFisica.setPIS(request.getParameter("PIS"));
 		
-		/*String dataNascimentoTexto = request.getParameter("dataNascimento");
+		String dataNascimentoTexto = request.getParameter("dataNascimento");
 		Date dataNascimento;
 		try{
 			dataNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimentoTexto);
 			pessoaFisica.setDataNascimento(dataNascimento);
 		} catch(ParseException e) {
 			e.printStackTrace();
-		}*/
+		}
 		pessoaFisica.setTelefoneCelular(request.getParameter("telefoneCelular"));
 		pessoaFisica.setTelefoneResidencial(request.getParameter("telefoneResidencial"));
 		pessoaFisica.setEstadoCivil(request.getParameter("estadoCivil"));
 		pessoaFisica.setNaturalidade(request.getParameter("naturalidade"));
-		//pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
-		//pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));
+		pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
+		pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));
 		pessoaFisica.setCorCabelo(request.getParameter("corCabelo"));
 		pessoaFisica.setCorOlhos(request.getParameter("corOlhos"));
 		pessoaFisica.setRacaCor(request.getParameter("racaCor"));
@@ -103,7 +106,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setNacionalidadeMae(request.getParameter("acionalidadeMae"));
 		pessoaFisica.setNacionalidadePai(request.getParameter("nacionalidadePai"));
 		pessoaFisica.setSerieCTPS(request.getParameter("serieCTPS"));
-		/*
+		
 		String emissaoCTPSTexto= request.getParameter("emissaoCTPS");
 		Date emissaoCTPS;
 		try{
@@ -111,7 +114,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 			pessoaFisica.setEmissaoCTPS(emissaoCTPS);
 		} catch(ParseException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		pessoaFisica.setUFCTPS(request.getParameter("UFCTPS"));
 		pessoaFisica.setTituloEleitoral(request.getParameter("tituloEleitoral"));
@@ -131,7 +134,8 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		
 		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarPessoaFisica(pessoaFisica);
-		
+		PrintWriter out = response.getWriter();
+		out.println("Funcionário: " + pessoaFisica.getNome() + "Cadastrado com sucesso.");
 	}
 
 }

@@ -70,14 +70,14 @@
 		<tr>
 		<tr>
 		<td>
-		Nome da mãe: <input type="text" name="mae" value="" size="50" maxlength="60"/>
+		Nome da mãe: <input type="text" name="nomeMae" value="" size="50" maxlength="60"/>
 		Nacionalidade da mãe: <input type="text" name="nacionalidadeMae" value="" size="20" maxlength="30"/>
 		</td>
 		</tr>
 		<tr>
 		<tr>
 		<td>
-		Nome do pai: <input type="text" name="pai" value="" size="50" maxlength="60"/>
+		Nome do pai: <input type="text" name="nomePai" value="" size="50" maxlength="60"/>
 		Nacionalidade do pai: <input type="text" name="nacionalidadePai" value="" size="20" maxlength="30"/>
 		</td>
 		</tr>
@@ -85,7 +85,7 @@
 		<td>
 		Cor: <input type="text" name="racaCor" value="" size="20" maxlength="30"/>
 		Peso: <input type="text" name="peso" value="" size="20" maxlength="30"/>
-		Altura: <input type="text" name="peso" value="" size="20" maxlength="30"/>
+		Altura: <input type="text" name="altura" value="" size="20" maxlength="30"/>
 		</td>
 		</tr>
 		<tr>
@@ -114,8 +114,8 @@
 		<tr>
 		<td>
 		CPF/CNPJ: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
-		CNH: <input type="text" name="dataExpedicao" value="" size="15" maxlength="15"/>
-		Reservista: <input type="text" name="dataExpedicao" value="" size="14" maxlength="15"/>
+		CNH: <input type="text" name="CNH" value="" size="15" maxlength="15"/>
+		Reservista: <input type="text" name="reservista" value="" size="14" maxlength="15"/>
 		</td>
 		</tr>
 		<tr>
