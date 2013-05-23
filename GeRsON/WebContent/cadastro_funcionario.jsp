@@ -19,7 +19,7 @@
 
 
         <p align="right"><b>Usuário logado: Gerente</b></p>
-        <form name="cadastrar_funcionario" action="cadastrar_funcionario.jsp" method="post" enctype="text/plain">
+        <form name="cadastrar_funcionario" action="ServletCadastroPessoaFisica" method="post" >
 		<h2>Cadastro de Funcionário</h2>
 		<p>Tipo Funcionário:
 		<select name="tipoFuncionario">
