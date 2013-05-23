@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Funcionario {
@@ -14,7 +16,9 @@ public class Funcionario {
 	protected int id;
 	protected String area;
 	protected String matricula;
+	@Temporal(TemporalType.DATE)
 	protected Date dataAdmissao;
+	@Temporal(TemporalType.DATE)
 	protected Date dataDesligamento;
 	protected boolean status_2;
 	protected double salario;

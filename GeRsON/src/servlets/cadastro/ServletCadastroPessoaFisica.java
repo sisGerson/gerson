@@ -135,7 +135,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarPessoaFisica(pessoaFisica);
 		PrintWriter out = response.getWriter();
-		out.println("Funcionário: " + pessoaFisica.getNome() + "Cadastrado com sucesso.");
+		out.println("Funcionário: " + pessoaFisica.getNome() + " Cadastrado com sucesso.");
 	}
 
 }

@@ -3,6 +3,8 @@ package funcionarios.pf;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import funcionarios.Funcionario;
 import funcionarios.pf.dependentes.Dependentes;
@@ -14,9 +16,11 @@ public class PessoaFisica extends Funcionario {
 	protected int totalHoraSemanal;
 	protected String RG;
 	protected String orgaoEmissor;
+	@Temporal(TemporalType.DATE)
 	protected Date dataExpedicao;
 	protected String CTPS;
 	protected String PIS;
+	@Temporal(TemporalType.DATE)
 	protected Date dataNascimento;
 	protected String telefoneCelular;
 	protected String telefoneResidencial;
@@ -34,6 +38,7 @@ public class PessoaFisica extends Funcionario {
 	protected String nacionalidadeMae;
 	protected String nacionalidadePai;
 	protected String serieCTPS;
+	@Temporal(TemporalType.DATE)
 	protected Date emissaoCTPS;
 	protected String UFCTPS;
 	protected String tituloEleitoral;
