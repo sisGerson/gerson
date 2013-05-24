@@ -1,6 +1,7 @@
 package servlets.cadastro;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -44,8 +45,7 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		String dataDesligamentoTexto = request.getParameter("dataDesligamento");
 		Date dataDesligamento;
 		try {
-			dataDesligamento = new SimpleDateFormat("dd/MM/yyyy")
-					.parse(dataDesligamentoTexto);
+			dataDesligamento = new SimpleDateFormat("dd/MM/yyyy").parse(dataDesligamentoTexto);
 			pessoaJuridica.setDataDesligamento(dataDesligamento);
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -55,7 +55,7 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setSalario(Double.parseDouble(request.getParameter("salario")));
 		pessoaJuridica.setEnderecoFuncional(request.getParameter("enderecoFuncional"));
 		pessoaJuridica.setTelefoneComercial(request.getParameter("telefoneComercial"));
-		pessoaJuridica.setTipoFuncionario(request.getParameter("tipoFuncionario"));
+		pessoaJuridica.setTipoFuncionario("Pessoa Jurídica");
 		pessoaJuridica.setNome(request.getParameter("nome"));
 		pessoaJuridica.setCPF_CNPJ(request.getParameter("CPF_CNPJ"));
 		pessoaJuridica.setEmail(request.getParameter("email"));
@@ -69,6 +69,9 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		
 		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarPessoaJuridica(pessoaJuridica);
+		
+		PrintWriter out = response.getWriter();
+		out.println("Empresa: " + pessoaJuridica.getNome() + " Cadastrada com sucesso.");
 	}
 
 }
