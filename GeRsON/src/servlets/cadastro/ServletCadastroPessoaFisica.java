@@ -53,10 +53,10 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		}
 		
 		pessoaFisica.setStatus_2(Boolean.parseBoolean(request.getParameter("status_2")));
-		//pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
+		pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
 		pessoaFisica.setEnderecoFuncional(request.getParameter("enderecoFuncional"));
 		pessoaFisica.setTelefoneComercial(request.getParameter("telefoneComercial"));
-		pessoaFisica.setTipoFuncionario(request.getParameter("tipoFuncionario"));
+		pessoaFisica.setTipoFuncionario("Pessoa Física");
 		pessoaFisica.setNome(request.getParameter("nome"));
 		pessoaFisica.setCPF_CNPJ(request.getParameter("CPF_CNPJ"));
 		pessoaFisica.setEmail(request.getParameter("email"));
@@ -65,7 +65,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setCidadeFuncional(request.getParameter("cidadeFuncional"));
 		pessoaFisica.setUFCidadeFuncional(request.getParameter("UFCidadeFuncional"));
 		pessoaFisica.setCargo(request.getParameter("cargo"));
-		//pessoaFisica.setTotalHoraSemanal(Integer.parseInt(request.getParameter("totalHoraSemanal")));
+		pessoaFisica.setTotalHoraSemanal(Integer.parseInt(request.getParameter("totalHoraSemanal")));
 		pessoaFisica.setRG(request.getParameter("RG"));
 		pessoaFisica.setOrgaoEmissor(request.getParameter("orgaoEmissor"));
 		
@@ -104,7 +104,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setSinaisParticulares(request.getParameter("sinaisParticulares"));
 		pessoaFisica.setNomeMae(request.getParameter("nomeMae"));
 		pessoaFisica.setNomePai(request.getParameter("nomePai"));
-		pessoaFisica.setNacionalidadeMae(request.getParameter("acionalidadeMae"));
+		pessoaFisica.setNacionalidadeMae(request.getParameter("nacionalidadeMae"));
 		pessoaFisica.setNacionalidadePai(request.getParameter("nacionalidadePai"));
 		pessoaFisica.setSerieCTPS(request.getParameter("serieCTPS"));
 		

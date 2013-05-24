@@ -59,7 +59,7 @@
 		<tr>
 		<tr>
 		<td>
-		Nome da mãe: <input type="text" name="nomeMae" value="" size="50" maxlength="60"/>
+		Nome da mãe: <input type="text" name="nomeMae" value="" size="45" maxlength="60"/>
 		Nacionalidade da mãe: <input type="text" name="nacionalidadeMae" value="" size="20" maxlength="30"/>
 		</td>
 		</tr>
@@ -118,7 +118,6 @@
 		<td>
 		Nº CTPS: <input type="text" name="CTPS" value="" size="15" maxlength="15"/>
 		Série CTPS: <input type="text" name="serieCTPS" value="" size="10" maxlength="10"/>
-		Data emissão CTPS: <input type="text" name="emissaoCTPS" value="" size="10" maxlength="10"/>
 		UF CTPS: <select name="UFCTPS">
 		<option value="AC">AC</option>
 		<option value="AL">AL</option>
@@ -152,6 +151,12 @@
 		</tr>
 		<tr>
 		<td>
+		Data emissão CTPS: <input type="text" name="emissaoCTPS" value="" size="10" maxlength="10"/>
+		PIS:<input type="text" name="PIS" value="" size="10" maxlength="10"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
 		Nº Título Eleitoral: <input type="text" name="tituloEleitoral" value="" size="15" maxlength="15"/>
 		Zona Título Eleitoral: <input type="text" name="zonaTitulo" value="" size="10" maxlength="10"/>
 		Seção Título Eleitoral: <input type="text" name="secaoTitulo" value="" size="10" maxlength="10"/>
@@ -164,9 +169,9 @@
 		</tr>
 		<tr>
 		<td>
-		Cidade Residencial: <input type="text" name="cidadeResidencial" value="" size="40" maxlength="50"/>
+		Cidade Residencial: <input type="text" name="cidadeResidencial" value="" size="25" maxlength="50"/>
 		Estado Residencial: 
-		<select name="estadoResidencial">
+		<select name="UFResidencial">
 		<option value="AC">AC</option>
 		<option value="AL">AL</option>
 		<option value="AP">AP</option>
@@ -222,12 +227,24 @@
 		</tr>
 		<tr>
 		<td>
+		Salario: <input type="text" name="salario" value="" size="20" maxlength="10"/>
+		Cargo: <input type="text" name="cargo" value="" size="20" maxlength="20"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Horário de Trabalho: <input type="text" name="horarioTrabalho" value="" size="20" maxlength="10"/>
+		Total de Horas Semanais: <input type="text" name="totalHoraSemanal" value="" size="20" maxlength="10"/>
+		</td>
+		</tr>
+		<tr>
+		<td>
 		Endereço Funcional: <input type="text" name="enderecoFuncional" value="" size="100" maxlength="100"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Cidade Funcional: <input type="text" name="cidadeFuncional" value="" size="40" maxlength="50"/>
+		Cidade Funcional: <input type="text" name="cidadeFuncional" value="" size="25" maxlength="50"/>
 		Estado Funcional: 
 		<select name="UFCidadeFuncional">
 		<option value="AC">AC</option>
