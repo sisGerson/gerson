@@ -25,6 +25,7 @@ public class PessoaFisica extends Funcionario {
 	protected String telefoneCelular;
 	protected String telefoneResidencial;
 	protected String estadoCivil;
+	protected String nacionalidade;
 	protected String naturalidade;
 	protected double altura;
 	protected double peso;
@@ -146,6 +147,14 @@ public class PessoaFisica extends Funcionario {
 
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
+	}
+
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
 	}
 
 	public String getNaturalidade() {

@@ -93,6 +93,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setTelefoneCelular(request.getParameter("telefoneCelular"));
 		pessoaFisica.setTelefoneResidencial(request.getParameter("telefoneResidencial"));
 		pessoaFisica.setEstadoCivil(request.getParameter("estadoCivil"));
+		pessoaFisica.setNacionalidade(request.getParameter("nacionalidade"));
 		pessoaFisica.setNaturalidade(request.getParameter("naturalidade"));
 		pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
 		pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));

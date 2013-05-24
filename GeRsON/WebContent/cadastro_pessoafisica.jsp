@@ -20,33 +20,22 @@
 
         <p align="right"><b>Usuário logado: Gerente</b></p>
         <form name="cadastrar_funcionario" action="ServletCadastroPessoaFisica" method="post" >
-		<h2>Cadastro de Funcionário</h2>
-		<p>Tipo Funcionário:
-		<select name="tipoFuncionario">
-			<option value="Pessoa Física">Pessoa Física</option>
-			<option value="Pessoa Jurídica">Pessoa Jurídica</option>
-		</select>
-		&nbsp; &nbsp;Status do Funcionário: 
+		<h2>Cadastro de Funcionário - Pessoa Física</h2>
+		<p>Status do Funcionário: 
 		<select name="status_2">
-			<option value="True">Ativo</option>
-			<option value="False">Inativo</option>
+			<option value="Ativo">Ativo</option>
+			<option value="Inativo">Inativo</option>
 		</select>
 		</p>
 		<h3>Dados Pessoais</h3>
 		<table>
 		<tr>
 		<td>
-		Nome/Empresa: <input type="text" name="nome" value="" size="50" maxlength="60"/>
-		Data Nascimento/Abertura Empresa: <input type="text" name="dataNascimento" value="" size="10" maxlength="10"/>
+		Nome: <input type="text" name="nome" value="" size="50" maxlength="60"/>
+		Data Nascimento: <input type="text" name="dataNascimento" value="" size="10" maxlength="10"/>
 		</td>
 		</tr>
-		<tr>
-		<td>
-		Descrição do Serviço (Pessoa Jurídica):
-		<br>
-		<textarea name="descricao" style="overflow: auto; width: 750px; height: 40px;"></textarea>
-		</td>
-		</tr>
+		
 		<tr>
 		<td>
 		Email: <input type="text" name="email" value="" size="20" maxlength="30"/>
@@ -113,7 +102,7 @@
 		</tr>
 		<tr>
 		<td>
-		CPF/CNPJ: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
+		CPF: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
 		CNH: <input type="text" name="CNH" value="" size="15" maxlength="15"/>
 		Reservista: <input type="text" name="reservista" value="" size="14" maxlength="15"/>
 		</td>
