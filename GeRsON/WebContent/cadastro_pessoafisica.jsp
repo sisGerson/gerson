@@ -28,8 +28,8 @@
 		</select>
 		&nbsp; &nbsp;Status do Funcionário: 
 		<select name="status_2">
-			<option value="Ativo">Ativo</option>
-			<option value="Inativo">Inativo</option>
+			<option value="True">Ativo</option>
+			<option value="False">Inativo</option>
 		</select>
 		</p>
 		<h3>Dados Pessoais</h3>
