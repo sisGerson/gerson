@@ -49,4 +49,24 @@
     <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
     <url-pattern>/ServletPesquisaPessoaFisica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletBuscaPessoaFisica</display-name>
+    <servlet-name>ServletBuscaPessoaFisica</servlet-name>
+    <servlet-class>servlets.pesquisa.ServletBuscaPessoaFisica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletBuscaPessoaFisica</servlet-name>
+    <url-pattern>/ServletBuscaPessoaFisica</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletBuscaPessoaJuridica</display-name>
+    <servlet-name>ServletBuscaPessoaJuridica</servlet-name>
+    <servlet-class>servlets.pesquisa.ServletBuscaPessoaJuridica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletBuscaPessoaJuridica</servlet-name>
+    <url-pattern>/ServletBuscaPessoaJuridica</url-pattern>
+  </servlet-mapping>
 </web-app>

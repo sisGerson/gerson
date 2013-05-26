@@ -37,7 +37,7 @@
 		</tr>
 		<tr>
 		<td>
-		Responsavel: <input type="text" name="nome" value="" size="40" maxlength="50"/>
+		Responsavel: <input type="text" name="responsavel" value="" size="40" maxlength="50"/>
 		Data de Admissão: <input type="text" name="dataAdmissao" value="" size="20" maxlength="10"/>
 		</td>
 		</tr>
