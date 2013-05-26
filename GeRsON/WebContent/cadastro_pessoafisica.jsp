@@ -19,7 +19,7 @@
 
 
         <p align="right"><b>Usuário logado: Gerente</b></p>
-        <form name="cadastrar_funcionario" action="ServletCadastroPessoaFisica" method="post" >
+        <form name="cadastrar_pessoafisica" action="ServletCadastroPessoaFisica" method="post" >
 		<h2>Cadastro de Funcionário - Pessoa Física</h2>
 		<p>Status do Funcionário: 
 		<select name="status_2">

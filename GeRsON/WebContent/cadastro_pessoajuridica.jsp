@@ -18,7 +18,7 @@
     <div id="main">
      
      <p align="right"><b>Usuário logado: Gerente</b></p>
-        <form name="cadastrar_funcionario" action="ServletCadastroPessoaJuridica" method="post" >
+        <form name="cadastrar_pessoajuridica" action="ServletCadastroPessoaJuridica" method="post" >
 		<h2>Cadastro de Funcionário - Pessoa Jurídica</h2>
 		<p>Status do Funcionário: 
 		<select name="status_2">
@@ -31,7 +31,7 @@
 		<table>
 		<tr>
 		<td>
-		Nome: <input type="text" name="nome" value="" size="40" maxlength="60"/>
+		Empresa: <input type="text" name="nome" value="" size="40" maxlength="60"/>
 		CNPJ: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
 		</td>
 		</tr>
