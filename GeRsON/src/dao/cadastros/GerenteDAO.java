@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
-import funcionarios.Funcionario;
 import funcionarios.pf.PessoaFisica;
 import funcionarios.pj.PessoaJuridica;
 
@@ -38,10 +36,18 @@ public class GerenteDAO {
 		this.entityManager.getTransaction().commit();
 	}
 	
-	//Método para buscar todos os Funcionarios
+	//Método para buscar todas as PessoasFisicas
 	@SuppressWarnings("unchecked")
-	public List<Funcionario> buscarTodosFuncionarios(){
-		this.query = this.entityManager.createQuery("SELECT func FROM Funcionario func");
+	public List<PessoaFisica> buscarTodasPessoasFisicas(){
+		this.query = this.entityManager.createQuery("SELECT func FROM PessoaFisica func");
 		return this.query.getResultList();
 	}
+	
+	//Método para buscar todas as PessoasJuridicas
+		@SuppressWarnings("unchecked")
+		public List<PessoaJuridica> buscarTodasPessoasJuridicas(){
+			this.query = this.entityManager.createQuery("SELECT func FROM PessoaJuridica func");
+			return this.query.getResultList();
+		}
+	
 }

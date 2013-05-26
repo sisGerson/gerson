@@ -1,10 +1,12 @@
 package funcionarios.pj;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 import funcionarios.Funcionario;
 
 @Entity
+@PrimaryKeyJoinColumn (name = "id")
 public class PessoaJuridica extends Funcionario{
 	
 	private String responsavel;

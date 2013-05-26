@@ -74,7 +74,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		Date dataExpedicao;
 		try{
 			dataExpedicao = new SimpleDateFormat("dd/MM/yyyy").parse(dataExpedicaoTexto);
-			pessoaFisica.setDataNascimento(dataExpedicao);
+			pessoaFisica.setDataExpedicao(dataExpedicao);
 		} catch(ParseException e) {
 			e.printStackTrace();
 		}

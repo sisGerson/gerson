@@ -39,4 +39,14 @@
     <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
     <url-pattern>/ServletCadastroPessoaJuridica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletPesquisaPessoaFisica</display-name>
+    <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
+    <servlet-class>servlets.pesquisa.ServletPesquisaPessoaFisica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
+    <url-pattern>/ServletPesquisaPessoaFisica</url-pattern>
+  </servlet-mapping>
 </web-app>

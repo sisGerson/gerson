@@ -3,6 +3,7 @@ package funcionarios.pf;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -10,6 +11,7 @@ import funcionarios.Funcionario;
 import funcionarios.pf.dependentes.Dependentes;
 
 @Entity
+@PrimaryKeyJoinColumn (name = "id")
 public class PessoaFisica extends Funcionario {
 
 	protected String cargo;
