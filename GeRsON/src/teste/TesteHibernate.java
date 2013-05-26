@@ -1,13 +1,10 @@
 package teste;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import dao.cadastros.GerenteDAO;
-import funcionarios.pj.PessoaJuridica;
+import funcionarios.pf.PessoaFisica;
 
 public class TesteHibernate {
 	
@@ -16,9 +13,12 @@ public class TesteHibernate {
 		EntityManager em = factory.createEntityManager();
 		
 		
-		PessoaJuridica p = new PessoaJuridica();
-		p.setNome("teste");
-		p.setDescricaoServico("testa");
+		PessoaFisica p = new PessoaFisica();
+		p.setMatricula("matricula");
+		p.setArea("area1");
+		p.setNome("nome1");
+		p.setCPF_CNPJ("CPF_CNPJ1");
+		p.setCargo("cargo1");
 		
 		em.getTransaction().begin();
 		em.persist(p);
@@ -26,11 +26,10 @@ public class TesteHibernate {
 		
 		
 		//Teste da listagem de todos os funcionários
-		GerenteDAO dao = new GerenteDAO();
-		List<PessoaJuridica> funcionarios = dao.buscarTodasPessoasJuridicas();
+		/*GerenteDAO dao = new GerenteDAO();
 		
-		for (PessoaJuridica funcionario : funcionarios) {
-			System.out.println("Nome: "+ funcionario.getNome());
-		}
+		for(int i=0;i<dao.getPessoasFisicas().length;i++){
+			System.out.println(dao.getPessoasFisicas()[i].getNome());
+		}*/
 	}
 }

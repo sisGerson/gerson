@@ -19,7 +19,7 @@
 
 
         <p align="right"><b>Usuário logado: Gerente</b></p>
-        <form name="pesquisar_pessoafisica" action="ServletPesquisaPessoaJuridica" method="post" >
+        <form name="pesquisar_pessoafisica" action="ServletBuscaPessoaJuridica" method="post" >
 		<h2>Pesquisa Pessoa Jurídica</h2>
 		<h3>Dados para pesquisa</h3>
 		<table>
@@ -38,7 +38,6 @@
 		<tr>
 		<td>
 		Responsavel: <input type="text" name="responsavel" value="" size="40" maxlength="50"/>
-		Data de Admissão: <input type="text" name="dataAdmissao" value="" size="20" maxlength="10"/>
 		</td>
 		</tr>
 		</table>

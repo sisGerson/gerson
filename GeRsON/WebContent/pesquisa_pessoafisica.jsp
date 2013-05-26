@@ -19,7 +19,7 @@
 
 
         <p align="right"><b>Usuário logado: Gerente</b></p>
-        <form name="pesquisar_pessoafisica" action="ServletPesquisaPessoaFisica" method="post" >
+        <form name="pesquisar_pessoafisica" action="ServletBuscaPessoaFisica" method="post" >
 		<h2>Pesquisa Pessoa Física</h2>
 		<h3>Dados para pesquisa</h3>
 		<table>
@@ -37,7 +37,6 @@
 		</tr>
 		<tr>
 		<td>
-		Data de Admissão: <input type="text" name="dataAdmissao" value="" size="20" maxlength="10"/>
 		Cargo: <input type="text" name="cargo" value="" size="20" maxlength="20"/>
 		</td>
 		</tr>
