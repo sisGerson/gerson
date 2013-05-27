@@ -31,26 +31,26 @@
 		<table>
 		<tr>
 		<td>
-		Nome: <input type="text" name="nome" value="" size="50" maxlength="60"/>
-		Data Nascimento: <input type="text" name="dataNascimento" value="" size="10" maxlength="10"/>
+		* Nome: <input type="text" name="nome" value="" size="50" maxlength="60" required />
+		* Data Nascimento: <input type="date" name="dataNascimento" value="" size="10" maxlength="10" required />
 		</td>
 		</tr>
 		
 		<tr>
 		<td>
-		Email: <input type="text" name="email" value="" size="20" maxlength="30"/>
-		Senha: <input type="text" name="senha" value="" size="15" maxlength="10"/>
+		* Email: <input type="E-mail" name="email" value="" size="20" maxlength="30" required/>
+		* Senha: <input type="password" name="senha" value="" size="15" maxlength="10" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Nacionalidade: <input type="text" name="nacionalidade" value="" size="20" maxlength="30"/>
-		Naturalidade: <input type="text" name="naturalidade" value="" size="20" maxlength="30"/>
+		* Nacionalidade: <input type="text" name="nacionalidade" value="" size="20" maxlength="30" required/>
+		* Naturalidade: <input type="text" name="naturalidade" value="" size="20" maxlength="30" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Estado Civil: <input type="text" name="estadoCivil" value="" size="25" maxlength="25"/>
+		* Estado Civil: <input type="text" name="estadoCivil" value="" size="25" maxlength="25" required/>
 		Conjuge: <input type="text" name="nomeConjuge" value="" size="50" maxlength="60"/>
 		<br>
 		Nacionalidade do Conjuge: <input type="text" name="nacionalidadeConjuge" value="" size="20" maxlength="30"/>
@@ -72,20 +72,20 @@
 		</tr>
 		<tr>
 		<td>
-		Cor: <input type="text" name="racaCor" value="" size="20" maxlength="30"/>
-		Peso: <input type="text" name="peso" value="" size="20" maxlength="30"/>
-		Altura: <input type="text" name="altura" value="" size="20" maxlength="30"/>
+		* Cor: <input type="text" name="racaCor" value="" size="20" maxlength="30" required/>
+		* Peso: <input type="text" name="peso" value="" size="20" maxlength="30" required/>
+		* Altura: <input type="text" name="altura" value="" size="20" maxlength="30" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Cor dos olhos: <input type="text" name="corOlhos" value="" size="20" maxlength="30"/>
-		Cor dos cabelos: <input type="text" name="corCabelo" value="" size="20" maxlength="30"/>
+		* Cor dos olhos: <input type="text" name="corOlhos" value="" size="20" maxlength="30" required/>
+		* Cor dos cabelos: <input type="text" name="corCabelo" value="" size="20" maxlength="30" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Grau de Instrução: <input type="text" name="grauInstrucao" value="" size="30" maxlength="40"/>
+		* Grau de Instrução: <input type="text" name="grauInstrucao" value="" size="30" maxlength="40" required/>
 		</td>
 		</tr>
 		<tr>
@@ -102,23 +102,23 @@
 		</tr>
 		<tr>
 		<td>
-		CPF: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
+		* CPF: <input type="text" name="CPF_CNPJ" onkeypress="return mascaraCPF(event,this);return false;" value="" size="15" maxlength="14" required />
 		CNH: <input type="text" name="CNH" value="" size="15" maxlength="15"/>
 		Reservista: <input type="text" name="reservista" value="" size="14" maxlength="15"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		RG: <input type="text" name="RG" value="" size="10" maxlength="15"/>
-		Órgão Emissor: <input type="text" name="orgaoEmissor" value="" size="10" maxlength="15"/>
-		Data Expedição: <input type="text" name="dataExpedicao" value="" size="10" maxlength="10"/>
+		* RG: <input type="text" name="RG" value="" size="10" maxlength="15" required/>
+		* Órgão Emissor: <input type="text" name="orgaoEmissor" value="" size="10" maxlength="15" required/>
+		* Data Expedição: <input type="date" name="dataExpedicao" value="" size="10" maxlength="10"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Nº CTPS: <input type="text" name="CTPS" value="" size="15" maxlength="15"/>
-		Série CTPS: <input type="text" name="serieCTPS" value="" size="10" maxlength="10"/>
-		UF CTPS: <select name="UFCTPS">
+		* Nº CTPS: <input type="text" name="CTPS" value="" size="15" maxlength="15" required/>
+		* Série CTPS: <input type="text" name="serieCTPS" value="" size="10" maxlength="10" required/>
+		* UF CTPS: <select name="UFCTPS">
 		<option value="AC">AC</option>
 		<option value="AL">AL</option>
 		<option value="AP">AP</option>
@@ -151,26 +151,26 @@
 		</tr>
 		<tr>
 		<td>
-		Data emissão CTPS: <input type="text" name="emissaoCTPS" value="" size="10" maxlength="10"/>
+		* Data emissão CTPS: <input type="date" name="emissaoCTPS" value="" size="10" maxlength="10" required/>
 		PIS:<input type="text" name="PIS" value="" size="10" maxlength="10"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Nº Título Eleitoral: <input type="text" name="tituloEleitoral" value="" size="15" maxlength="15"/>
-		Zona Título Eleitoral: <input type="text" name="zonaTitulo" value="" size="10" maxlength="10"/>
-		Seção Título Eleitoral: <input type="text" name="secaoTitulo" value="" size="10" maxlength="10"/>
+		* Nº Título Eleitoral: <input type="text" name="tituloEleitoral" value="" size="15" maxlength="15" required/>
+		* Zona Título Eleitoral: <input type="text" name="zonaTitulo" value="" size="10" maxlength="10" required/>
+		* Seção Título Eleitoral: <input type="text" name="secaoTitulo" value="" size="10" maxlength="10" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Endereço Residencial: <input type="text" name="enderecoResidencial" value="" size="100" maxlength="100"/>
+		* Endereço Residencial: <input type="text" name="enderecoResidencial" value="" size="100" maxlength="100" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Cidade Residencial: <input type="text" name="cidadeResidencial" value="" size="25" maxlength="50"/>
-		Estado Residencial: 
+		* Cidade Residencial: <input type="text" name="cidadeResidencial" value="" size="25" maxlength="50" required/>
+		* Estado Residencial: 
 		<select name="UFResidencial">
 		<option value="AC">AC</option>
 		<option value="AL">AL</option>
@@ -200,13 +200,13 @@
 		<option value="SE">SE</option>
 		<option value="TO">TO</option>
 		</select>
-		CEP Residencial: <input type="text" name="CEPResidencial" value="" size="15" maxlength="8"/>
+		* CEP Residencial: <input type="text" name="CEPResidencial" onkeypress="return mascaraCEP(event,this); return false;" value="" size="15" maxlength="13" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Telefone Residencial: <input type="text" name="telefoneResidencial" value="" size="15" maxlength="10"/>
-		Telefone Celular: <input type="text" name="telefoneCelular" value="" size="15" maxlength="10"/>
+		Telefone Residencial: <input type="text" onkeypress="return mascaraTelefone(event,this); return false;" name="telefoneResidencial" value="" size="15" maxlength="13"/>
+		Telefone Celular: <input type="text" name="telefoneCelular" onkeypress="return mascaraTelefone(event,this); return false;" value="" size="15" maxlength="13"/>
 		</td>
 		</tr>		
 		</table>
@@ -215,26 +215,26 @@
 		<table>
 		<tr>
 		<td>
-		Matrícula: <input type="text" name="matricula" value="" size="20" maxlength="15"/>
-		Área: <input type="text" name="area" value="" size="30" maxlength="40"/>
+		* Matrícula: <input type="text" name="matricula" value="" size="20" maxlength="15" required/>
+		* Área: <input type="text" name="area" value="" size="30" maxlength="40" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Data de Admissão: <input type="text" name="dataAdmissao" value="" size="20" maxlength="10"/>
-		Data de Desligamento: <input type="text" name="dataDesligamento" value="" size="20" maxlength="10"/>
+		* Data de Admissão: <input type="date" name="dataAdmissao" value="" size="20" maxlength="10" required/>
+		Data de Desligamento: <input type="date" name="dataDesligamento" value="" size="20" maxlength="10/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Salario: <input type="text" name="salario" value="" size="20" maxlength="10"/>
-		Cargo: <input type="text" name="cargo" value="" size="20" maxlength="20"/>
+		* Salario: <input type="text" name="salario" value="" size="20" maxlength="10" required/>
+		* Cargo: <input type="text" name="cargo" value="" size="20" maxlength="20" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Horário de Trabalho: <input type="text" name="horarioTrabalho" value="" size="20" maxlength="10"/>
-		Total de Horas Semanais: <input type="text" name="totalHoraSemanal" value="" size="20" maxlength="10"/>
+		* Horário de Trabalho: <input type="text" name="horarioTrabalho" value="" size="20" maxlength="10" required/>
+		* Total de Horas Semanais: <input type="text" name="totalHoraSemanal" value="" size="20" maxlength="10" required/>
 		</td>
 		</tr>
 		<tr>
@@ -275,12 +275,12 @@
 		<option value="SE">SE</option>
 		<option value="TO">TO</option>
 		</select>
-		CEP Funcional: <input type="text" name="CEPFuncional" value="" size="15" maxlength="8"/>
+		CEP Funcional: <input type="text" name="CEPFuncional" onkeypress="return mascaraCEP(event,this); return false;" value="" size="15" maxlength="9"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Telefone Comercial: <input type="text" name="telefoneComercial" value="" size="15" maxlength="10"/>
+		Telefone Comercial: <input type="text" name="telefoneComercial" onkeypress="return mascaraTelefone(event,this); return false;" value="" size="15" maxlength="13"/>
 		</td>
 		</tr>		
 		</table>
@@ -290,3 +290,60 @@
 </div>
   </body>
 </html>
+
+<!-- Java Script utilizado para validação dos campos do formulário -->
+
+<script type="text/javascript">
+
+/*Campo CPF - permite somente valores numericos e monta a máscara*/
+function mascaraCPF(e,campo){
+ 
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '###.###.###-##');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+
+/*Campos de Telefones - permite somente valores numericos */
+function mascaraTelefone(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '(##)####-####');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+/*Campo CEP - permite somente valores numericos e coloca a máscara*/
+function mascaraCEP(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '#####-###');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+ 
+/*cria a mascara*/
+function mascara(src, mask){
+   var i = src.value.length;
+   var saida = mask.substring(1,2);
+   var texto = mask.substring(i);
+   if (texto.substring(0,1) != saida)
+   {
+      src.value += texto.substring(0,1);
+   }
+}
+ 
+
+</script> 
