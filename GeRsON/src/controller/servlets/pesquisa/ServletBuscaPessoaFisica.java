@@ -29,11 +29,11 @@ public class ServletBuscaPessoaFisica extends HttpServlet {
 			throws ServletException, IOException {
 		String nome, matricula, cargo, area, CPF;
 		
-		nome = request.getParameter("nome");
-		matricula = request.getParameter("matricula");
-		cargo = request.getParameter("cargo");
-		area = request.getParameter("area");
-		CPF = request.getParameter("cpf");
+		nome = request.getParameter("nome").toUpperCase();
+		matricula = request.getParameter("matricula").toUpperCase();
+		cargo = request.getParameter("cargo").toUpperCase();
+		area = request.getParameter("area").toUpperCase();
+		CPF = request.getParameter("cpf").toUpperCase();
 		
 		GerenteDAO dao = new GerenteDAO();
 		dao.pesquisarPessoaFisica(nome, matricula, cargo, area, CPF);

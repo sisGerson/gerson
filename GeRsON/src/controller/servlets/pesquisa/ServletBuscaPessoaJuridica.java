@@ -28,11 +28,11 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String empresa, matricula, area, CNPJ, responsavel;
 		
-		empresa = request.getParameter("empresa");
-		matricula = request.getParameter("matricula");
-		area = request.getParameter("area");
-		CNPJ = request.getParameter("cnpj");
-		responsavel = request.getParameter("responsavel");
+		empresa = request.getParameter("empresa").toUpperCase();
+		matricula = request.getParameter("matricula").toUpperCase();
+		area = request.getParameter("area").toUpperCase();
+		CNPJ = request.getParameter("cnpj").toUpperCase();
+		responsavel = request.getParameter("responsavel").toUpperCase();
 		
 		GerenteDAO dao = new GerenteDAO();
 		dao.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
