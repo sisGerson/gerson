@@ -9,61 +9,68 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <error-page>
     <exception-type>
   		java.lang.Exception
   	</exception-type>
     <location>/erro.jsp</location>
   </error-page>
+  
   <error-page>
     <error-code>404</error-code>
     <location>/404.jsp</location>
   </error-page>
+  
   <servlet>
     <description></description>
     <display-name>ServletCadastroPessoaFisica</display-name>
     <servlet-name>ServletCadastroPessoaFisica</servlet-name>
-    <servlet-class>servlets.cadastro.ServletCadastroPessoaFisica</servlet-class>
+    <servlet-class>controller.servlets.cadastro.ServletCadastroPessoaFisica</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletCadastroPessoaFisica</servlet-name>
     <url-pattern>/ServletCadastroPessoaFisica</url-pattern>
   </servlet-mapping>
+ 
   <servlet>
     <description></description>
     <display-name>ServletCadastroPessoaJuridica</display-name>
     <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
-    <servlet-class>servlets.cadastro.ServletCadastroPessoaJuridica</servlet-class>
+    <servlet-class>controller.servlets.cadastro.ServletCadastroPessoaJuridica</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
     <url-pattern>/ServletCadastroPessoaJuridica</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletPesquisaPessoaFisica</display-name>
     <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
-    <servlet-class>servlets.pesquisa.ServletPesquisaPessoaFisica</servlet-class>
+    <servlet-class>controller.servlets.pesquisa.ServletPesquisaPessoaFisica</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
     <url-pattern>/ServletPesquisaPessoaFisica</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletBuscaPessoaFisica</display-name>
     <servlet-name>ServletBuscaPessoaFisica</servlet-name>
-    <servlet-class>servlets.pesquisa.ServletBuscaPessoaFisica</servlet-class>
+    <servlet-class>controller.servlets.pesquisa.ServletBuscaPessoaFisica</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletBuscaPessoaFisica</servlet-name>
     <url-pattern>/ServletBuscaPessoaFisica</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletBuscaPessoaJuridica</display-name>
     <servlet-name>ServletBuscaPessoaJuridica</servlet-name>
-    <servlet-class>servlets.pesquisa.ServletBuscaPessoaJuridica</servlet-class>
+    <servlet-class>controller.servlets.pesquisa.ServletBuscaPessoaJuridica</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletBuscaPessoaJuridica</servlet-name>

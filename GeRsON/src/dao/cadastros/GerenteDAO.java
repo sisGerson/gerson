@@ -89,11 +89,11 @@ public class GerenteDAO {
 		List<PessoaFisica> pessoaFisica = buscarTodasPessoasFisicas();
 		
 		for (PessoaFisica pessoa : pessoaFisica) {
-			if((nome == "" || pessoa.getNome().toUpperCase().equalsIgnoreCase(nome)) &&
-					(matricula == "" || pessoa.getMatricula().toUpperCase().equalsIgnoreCase(matricula)) &&
-					(cargo == "" || pessoa.getCargo().toUpperCase().equalsIgnoreCase(cargo)) &&
-					(area == "" || pessoa.getArea().toUpperCase().equalsIgnoreCase(area)) &&
-					(CPF == "" || pessoa.getCPF_CNPJ().toUpperCase().equalsIgnoreCase(CPF))){
+			if((nome == "" || pessoa.getNome().toUpperCase().startsWith(nome)) &&
+					(matricula == "" || pessoa.getMatricula().toUpperCase().startsWith(matricula)) &&
+					(cargo == "" || pessoa.getCargo().toUpperCase().startsWith(cargo)) &&
+					(area == "" || pessoa.getArea().toUpperCase().startsWith(area)) &&
+					(CPF == "" || pessoa.getCPF_CNPJ().toUpperCase().startsWith(CPF))){
 				
 				adicionarPessoaFisica(pessoa);
 			}
@@ -106,11 +106,11 @@ public class GerenteDAO {
 		List<PessoaJuridica> pessoaJuridica = buscarTodasPessoasJuridicas();
 		
 		for (PessoaJuridica pessoa : pessoaJuridica) {
-			if((empresa == "" || pessoa.getNome().toUpperCase().equalsIgnoreCase(empresa)) &&
-					(matricula == "" || pessoa.getMatricula().toUpperCase().equalsIgnoreCase(matricula)) &&
-					(area == "" || pessoa.getArea().toUpperCase().equalsIgnoreCase(area)) &&
-					(CNPJ == "" || pessoa.getCPF_CNPJ().toUpperCase().equalsIgnoreCase(CNPJ)) &&
-					(responsavel == "" || pessoa.getResponsavel().toUpperCase().equalsIgnoreCase(responsavel))){
+			if((empresa == "" || pessoa.getNome().toUpperCase().startsWith(empresa)) &&
+					(matricula == "" || pessoa.getMatricula().toUpperCase().startsWith(matricula)) &&
+					(area == "" || pessoa.getArea().toUpperCase().startsWith(area)) &&
+					(CNPJ == "" || pessoa.getCPF_CNPJ().toUpperCase().startsWith(CNPJ)) &&
+					(responsavel == "" || pessoa.getResponsavel().toUpperCase().startsWith(responsavel))){
 				
 				adicionarPessoaJuridica(pessoa);
 			}
