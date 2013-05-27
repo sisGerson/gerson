@@ -222,7 +222,7 @@
 		<tr>
 		<td>
 		* Data de Admissão: <input type="date" name="dataAdmissao" value="" size="20" maxlength="10" required/>
-		Data de Desligamento: <input type="date" name="dataDesligamento" value="" size="20" maxlength="10/>
+		Data de Desligamento: <input type="date" name="dataDesligamento" value="" size="20" maxlength="10"/>
 		</td>
 		</tr>
 		<tr>
