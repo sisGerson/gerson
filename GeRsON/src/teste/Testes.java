@@ -1,6 +1,6 @@
 package teste;
 
-import funcionarios.pf.*;;
+import model.funcionarios.pf.*;
 
 public class Testes {
 
