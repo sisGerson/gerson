@@ -14,6 +14,7 @@ public class GerenteDAO {
 	private EntityManagerFactory factory;
 	private EntityManager entityManager;
 	private Query query;
+	private int id;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
 	
@@ -26,6 +27,13 @@ public class GerenteDAO {
 		
 		this.entityManager.getTransaction().begin();
 	}
+	
+	public int getId(){
+		return this.id;
+	}
+	public void setId(int id){
+		this.id = id;
+	}
 
 	public PessoaFisica[] getPessoasFisicas() {
 		return pessoasFisicas;
@@ -36,13 +44,13 @@ public class GerenteDAO {
 	}
 
 	//Método para cadastrar PessoaFisica!
-	public void cadastrarPessoaFisica(PessoaFisica pessoaFisica) {
+	public void cadastrarAlterarPessoaFisica(PessoaFisica pessoaFisica) {
 		this.entityManager.persist(pessoaFisica);
 		this.entityManager.getTransaction().commit();
 	}
 	
 	//Método para cadastrar PessoaJuridica!
-	public void cadastrarPessoaJuridica(PessoaJuridica pessoaJuridica) {
+	public void cadastrarAlterarPessoaJuridica(PessoaJuridica pessoaJuridica) {
 		this.entityManager.persist(pessoaJuridica);
 		this.entityManager.getTransaction().commit();
 	}

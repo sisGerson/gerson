@@ -1,36 +1,43 @@
-package controller.servlets.cadastro;
+package controller.servlets.atualizacoes;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.funcionarios.pf.PessoaFisica;
 import dao.cadastros.GerenteDAO;
 
-/**
- * Servlet implementation class ServletCadastroPessoaFisica
- */
-public class ServletCadastroPessoaFisica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import model.funcionarios.pf.PessoaFisica;
 
-    public ServletCadastroPessoaFisica() {
+/**
+ * Servlet implementation class ServletAtualizaPessoaFisica
+ */
+public class ServletAtualizaPessoaFisica extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public ServletAtualizaPessoaFisica() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		PessoaFisica pessoaFisica = new PessoaFisica();
-
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
+		EntityManager entityManager = factory.createEntityManager();
+		
+		GerenteDAO dao = new GerenteDAO();
+		
+		PessoaFisica pessoaFisica = entityManager.find(PessoaFisica.class, dao.getId());
+		
 		pessoaFisica.setArea(request.getParameter("area"));
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
 		
@@ -133,12 +140,11 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setCidadeResidencial(request.getParameter("cidadeResidencial"));
 		pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
-		
-		GerenteDAO gerente = new GerenteDAO();
-		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
+
+		dao.cadastrarAlterarPessoaFisica(pessoaFisica);
 		
 		PrintWriter out = response.getWriter();
-		out.println("Funcionário: " + pessoaFisica.getNome() + " Cadastrado com sucesso.");
+		out.println("Dados do Funcionário: " + pessoaFisica.getNome() + " Alterados com sucesso.");
 	}
 
 }

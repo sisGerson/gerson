@@ -1,6 +1,7 @@
 package controller.servlets.pesquisa;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +38,26 @@ public class ServletBuscaPessoaFisica extends HttpServlet {
 		
 		GerenteDAO dao = new GerenteDAO();
 		dao.pesquisarPessoaFisica(nome, matricula, cargo, area, CPF);
+		
+		PrintWriter out = response.getWriter();
+		
+		out.println("<table>");
+		out.println("<td>Matricula</td>");
+		out.println("<td>Nome</td>");
+		out.println("<td>Cargo</td>");
+		
+		for(int i=0;i<dao.getPessoasFisicas().length;i++){
+			//Recuperar id do funcionário
+			dao.setId(dao.getPessoasFisicas()[i].getId());
+			
+			out.println("<tr>");
+			out.println("<td>"+dao.getPessoasFisicas()[i].getMatricula()+"</td>");
+			out.println("<td>"+dao.getPessoasFisicas()[i].getNome()+"</td>");
+			out.println("<td>"+dao.getPessoasFisicas()[i].getCargo()+"</td>");
+			out.println("<td><a href=atualiza_pessoafisica.jsp>Editar</a></td>");
+			out.println("</tr>");
+		}
+		out.println("</table>");
 	}
 
 }

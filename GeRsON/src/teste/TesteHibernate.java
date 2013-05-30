@@ -6,14 +6,20 @@ import javax.persistence.Persistence;
 
 import model.funcionarios.pf.PessoaFisica;
 
-
 public class TesteHibernate {
 	
 	public static void main(String[] args) {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
 		EntityManager em = factory.createEntityManager();
 		
+		PessoaFisica pessoa = em.find(PessoaFisica.class, 1);
+		System.out.println(pessoa.getNome());
+		pessoa.setNome("Mudado");
+		em.getTransaction().begin();
+		em.persist(pessoa);
+		em.getTransaction().commit();
 		
+		/*
 		PessoaFisica p = new PessoaFisica();
 		p.setMatricula("matricula");
 		p.setArea("area1");
@@ -25,7 +31,7 @@ public class TesteHibernate {
 		em.persist(p);
 		em.getTransaction().commit();
 		
-		
+		*/
 		//Teste da listagem de todos os funcionários
 		/*GerenteDAO dao = new GerenteDAO();
 		

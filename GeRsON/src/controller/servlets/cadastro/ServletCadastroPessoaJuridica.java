@@ -69,7 +69,7 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setDescricaoServico(request.getParameter("descricaoServico"));
 		
 		GerenteDAO gerente = new GerenteDAO();
-		gerente.cadastrarPessoaJuridica(pessoaJuridica);
+		gerente.cadastrarAlterarPessoaJuridica(pessoaJuridica);
 		
 		PrintWriter out = response.getWriter();
 		out.println("Empresa: " + pessoaJuridica.getNome() + " Cadastrada com sucesso.");

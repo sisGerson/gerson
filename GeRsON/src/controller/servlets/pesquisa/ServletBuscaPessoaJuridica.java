@@ -1,6 +1,7 @@
 package controller.servlets.pesquisa;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +37,26 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 		
 		GerenteDAO dao = new GerenteDAO();
 		dao.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
+		
+		PrintWriter out = response.getWriter();
+		
+		out.println("<table>");
+		out.println("<td>Matricula</td>");
+		out.println("<td>Nome</td>");
+		out.println("<td>Responsável</td>");
+		
+		for(int i=0;i<dao.getPessoasJuridicas().length;i++){
+			//Recuperar id do funcionário
+			dao.setId(dao.getPessoasJuridicas()[i].getId());
+			
+			out.println("<tr>");
+			out.println("<td>"+dao.getPessoasJuridicas()[i].getMatricula()+"</td>");
+			out.println("<td>"+dao.getPessoasJuridicas()[i].getNome()+"</td>");
+			out.println("<td>"+dao.getPessoasJuridicas()[i].getResponsavel()+"</td>");
+			out.println("<td><a href=atualiza_pessoajuridica.jsp>Editar</a></td>");
+			out.println("</tr>");
+		}
+		out.println("</table>");
 	}
 
 }

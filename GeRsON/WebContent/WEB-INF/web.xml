@@ -9,19 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <error-page>
     <exception-type>
   		java.lang.Exception
   	</exception-type>
     <location>/erro.jsp</location>
   </error-page>
-  
   <error-page>
     <error-code>404</error-code>
     <location>/404.jsp</location>
   </error-page>
-  
   <servlet>
     <description></description>
     <display-name>ServletCadastroPessoaFisica</display-name>
@@ -32,7 +29,6 @@
     <servlet-name>ServletCadastroPessoaFisica</servlet-name>
     <url-pattern>/ServletCadastroPessoaFisica</url-pattern>
   </servlet-mapping>
- 
   <servlet>
     <description></description>
     <display-name>ServletCadastroPessoaJuridica</display-name>
@@ -43,7 +39,6 @@
     <servlet-name>ServletCadastroPessoaJuridica</servlet-name>
     <url-pattern>/ServletCadastroPessoaJuridica</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletPesquisaPessoaFisica</display-name>
@@ -54,7 +49,6 @@
     <servlet-name>ServletPesquisaPessoaFisica</servlet-name>
     <url-pattern>/ServletPesquisaPessoaFisica</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletBuscaPessoaFisica</display-name>
@@ -65,7 +59,6 @@
     <servlet-name>ServletBuscaPessoaFisica</servlet-name>
     <url-pattern>/ServletBuscaPessoaFisica</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletBuscaPessoaJuridica</display-name>
@@ -75,5 +68,15 @@
   <servlet-mapping>
     <servlet-name>ServletBuscaPessoaJuridica</servlet-name>
     <url-pattern>/ServletBuscaPessoaJuridica</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAtualizaPessoaFisica</display-name>
+    <servlet-name>ServletAtualizaPessoaFisica</servlet-name>
+    <servlet-class>controller.servlets.atualizacoes.ServletAtualizaPessoaFisica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAtualizaPessoaFisica</servlet-name>
+    <url-pattern>/ServletAtualizaPessoaFisica</url-pattern>
   </servlet-mapping>
 </web-app>
