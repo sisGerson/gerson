@@ -32,6 +32,19 @@ function mascaraCPF(e,campo){
     }
 }
 
+/*Campo DATA - permite somente valores numericos e coloca a máscara*/
+function mascaraDATA(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '##/##/####');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+
 /*Campos de Telefones - permite somente valores numericos */
 function mascaraTelefone(e,campo){
     var tecla=(window.event)?event.keyCode:e.which;
@@ -89,7 +102,7 @@ function mascara(src, mask){
 		<br>
 		* Nome: <input type="text" name="nome" value="" size="65" maxlength="60" required />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		* Data Nascimento: <input type="date" name="dataNascimento" value="" size="10" maxlength="10" required />
+		* Data Nascimento: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataNascimento" value="" size="10" maxlength="10" required />
 		</td>
 		</tr>
 	
@@ -165,7 +178,7 @@ function mascara(src, mask){
 		<tr>
 		<td>
 		Sinais Particulares:
-		<textarea name="sinaisParticulares" style="overflow: auto; width: 725px; height: 40px;"></textarea>
+		<textarea name="sinaisParticulares" style="overflow: auto; width: 755px; height: 40px;"></textarea>
 		</td>
 		</tr>
 		<tr>
@@ -183,7 +196,7 @@ function mascara(src, mask){
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		* Órgão Emissor: <input type="text" name="orgaoEmissor" value="" size="10" maxlength="15" required/>
 		&nbsp;&nbsp;&nbsp;
-		* Data Expedição: <input type="date" name="dataExpedicao" value="" size="10" maxlength="10"/>
+		* Data Expedição: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataExpedicao" value="" size="10" maxlength="10" required/>
 		</td>
 		</tr>
 		<tr>
@@ -225,7 +238,7 @@ function mascara(src, mask){
 		</tr>
 		<tr>
 		<td>
-		* Data emissão CTPS: <input type="date" name="emissaoCTPS" value="" size="10" maxlength="10" required/>
+		* Data emissão CTPS: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="emissaoCTPS" value="" size="10" maxlength="10" required/>
 		&nbsp;&nbsp;&nbsp;
 		PIS:<input type="number" step="1" min="1" max="999999999999999" name="PIS" value="" size="10" maxlength="10"/>
 		</td>
@@ -307,14 +320,14 @@ function mascara(src, mask){
 		</tr>
 		<tr>
 		<td>
-		* Data de Admissão: <input type="date" name="dataAdmissao" value="" size="20" maxlength="10" required/>
+		* Data de Admissão: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataAdmissao" value="" size="10" maxlength="10" required/>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		Data de Desligamento: <input type="date" name="dataDesligamento" value="" size="20" maxlength="10"/>
+		Data de Desligamento: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataDesligamento" value="" size="10" maxlength="10"/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		* Salario: <input type="number" step="0.01" min="678.00" max="15000.00" name="salario" value="" size="20" maxlength="8" required/>
+		* Salario: <input type="number" step="0.01" min="678.00" max="25000.00" name="salario" value="" size="20" maxlength="8" required/>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		* Cargo: <input type="text" name="cargo" value="" size="40" maxlength="40" required/>
 		</td>
@@ -370,7 +383,10 @@ function mascara(src, mask){
 		<option value="SE">SE</option>
 		<option value="TO">TO</option>
 		</select>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		</tr>
+		<tr>
+		<td>
 		CEP Funcional: <input type="text" name="CEPFuncional" onkeypress="return mascaraCEP(event,this); return false;" value="" size="15" maxlength="9"/>
 		</td>
 		</tr>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 
 <html>
   <head>
@@ -11,9 +11,77 @@
     <link rel="stylesheet" type="text/css" href="css/formulario.css">
     
 
-    <title>GeRsON</title>
+  <title>GeRsON</title>
   </head>
   <body>
+  
+<!-- Java Script utilizado para validação dos campos do formulário -->
+<script type="text/javascript">
+
+/*Campo CNPJ - permite somente valores numericos e monta a máscara*/
+function mascaraCNPJ(e,campo){
+ 
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '##.###.###/####-##');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+
+/*Campo DATA - permite somente valores numericos e coloca a máscara*/
+function mascaraDATA(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '##/##/####');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+
+/*Campos de Telefones - permite somente valores numericos */
+function mascaraTelefone(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '(##)####-####');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+
+/*Campo CEP - permite somente valores numericos e coloca a máscara*/
+function mascaraCEP(e,campo){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla > 47 && tecla < 58 )){
+           mascara(campo, '#####-###');
+           return true;
+         }
+    else{
+    if (tecla != 8 ) return false;
+    else return true;
+    }
+}
+ 
+/*cria a mascara*/
+function mascara(src, mask){
+   var i = src.value.length;
+   var saida = mask.substring(1,2);
+   var texto = mask.substring(i);
+   if (texto.substring(0,1) != saida)
+   {
+      src.value += texto.substring(0,1);
+   }
+}
+</script>
   	<div id="layout">
     <div id="main">
      
@@ -30,15 +98,16 @@
 		<h3>Dados da Empresa</h3>
 		<table>
 		<tr>
-		<td>
-		Empresa: <input type="text" name="nome" value="" size="40" maxlength="60"/>
-		CNPJ: <input type="text" name="CPF_CNPJ" value="" size="15" maxlength="14"/>
+		<td>	
+		<br>
+		* Empresa: <input type="text" name="nome" value="" size="65" maxlength="60" required />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		* CNPJ: <input type="text" name="CPF_CNPJ" onkeypress="return mascaraCNPJ(event,this);return false;" value="" size="30" maxlength="18" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Email: <input type="text" name="email" value="" size="20" maxlength="30"/>
-		Senha: <input type="text" name="senha" value="" size="15" maxlength="10"/>
+		* Email: <input type="Email" name="email" value="" size="40" maxlength="35" required/>
 		</td>
 		</tr>
 		<tr>
@@ -46,17 +115,18 @@
 		Serviços prestados 
 		<br>
 		Descrição: <br>
-		<textarea name="descricaoServico" style="overflow: auto; width: 700px; height: 40px;"></textarea>
+		<textarea name="descricaoServico" style="overflow: auto; width: 745px; height: 40px;"></textarea>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Endereço Comercial: <input type="text" name="enderecoFuncional" value="" size="80" maxlength="100"/>
+		* Endereço Comercial: <input type="text" name="enderecoFuncional" value="" size="101" maxlength="100" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Cidade Comercial: <input type="text" name="cidadeFuncional" value="" size="25" maxlength="50"/>
+		* Cidade Comercial: <input type="text" name="cidadeFuncional" value="" size="25" maxlength="50" required/>
+		&nbsp;&nbsp;
 		Estado Comercial: 
 		<select name="UFCidadeFuncional">
 		<option value="AC">AC</option>
@@ -87,12 +157,13 @@
 		<option value="SE">SE</option>
 		<option value="TO">TO</option>
 		</select>
-		CEP Comercial: <input type="text" name="CEPFuncional" value="" size="15" maxlength="8"/>
+		&nbsp;&nbsp;
+		* CEP Comercial: <input type="text" name="CEPFuncional" onkeypress="return mascaraCEP(event,this); return false;" value="" size="15" maxlength="9" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Telefone Comercial: <input type="text" name="telefoneComercial" value="" size="15" maxlength="10"/>
+		Telefone Comercial: <input type="text" onkeypress="return mascaraTelefone(event,this); return false;" name="telefoneComercial" value="" size="15" maxlength="13"/>
 		</td>
 		</tr>
 		</table>
@@ -102,22 +173,37 @@
 		<table>
 		<tr>
 		<td>
-		Matrícula: <input type="text" name="matricula" value="" size="20" maxlength="15"/>
-		Área: <input type="text" name="area" value="" size="20" maxlength="40"/>
-		Salario: <input type="text" name="salario" value="" size="20" maxlength="10"/>
+		<br>
+		* Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20" maxlength="8" required/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		* Senha: <input type="number" step="1" min="1" max="99999999" name="senha" value="" size="15" maxlength="8" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Data de Admissão: <input type="text" name="dataAdmissao" value="" size="20" maxlength="10"/>
-		Data de Desligamento: <input type="text" name="dataDesligamento" value="" size="20" maxlength="10"/>
+		* Área: <input type="text" name="area" value="" size="40" maxlength="40" required/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		* Salario: <input type="number" step="0.01" min="678.00" max="15000.00" name="salario" value="" size="20" maxlength="8" required/>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Responsável: <input type="text" name="responsavel" value="" size="40" maxlength="60"/>
-		Telefone Responsável: <input type="text" name="telefoneResponsavel" value="" size="15" maxlength="10"/>
+		* Data de Admissão: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataAdmissao" value="" size="10" maxlength="10" required/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Data de Desligamento: <input type="text" onkeypress="return mascaraDATA(event,this); return false;" name="dataDesligamento" value="" size="10" maxlength="10"/>
 		</td>
+		</tr>
+		<tr>
+		<td>
+		* Responsável: <input type="text" name="responsavel" value="" size="65" maxlength="60" required/>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		Telefone Responsável: <input type="text" onkeypress="return mascaraTelefone(event,this); return false;" name="telefoneResponsavel" value="" size="15" maxlength="13"/>
+		<br>&nbsp;
+		</td>
+		</tr>
 		</table>
 		
 		<input type="submit" value="Cadastrar">
