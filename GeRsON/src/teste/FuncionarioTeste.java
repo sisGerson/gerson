@@ -56,7 +56,7 @@ public class FuncionarioTeste {
 	public void testSetSalario() {
 		Funcionario f1 = new Funcionario();
 		f1.setSalario(1289.45);
-		assertEquals(1289,45,f1.getSalario());
+		assertEquals(128945,(int)(f1.getSalario()*100));
 	}
 
 	@Test
