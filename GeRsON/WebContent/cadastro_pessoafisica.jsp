@@ -83,6 +83,62 @@
 				src.value += texto.substring(0, 1);
 			}
 		}
+		
+		/*funçao de adiciona uma linha na tabela dependentes*/
+		function addRow(tableID) {
+			 
+            var table = document.getElementById(tableID);
+ 
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+ 
+            var colCount = table.rows[0].cells.length;
+ 
+            for(var i=0; i<colCount; i++) {
+ 
+                var newcell = row.insertCell(i);
+ 
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                //alert(newcell.childNodes);
+                switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = "";
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            break;
+                    case "select-one":
+                            newcell.childNodes[0].selectedIndex = 0;
+                            break;
+                }
+            }
+        }
+ 		
+		/*função que deleta uma linha da tabela dependentes*/
+        function deleteRow(tableID) {
+            try {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+ 
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    if(rowCount <= 1) {
+                        alert("Cannot delete all the rows.");
+                        break;
+                    }
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+ 
+ 
+            }
+            }catch(e) {
+                alert(e);
+            }
+        }
 	</script>
 
 	<div id="layout">
@@ -415,6 +471,22 @@
 						</td>
 					</tr>
 				</table>
+	
+	
+	<h3>Dependentes</h3>
+	<!-- tabela dependentes inicio -->			
+	<INPUT type="button" value="Adicionar Dependente" onclick="addRow('Dependentes')" />
+ 
+    <INPUT type="button" value="Retirar Dependente" onclick="deleteRow('Dependentes')" />
+ 
+    <TABLE id="Dependentes" width="350px" border="1">
+        <TR>
+            <TD><INPUT type="checkbox" name="chk"/></TD>
+            <TD><INPUT type="text" name="txt" value="" size="101" maxlength="100"/></TD>
+        </TR>
+    </TABLE>
+	<!-- tabela dependentes fim -->
+	
 				<input type="submit" value="Cadastrar">
 				<hr>
 			</form>
