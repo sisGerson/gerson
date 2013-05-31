@@ -9,5 +9,7 @@
 </head>
 <body>
 	<h1>Um erro ocorreu!</h1>
+	
+	<h2>Clique <a href="javascript:window.history.go(-1)">AQUI</a> para retornar.</h2>
 </body>
 </html>

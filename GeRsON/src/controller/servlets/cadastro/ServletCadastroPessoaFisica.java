@@ -31,19 +31,25 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		
 		PessoaFisica pessoaFisica = new PessoaFisica();
 
-		pessoaFisica.setArea(request.getParameter("area"));
+		//Recebendo os dados da área e validando se o campo está fazio
+		String area = request.getParameter("area");
+		if ((area == null) || (area.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setArea(request.getParameter("area"));
+		}
+		
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
 		
 		String dataAdmissaoTexto = request.getParameter("dataAdmissao");
 		Date dataAdmissao;
+		//validando a data de Admissão
 		try {
 			dataAdmissao = new SimpleDateFormat("dd/MM/yyyy").parse(dataAdmissaoTexto);
 			pessoaFisica.setDataAdmissao(dataAdmissao);
 		} catch (ParseException e1) {
 			e1.printStackTrace();
 		}
-
-		
 		String dataDesligamentoTexto = request.getParameter("dataDesligamento");
 		Date dataDesligamento;
 		try {
@@ -52,25 +58,41 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
 		pessoaFisica.setStatus_2(Boolean.parseBoolean(request.getParameter("status_2")));
 		pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
-		pessoaFisica.setEnderecoFuncional(request.getParameter("enderecoFuncional"));
+		pessoaFisica.setEnderecoFuncional(request.getParameter("enderecoFuncional"));	
 		pessoaFisica.setTelefoneComercial(request.getParameter("telefoneComercial"));
-		pessoaFisica.setTipoFuncionario("Pessoa FÃ­sica");
-		pessoaFisica.setNome(request.getParameter("nome"));
+		pessoaFisica.setTipoFuncionario("Pessoa Física");
+		//Recebendo os dados no nome e validando se o campo está preenchido
+		String nome = request.getParameter("nome");
+		if ((nome == null) || (nome.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setNome(request.getParameter("nome"));	
+		}
 		pessoaFisica.setCPF_CNPJ(request.getParameter("CPF_CNPJ"));
 		pessoaFisica.setEmail(request.getParameter("email"));
 		pessoaFisica.setSenha(request.getParameter("senha"));
 		pessoaFisica.setCEPFuncional(request.getParameter("CEPFuncional"));
 		pessoaFisica.setCidadeFuncional(request.getParameter("cidadeFuncional"));
 		pessoaFisica.setUFCidadeFuncional(request.getParameter("UFCidadeFuncional"));
-		pessoaFisica.setCargo(request.getParameter("cargo"));
+		//Recebendo os dados do cargo e validando se o campo está preenchido
+		String cargo = request.getParameter("cargo");
+		if ((cargo == null) || (cargo.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCargo(request.getParameter("cargo"));	
+		}
 		pessoaFisica.setTotalHoraSemanal(Integer.parseInt(request.getParameter("totalHoraSemanal")));
 		pessoaFisica.setRG(request.getParameter("RG"));
-		pessoaFisica.setOrgaoEmissor(request.getParameter("orgaoEmissor"));
-		
-		
+		//Recebendo os dados do órgão emissor e validando se o campo está preenchido
+		String orgaoEmissor = request.getParameter("orgaoEmissor");
+		if ((orgaoEmissor == null) || (orgaoEmissor.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setOrgaoEmissor(request.getParameter("orgaoEmissor"));	
+		}
+		//validando data de expedição
 		String dataExpedicaoTexto = request.getParameter("dataExpedicao");
 		Date dataExpedicao;
 		try{
@@ -82,7 +104,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		
 		pessoaFisica.setCTPS(request.getParameter("CTPS"));
 		pessoaFisica.setPIS(request.getParameter("PIS"));
-		
+		//Validando data de Nascimento
 		String dataNascimentoTexto = request.getParameter("dataNascimento");
 		Date dataNascimento;
 		try{
@@ -93,14 +115,51 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		}
 		pessoaFisica.setTelefoneCelular(request.getParameter("telefoneCelular"));
 		pessoaFisica.setTelefoneResidencial(request.getParameter("telefoneResidencial"));
-		pessoaFisica.setEstadoCivil(request.getParameter("estadoCivil"));
-		pessoaFisica.setNacionalidade(request.getParameter("nacionalidade"));
-		pessoaFisica.setNaturalidade(request.getParameter("naturalidade"));
+		//Recebendo os dados do estado civil e validando se o campo está preenchido
+		String estadoCivil = request.getParameter("estadoCivil");
+		if ((estadoCivil == null) || (estadoCivil.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setEstadoCivil(request.getParameter("estadoCivil"));
+		}
+		//Recebendo os dados da nacionalidade e verificando se o campo foi preenchido
+		String nacionalidade = request.getParameter("nacionalidade");
+		if ((nacionalidade == null) || (nacionalidade.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setNacionalidade(request.getParameter("nacionalidade"));
+		}
+		//Recebendo os dados da naturalidade e verificando se o campo foi preenchido
+		String naturalidade = request.getParameter("naturalidade");
+		if ((naturalidade == null) || (naturalidade.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setNaturalidade(request.getParameter("naturalidade"));
+		}		
 		pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
 		pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));
-		pessoaFisica.setCorCabelo(request.getParameter("corCabelo"));
-		pessoaFisica.setCorOlhos(request.getParameter("corOlhos"));
-		pessoaFisica.setRacaCor(request.getParameter("racaCor"));
+		//Recebendo os dados da cor do cabelo e verificando se o campo foi preenchido
+		String corCabelo = request.getParameter("corCabelo");
+		if ((corCabelo == null) || (corCabelo.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCorCabelo(request.getParameter("corCabelo"));
+		}			
+		//Recebendo os dados da cor dos olhos e verificando se o campo foi preenchido
+		String corOlhos = request.getParameter("corOlhos");
+		if ((corOlhos == null) || (corOlhos.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCorOlhos(request.getParameter("corOlhos"));
+		}		
+		//Recebendo os dados da cor dos olhos e verificando se o campo foi preenchido
+		String racaCor = request.getParameter("racaCor");
+		if ((racaCor == null) || (racaCor.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setRacaCor(request.getParameter("racaCor"));
+		}		
+		
 		pessoaFisica.setDeficienteFisico(Boolean.parseBoolean(request.getParameter("deficienteFisico")));
 		pessoaFisica.setSinaisParticulares(request.getParameter("sinaisParticulares"));
 		pessoaFisica.setNomeMae(request.getParameter("nomeMae"));
@@ -128,17 +187,43 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setNomeConjuge(request.getParameter("nomeConjuge"));
 		pessoaFisica.setNacionalidadeConjuge(request.getParameter("nacionalidadeConjuge"));
 		//dependentes
-		pessoaFisica.setHorarioTrabalho(request.getParameter("horarioTrabalho"));
-		pessoaFisica.setEnderecoResidencial(request.getParameter("enderecoResidencial"));
-		pessoaFisica.setCidadeResidencial(request.getParameter("cidadeResidencial"));
-		pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
+		//Recebendo os dados do horário de trabalho e verificando se o campo foi preenchido
+		String horarioTrabalho = request.getParameter("horarioTrabalho");
+		if ((horarioTrabalho == null) || (horarioTrabalho.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setHorarioTrabalho(request.getParameter("horarioTrabalho"));
+		}
+		//Recebendo os dados do endereço residencial e verificando se o campo foi preenchido
+		String enderecoResidencial = request.getParameter("enderecoResidencial");
+		if ((enderecoResidencial == null) || (enderecoResidencial.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setEnderecoResidencial(request.getParameter("enderecoResidencial"));
+		}
+		//Recebendo os dados da cidade residencial e verificando se o campo foi preenchido
+		String cidadeResidencial = request.getParameter("cidadeResidencial");
+		if ((cidadeResidencial == null) || (cidadeResidencial.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCidadeResidencial(request.getParameter("cidadeResidencial"));
+		}		
+		
+		//Recebendo os dados da cidade residencial e verificando se o campo foi preenchido
+		String UFResidencial = request.getParameter("UFResidencial");
+		if ((UFResidencial == null) || (UFResidencial.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
+		}	
+		
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
 		
 		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
 		
 		PrintWriter out = response.getWriter();
-		out.println("FuncionÃ¡rio: " + pessoaFisica.getNome() + " Cadastrado com sucesso.");
+		out.println("Funcionário: " + pessoaFisica.getNome() + " Cadastrado com sucesso.");
 	}
 
 }

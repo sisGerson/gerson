@@ -157,7 +157,7 @@
 				<table>
 					<tr>
 						<td><br> * Nome: <input type="text" name="nome" value=""
-							size="65" maxlength="60" required />
+							size="65" maxlength="60" required/>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Data Nascimento: <input
 							type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
