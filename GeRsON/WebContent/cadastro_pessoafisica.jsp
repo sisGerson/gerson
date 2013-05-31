@@ -474,15 +474,31 @@
 	
 	
 	<h3>Dependentes</h3>
+	<p></p>
 	<!-- tabela dependentes inicio -->			
 	<INPUT type="button" value="Adicionar Dependente" onclick="addRow('Dependentes')" />
  
     <INPUT type="button" value="Retirar Dependente" onclick="deleteRow('Dependentes')" />
  
-    <TABLE id="Dependentes" width="350px" border="1">
+    <TABLE id="Dependentes" border="1">
         <TR>
-            <TD><INPUT type="checkbox" name="chk"/></TD>
-            <TD><INPUT type="text" name="txt" value="" size="101" maxlength="100"/></TD>
+            <TD><INPUT type="checkbox" name="seleciona"/></TD>
+            
+            <TD>Nome do Dependente<INPUT type="text" name="nomeDependente" value="" size="51" maxlength="50"/></TD>
+        	
+        	<TD> Data de Nascimento<INPUT type="text" 
+        	onkeypress="return mascaraDATA(event,this); return false;"
+			name="dataNascimento" value="" size="10" maxlength="10" /></TD>
+			
+			<TD>IRRF<select name="IRRF">
+						<option value="True">Sim</option>
+						<option value="False">Não</option>
+					</select></TD>
+			
+			<TD>Salario Familia<select name="SalarioFamilia">
+						<option value="True">Sim</option>
+						<option value="False">Não</option>
+					</select></TD>
         </TR>
     </TABLE>
 	<!-- tabela dependentes fim -->
