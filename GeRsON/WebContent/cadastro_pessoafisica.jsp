@@ -484,18 +484,18 @@
         <TR>
             <TD><INPUT type="checkbox" name="seleciona"/></TD>
             
-            <TD>Nome do Dependente<INPUT type="text" name="nomeDependente" value="" size="51" maxlength="50"/></TD>
+            <TD>Nome do Dependente<INPUT type="text" name="nomeDependente[]" value="" size="51" maxlength="50"/></TD>
         	
         	<TD> Data de Nascimento<INPUT type="text" 
         	onkeypress="return mascaraDATA(event,this); return false;"
-			name="dataNascimento" value="" size="10" maxlength="10" /></TD>
+			name="dataNascimentoDependente[]" value="" size="10" maxlength="10" /></TD>
 			
-			<TD>IRRF<select name="IRRF">
+			<TD>IRRF<select name="IRRF[]">
 						<option value="True">Sim</option>
 						<option value="False">Não</option>
 					</select></TD>
 			
-			<TD>Salario Familia<select name="SalarioFamilia">
+			<TD>Salario Familia<select name="SalarioFamilia[]">
 						<option value="True">Sim</option>
 						<option value="False">Não</option>
 					</select></TD>
