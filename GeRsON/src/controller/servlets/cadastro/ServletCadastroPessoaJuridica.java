@@ -1,11 +1,11 @@
 package controller.servlets.cadastro;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -71,8 +71,9 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarAlterarPessoaJuridica(pessoaJuridica);
 		
-		PrintWriter out = response.getWriter();
-		out.println("Empresa: " + pessoaJuridica.getNome() + " Cadastrada com sucesso.");
+		request.setAttribute("pessoaJuridica", pessoaJuridica);
+		RequestDispatcher dispache = request.getRequestDispatcher("/resultado_pessoajuridica.jsp");
+		dispache.forward(request, response);
 	}
 
 }
