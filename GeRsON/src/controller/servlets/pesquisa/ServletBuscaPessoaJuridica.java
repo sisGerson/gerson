@@ -46,14 +46,11 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 		out.println("<td>Responsável</td>");
 		
 		for(int i=0;i<dao.getPessoasJuridicas().length;i++){
-			//Recuperar id do funcionário
-			dao.setId(dao.getPessoasJuridicas()[i].getId());
-			
 			out.println("<tr>");
 			out.println("<td>"+dao.getPessoasJuridicas()[i].getMatricula()+"</td>");
 			out.println("<td>"+dao.getPessoasJuridicas()[i].getNome()+"</td>");
 			out.println("<td>"+dao.getPessoasJuridicas()[i].getResponsavel()+"</td>");
-			out.println("<td><a href=atualiza_pessoajuridica.jsp>Editar</a></td>");
+			out.println("<td><a href='atualiza_pessoajuridica.jsp?id="+dao.getPessoasJuridicas()[i].getId()+"'>Editar</a></td>");
 			out.println("</tr>");
 		}
 		out.println("</table>");

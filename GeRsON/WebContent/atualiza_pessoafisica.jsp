@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="model.funcionarios.pf.*" %>
 <!DOCTYPE html>
 
 <html>
@@ -15,7 +16,13 @@
 <title>GeRsON</title>
 </head>
 <body>
-
+	
+	<jsp:useBean id="dao" class="dao.cadastros.GerenteDAO"></jsp:useBean>
+	<% 
+	int id = Integer.parseInt(request.getParameter("id"));
+	PessoaFisica pessoaFisica = dao.getIdPessoaFisica(id);
+	%>	
+	
 	<!-- Java Script utilizado para validação dos campos do formulário -->
 	<script type="text/javascript">
 		/*Campo CPF - permite somente valores numericos e monta a máscara*/
@@ -144,24 +151,22 @@
 	<div id="layout">
 		<div id="main">
 
-			<form name="atualizar_pessoafisica"
-				action="ServletAtualizarPessoaFisica" method="post">
-				<h2>Dados do Funcionário - Pessoa Física</h2>
+			<form name="atualiza_pessoafisica"
+				action="ServletAtualizaPessoaFisica" method="post">
+				<h2>Cadastro de Funcionário - Pessoa Física</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
 					</select>
 				</p>
+				
+				<input type="hidden" name="id" value="<%= pessoaFisica.getId() %>" />
+				
 				<h3>Dados Pessoais</h3>
-				<% String Id = request.getParameter("id");
-				String nome = request.getParameter("nome");
-				%>
-				
-				
 				<table>
 					<tr>
-						<td><br> * Nome: <input type="text" name="nome" value="<% out.println(request.getParameter("nome"));%>"
+						<td><br> * Nome: <input type="text" name="nome" value="<%= pessoaFisica.getNome() %>"
 							size="65" maxlength="60" required/>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Data Nascimento: <input
 							type="text"
@@ -508,11 +513,10 @@
     </TABLE>
 	<!-- tabela dependentes fim -->
 	
-				<input type="submit" value="Atualizar">
+				<input type="submit" value="Enviar">
 				<hr>
 			</form>
 		</div>
 	</div>
 </body>
 </html>
-

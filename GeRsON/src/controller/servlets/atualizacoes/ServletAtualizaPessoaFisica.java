@@ -1,14 +1,12 @@
 package controller.servlets.atualizacoes;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,20 +21,17 @@ import model.funcionarios.pf.PessoaFisica;
  */
 public class ServletAtualizaPessoaFisica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private EntityManager entityManager;
        
     public ServletAtualizaPessoaFisica() {
         super();
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+			throws ServletException, IOException {		
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
-		EntityManager entityManager = factory.createEntityManager();
-		
-		GerenteDAO dao = new GerenteDAO();
-		
-		PessoaFisica pessoaFisica = entityManager.find(PessoaFisica.class, dao.getId());
+		int id = Integer.parseInt(request.getParameter("id"));
+		PessoaFisica pessoaFisica = this.entityManager.find(PessoaFisica.class, id);
 		
 		pessoaFisica.setArea(request.getParameter("area"));
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
@@ -140,11 +135,13 @@ public class ServletAtualizaPessoaFisica extends HttpServlet {
 		pessoaFisica.setCidadeResidencial(request.getParameter("cidadeResidencial"));
 		pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
-
-		dao.cadastrarAlterarPessoaFisica(pessoaFisica);
 		
-		PrintWriter out = response.getWriter();
-		out.println("Dados do Funcionário: " + pessoaFisica.getNome() + " Alterados com sucesso.");
+		GerenteDAO gerente = new GerenteDAO();
+		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
+		
+		request.setAttribute("pessoaFisica", pessoaFisica);
+		RequestDispatcher dispache = request.getRequestDispatcher("/alteracao_pessoafisica.jsp");
+		dispache.forward(request, response);
 	}
 
 }

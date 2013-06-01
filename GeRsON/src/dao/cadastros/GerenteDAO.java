@@ -1,6 +1,6 @@
 package dao.cadastros;
 
-import java.util.*;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,7 +14,6 @@ public class GerenteDAO {
 	private EntityManagerFactory factory;
 	private EntityManager entityManager;
 	private Query query;
-	private int id;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
 	
@@ -28,11 +27,16 @@ public class GerenteDAO {
 		this.entityManager.getTransaction().begin();
 	}
 	
-	public int getId(){
-		return this.id;
+	//Recuperar id de pessoaFisica
+	public PessoaFisica getIdPessoaFisica(int id){
+		PessoaFisica pessoaFisica = this.entityManager.find(PessoaFisica.class, id);
+		return pessoaFisica;
 	}
-	public void setId(int id){
-		this.id = id;
+	
+	//Recuperar id de pessoaJuridica
+	public PessoaJuridica getIdpessoaJuridica(int id){
+		PessoaJuridica pessoaJuridica = this.entityManager.find(PessoaJuridica.class, id);
+		return pessoaJuridica;
 	}
 
 	public PessoaFisica[] getPessoasFisicas() {
@@ -95,7 +99,6 @@ public class GerenteDAO {
 	public void pesquisarPessoaFisica(String nome, String matricula, String cargo, String area,
 			String CPF){
 		List<PessoaFisica> pessoaFisica = buscarTodasPessoasFisicas();
-		
 		for (PessoaFisica pessoa : pessoaFisica) {
 			if((nome == "" || pessoa.getNome().toUpperCase().startsWith(nome)) &&
 					(matricula == "" || pessoa.getMatricula().toUpperCase().startsWith(matricula)) &&

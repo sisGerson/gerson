@@ -2,7 +2,6 @@ package controller.servlets.pesquisa;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,15 +45,12 @@ public class ServletBuscaPessoaFisica extends HttpServlet {
 		out.println("<td>Nome</td>");
 		out.println("<td>Cargo</td>");
 		
-		for(int i=0;i<dao.getPessoasFisicas().length;i++){
-			//Recuperar id do funcionário
-			dao.setId(dao.getPessoasFisicas()[i].getId());
-			
+		for (int i=0;i<dao.getPessoasFisicas().length;i++) {
 			out.println("<tr>");
 			out.println("<td>"+dao.getPessoasFisicas()[i].getMatricula()+"</td>");
 			out.println("<td>"+dao.getPessoasFisicas()[i].getNome()+"</td>");
 			out.println("<td>"+dao.getPessoasFisicas()[i].getCargo()+"</td>");
-			out.println("<td><a href=atualiza_pessoafisica.jsp>Editar</a></td>");
+			out.println("<td><a href='atualiza_pessoafisica.jsp?id="+dao.getPessoasFisicas()[i].getId()+"'>Editar</a></td>");
 			out.println("</tr>");
 		}
 		out.println("</table>");
