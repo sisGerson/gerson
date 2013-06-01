@@ -171,71 +171,71 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Data Nascimento: <input
 							type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataNascimento" value="" size="10" maxlength="10" required />
+							name="dataNascimento" value="<%= pessoaFisica.getDataNascimento() %>" size="10" maxlength="10" required />
 						</td>
 					</tr>
 
 					<tr>
-						<td>* Email: <input type="Email" name="email" value=""
+						<td>* Email: <input type="Email" name="email" value="<%= pessoaFisica.getEmail() %>"
 							size="40" maxlength="35" required />
 
 						</td>
 					</tr>
 					<tr>
 						<td>* Nacionalidade: <input type="text" name="nacionalidade"
-							value="" size="40" maxlength="40" required />
+							value="<%= pessoaFisica.getNacionalidade() %>" size="40" maxlength="40" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Naturalidade: <input type="text" name="naturalidade" value=""
+							Naturalidade: <input type="text" name="naturalidade" value="<%= pessoaFisica.getNaturalidade() %>"
 							size="40" maxlength="40" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Estado Civil: &nbsp;&nbsp;&nbsp;&nbsp;<input
-							type="text" name="estadoCivil" value="" size="40" maxlength="40"
+							type="text" name="estadoCivil" value="<%= pessoaFisica.getEstadoCivil() %>" size="40" maxlength="40"
 							required />
 						</td>
 					</tr>
 					<tr>
-						<td>Conjuge: <input type="text" name="nomeConjuge" value=""
+						<td>Conjuge: <input type="text" name="nomeConjuge" value="<%= pessoaFisica.getNomeConjuge() %>"
 							size="50" maxlength="60" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							Nacionalidade do Conjuge: <input type="text"
-							name="nacionalidadeConjuge" value="" size="27" maxlength="40" />
+							name="nacionalidadeConjuge" value="<%= pessoaFisica.getNacionalidadeConjuge() %>" size="27" maxlength="40" />
 						</td>
 					</tr>
 					<tr>
-						<td>Nome da mãe: <input type="text" name="nomeMae" value=""
+						<td>Nome da mãe: <input type="text" name="nomeMae" value="<%= pessoaFisica.getNomeMae() %>"
 							size="50" maxlength="60" /> &nbsp;&nbsp;&nbsp; Nacionalidade da
-							mãe: <input type="text" name="nacionalidadeMae" value=""
+							mãe: <input type="text" name="nacionalidadeMae" value="<%= pessoaFisica.getNacionalidadeMae() %>"
 							size="27" maxlength="40" />
 						</td>
 					</tr>
 					<tr>
 						<td>Nome do pai:&nbsp;&nbsp;&nbsp;<input type="text"
-							name="nomePai" value="" size="50" maxlength="60" />
+							name="nomePai" value="<%= pessoaFisica.getNomePai() %>" size="50" maxlength="60" />
 							&nbsp;&nbsp;&nbsp; Nacionalidade do pai: &nbsp;&nbsp;<input
-							type="text" name="nacionalidadePai" value="" size="27"
+							type="text" name="nacionalidadePai" value="<%= pessoaFisica.getNacionalidadePai() %>" size="27"
 							maxlength="40" />
 						</td>
 					</tr>
 					<tr>
-						<td>* Cor: <input type="text" name="racaCor" value=""
+						<td>* Cor: <input type="text" name="racaCor" value="<%= pessoaFisica.getRacaCor() %>"
 							size="30" maxlength="30" required /> &nbsp;&nbsp;&nbsp; * Peso: <input
-							type="number" step="0.1" min="40" max="200" name="peso" value=""
+							type="number" step="0.1" min="40" max="200" name="peso" value="<%= pessoaFisica.getPeso() %>"
 							size="20" maxlength="30" required /> &nbsp;&nbsp;&nbsp; * Altura:
 							<input type="number" step="0.1" min="1.4" max="2.30"
-							name="altura" value="" size="20" maxlength="30" required />
+							name="altura" value="<%= pessoaFisica.getAltura() %>" size="20" maxlength="30" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Cor dos olhos: <input type="text" name="corOlhos"
-							value="" size="30" maxlength="30" required /> &nbsp;&nbsp;&nbsp;
-							* Cor dos cabelos: <input type="text" name="corCabelo" value=""
+							value="<%= pessoaFisica.getCorOlhos() %>" size="30" maxlength="30" required /> &nbsp;&nbsp;&nbsp;
+							* Cor dos cabelos: <input type="text" name="corCabelo" value="<%= pessoaFisica.getCorCabelo() %>"
 							size="20" maxlength="30" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Grau de Instrução: <input type="text"
-							name="grauInstrucao" value="" size="30" maxlength="40" required />
+							name="grauInstrucao" value="<%= pessoaFisica.getGrauInstrucao() %>" size="30" maxlength="40" required />
 						</td>
 					</tr>
 					<tr>
@@ -252,32 +252,32 @@
 					</tr>
 					<tr>
 						<td>* CPF: <input type="text" name="CPF_CNPJ"
-							onkeypress="return mascaraCPF(event,this);return false;" value=""
+							onkeypress="return mascaraCPF(event,this);return false;" value="<%= pessoaFisica.getCPF_CNPJ() %>"
 							size="20" maxlength="14" required /> &nbsp;&nbsp;&nbsp; CNH: <input
 							type="number" step="1" min="1" max="999999999999999" name="CNH"
-							value="" size="15" maxlength="15" /> &nbsp;&nbsp;&nbsp;
+							value="<%= pessoaFisica.getCNH() %>" size="15" maxlength="15" /> &nbsp;&nbsp;&nbsp;
 							Reservista: <input type="number" step="1" min="1"
-							max="999999999999999" name="reservista" value="" size="15"
+							max="999999999999999" name="reservista" value="<%= pessoaFisica.getReservista() %>" size="15"
 							maxlength="15" />
 						</td>
 					</tr>
 					<tr>
 						<td>* RG: &nbsp;&nbsp;<input type="number" step="1" min="1"
-							max="99999999999" name="RG" value="" size="10" maxlength="11"
+							max="99999999999" name="RG" value="<%= pessoaFisica.getRG() %>" size="10" maxlength="11"
 							required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Órgão Emissor: <input
-							type="text" name="orgaoEmissor" value="" size="10" maxlength="15"
+							type="text" name="orgaoEmissor" value="<%= pessoaFisica.getOrgaoEmissor() %>" size="10" maxlength="15"
 							required /> &nbsp;&nbsp;&nbsp; * Data Expedição: <input
 							type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataExpedicao" value="" size="10" maxlength="10" required />
+							name="dataExpedicao" value="<%= pessoaFisica.getDataExpedicao() %>" size="10" maxlength="10" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Nº CTPS: <input type="number" step="1" min="1"
-							max="999999999999999" name="CTPS" value="" size="15"
+							max="999999999999999" name="CTPS" value="<%= pessoaFisica.getCTPS() %>" size="15"
 							maxlength="15" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Série
 							CTPS: <input type="number" step="1" min="1" max="999999999999999"
-							name="serieCTPS" value="" size="10" maxlength="15" required />
+							name="serieCTPS" value="<%= pessoaFisica.getSerieCTPS() %>" size="10" maxlength="15" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * UF CTPS: <select name="UFCTPS">
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
@@ -312,32 +312,32 @@
 					<tr>
 						<td>* Data emissão CTPS: <input type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="emissaoCTPS" value="" size="10" maxlength="10" required />
+							name="emissaoCTPS" value="<%= pessoaFisica.getEmissaoCTPS() %>" size="10" maxlength="10" required />
 							&nbsp;&nbsp;&nbsp; PIS:<input type="number" step="1" min="1"
-							max="999999999999999" name="PIS" value="" size="10"
+							max="999999999999999" name="PIS" value="<%= pessoaFisica.getPIS() %>" size="10"
 							maxlength="10" />
 						</td>
 					</tr>
 					<tr>
 						<td>* Nº Título Eleitoral: <input type="number" step="1"
-							min="1" max="999999999999999" name="tituloEleitoral" value=""
+							min="1" max="999999999999999" name="tituloEleitoral" value="<%= pessoaFisica.getTituloEleitoral() %>"
 							size="15" maxlength="15" required /> &nbsp;&nbsp; * Zona Título
 							Eleitoral: <input type="number" step="1" min="1" max="9999999"
-							name="zonaTitulo" value="" size="7" maxlength="15" required />
+							name="zonaTitulo" value="<%= pessoaFisica.getZonaTitulo() %>" size="7" maxlength="15" required />
 							&nbsp;&nbsp; * Seção Título Eleitoral: <input type="number"
-							step="1" min="1" max="9999999" name="secaoTitulo" value=""
+							step="1" min="1" max="9999999" name="secaoTitulo" value="<%= pessoaFisica.getSecaoTitulo() %>"
 							size="7" maxlength="15" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Endereço Residencial: <input type="text"
-							name="enderecoResidencial" value="" size="101" maxlength="100"
+							name="enderecoResidencial" value="<%= pessoaFisica.getEnderecoResidencial() %>" size="101" maxlength="100"
 							required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Cidade Residencial: <input type="text"
-							name="cidadeResidencial" value="" size="25" maxlength="50"
+							name="cidadeResidencial" value="<%= pessoaFisica.getCidadeResidencial() %>" size="25" maxlength="50"
 							required /> &nbsp;&nbsp; * Estado Residencial: <select
 							name="UFResidencial">
 								<option value="AC">AC</option>
@@ -370,18 +370,18 @@
 						</select> &nbsp;&nbsp; * CEP Residencial: <input type="text"
 							name="CEPResidencial"
 							onkeypress="return mascaraCEP(event,this); return false;"
-							value="" size="15" maxlength="9" required />
+							value="<%= pessoaFisica.getCEPResidencial() %>" size="15" maxlength="9" required />
 						</td>
 					</tr>
 					<tr>
 						<td>Telefone Residencial: <input type="text"
 							onkeypress="return mascaraTelefone(event,this); return false;"
-							name="telefoneResidencial" value="" size="15" maxlength="13" />
+							name="telefoneResidencial" value="<%= pessoaFisica.getTelefoneResidencial() %>" size="15" maxlength="13" />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telefone
 							Celular: <input type="text" name="telefoneCelular"
 							onkeypress="return mascaraTelefone(event,this); return false;"
-							value="" size="15" maxlength="13" /> <br>&nbsp;
+							value="<%= pessoaFisica.getTelefoneCelular() %>" size="15" maxlength="13" /> <br>&nbsp;
 						</td>
 					</tr>
 				</table>
@@ -390,35 +390,35 @@
 				<table>
 					<tr>
 						<td><br> * Matrícula: <input type="number" step="1"
-							min="1" max="99999999" name="matricula" value="" size="20"
+							min="1" max="99999999" name="matricula" value="<%= pessoaFisica.getMatricula() %>" size="20"
 							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Senha:
 							<input type="number" step="1" min="1" max="99999999" name="senha"
-							value="" size="15" maxlength="8" required />
+							value="<%= pessoaFisica.getSenha() %>" size="15" maxlength="8" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Área: <input type="text"
-							name="area" value="" size="40" maxlength="40" required /></td>
+							name="area" value="<%= pessoaFisica.getArea() %>" size="40" maxlength="40" required /></td>
 					</tr>
 					<tr>
 						<td>* Data de Admissão: <input type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataAdmissao" value="" size="10" maxlength="10" required />
+							name="dataAdmissao" value="<%= pessoaFisica.getDataAdmissao() %>" size="10" maxlength="10" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data
 							de Desligamento: <input type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataDesligamento" value="" size="10" maxlength="10" />
+							name="dataDesligamento" value="<%= pessoaFisica.getDataDesligamento() %>" size="10" maxlength="10" />
 						</td>
 					</tr>
 					<tr>
 						<td>* Salario: <input type="number" step="0.01" min="678.00"
-							max="25000.00" name="salario" value="" size="20" maxlength="8"
+							max="25000.00" name="salario" value="<%= pessoaFisica.getSalario() %>" size="20" maxlength="8"
 							required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Cargo: <input type="text" name="cargo" value="" size="40"
+							Cargo: <input type="text" name="cargo" value="<%= pessoaFisica.getCargo() %>" size="40"
 							maxlength="40" required />
 						</td>
 					</tr>
 					<tr>
 						<td>* Horário de Trabalho: <input type="text"
-							name="horarioTrabalho" value="" size="20" maxlength="10" required />
+							name="horarioTrabalho" value="<%= pessoaFisica.getHorarioTrabalho() %>" size="20" maxlength="10" required />
 							&nbsp;&nbsp;&nbsp;&nbsp; * Total de Horas Semanais: <select
 							name="totalHoraSemanal">
 								<option value="20">20</option>
@@ -429,12 +429,12 @@
 					</tr>
 					<tr>
 						<td>Endereço Funcional:&nbsp;&nbsp;&nbsp;<input type="text"
-							name="enderecoFuncional" value="" size="103" maxlength="100" />
+							name="enderecoFuncional" value="<%= pessoaFisica.getEnderecoFuncional() %>" size="103" maxlength="100" />
 						</td>
 					</tr>
 					<tr>
 						<td>Cidade Funcional: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-							type="text" name="cidadeFuncional" value="" size="25"
+							type="text" name="cidadeFuncional" value="<%= pessoaFisica.getCidadeFuncional() %>" size="25"
 							maxlength="50" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							Estado Funcional: <select name="UFCidadeFuncional">
 								<option value="AC">AC</option>
@@ -470,14 +470,14 @@
 					<tr>
 						<td>CEP Funcional: <input type="text" name="CEPFuncional"
 							onkeypress="return mascaraCEP(event,this); return false;"
-							value="" size="15" maxlength="9" />
+							value="<%= pessoaFisica.getCEPFuncional() %>" size="15" maxlength="9" />
 						</td>
 					</tr>
 					<tr>
 						<td>Telefone Comercial: &nbsp;&nbsp;&nbsp;<input type="text"
 							name="telefoneComercial"
 							onkeypress="return mascaraTelefone(event,this); return false;"
-							value="" size="15" maxlength="13" /> <br>&nbsp;
+							value="<%= pessoaFisica.getTelefoneComercial() %>" size="15" maxlength="13" /> <br>&nbsp;
 						</td>
 					</tr>
 				</table>

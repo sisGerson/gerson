@@ -194,9 +194,9 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.criarDependentes();
 		pessoaFisica.getDependentes()[0].setNomeDependente(nomeDependentes[0]);
 		pessoaFisica.getDependentes()[1].setNomeDependente(nomeDependentes[1]);
-		*/
+		
 		System.out.println(pessoaFisica.getDependentes()[0].getNomeDependente()+"\n" +
-				pessoaFisica.getDependentes()[1].getNomeDependente());
+				pessoaFisica.getDependentes()[1].getNomeDependente());*/
 		//Recebendo os dados do hor�rio de trabalho e verificando se o campo foi preenchido
 		String horarioTrabalho = request.getParameter("horarioTrabalho");
 		if ((horarioTrabalho == null) || (horarioTrabalho.equals(""))){
