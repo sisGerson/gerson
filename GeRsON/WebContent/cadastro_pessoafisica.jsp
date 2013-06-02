@@ -152,7 +152,7 @@
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
 					</select>
-				</p><!-- 
+				</p>
 				<h3>Dados Pessoais</h3>
 				<table>
 					<tr>
@@ -472,7 +472,7 @@
 					</tr>
 				</table>
 	
-	 -->
+	 
 	<h3>Dependentes</h3>
 	<p></p>
 	<!-- tabela dependentes inicio -->			

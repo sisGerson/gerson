@@ -187,7 +187,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setGrauInstrucao(request.getParameter("grauInstrucao"));
 		pessoaFisica.setNomeConjuge(request.getParameter("nomeConjuge"));
 		pessoaFisica.setNacionalidadeConjuge(request.getParameter("nacionalidadeConjuge"));
-		//dependentes
+		//dependentes - o recebimento dos dados dos dependentes está funcionando, porém o envio para o banco não
 		/*String[] nomeDependentes = request.getParameterValues("nomeDependente[]");
 		String[] parentescos = request.getParameterValues("parentesco[]");
 		for(int i = 0; i<nomeDependentes.length; i++)
