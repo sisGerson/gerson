@@ -25,9 +25,9 @@
               
         <div id="navigation">
         <ul>
-          <li><a href="#" title="#">Cadastrar Funcionário</a></li>
-          <li><a href="#" title="#">Alterar dados Funcionário</a></li>
-          <li><a href="#" title="#">Excluir dados Funcionário</a></li>
+          <li><a href="index.jsp?item=0">Início</a></li>
+          <li><a href="index.jsp?item=1">Pessoa Física</a></li>
+          <li><a href="index.jsp?item=2">Pessoa Jurídica</a></li>
 
         </ul>
         </div>
@@ -35,18 +35,62 @@
     
       </div>
       
-        <div id="main">
-        <p align="right"><b>Usuário logado: Gerente</b></p>
-		<center><img src="img\gerson02.jpg" width="600" height="500"/></center>
-		<br>
-		<br>
 
-        </div>
+<div id="main">
+
+<!-- Organizando a navegação dos itens de menu -->
+<% 
+int item = Integer.parseInt(request.getParameter("item"));
+
+switch(item)
+
+{case 0://página principal
+	%>
+	<%@ include file="main.jsp" %>
+	<%
+break;
+case 1://Opções Pessoa Física
+	%>
+	<%@ include file="item01.jsp" %>
+	<%
+break;
+case 2: //Opções Pessoa Jurídica
+	%>
+	<%@ include file="item02.jsp" %>
+	<%
+break;
+case 3: //Cadastrar Pessoa Pessoa Física
+	%>
+	<%@ include file="cadastro_pessoafisica.jsp" %>
+	<%
+break;
+case 4: //Pesquisar/Alterar Pessoa Pessoa Física
+	%>
+	<%@ include file="pesquisa_pessoafisica.jsp" %>
+	<%
+break;
+case 5: //Resultado Cadastro Pessoa Pessoa Física
+	%>
+	<%@ include file="resultado_pessoafisica.jsp" %>
+	<%
+break;
+case 6: //Atualiza Pessoa Pessoa Física
+
+break;
+default:
+%>
+<%@ include file="main.jsp" %>
+<%
+};
+
+%>
+</div>
+        
         <div id="footer">
         <div id="footer-inside">
-        <p id="copyright">&copy; 2013 - <a href="/">GeRsON</a></p>
+        <p id="copyright">&copy; 2013 - <a href="index.jsp?item=0">GeRsON</a></p>
         
-               <p >xxxxx | xxxxx: xxxx</p>
+               <p >Equipe de Trabalho  | GPP/MDS</p>
         
         </div><div style="clear: both;"></div></div>
         </div>
