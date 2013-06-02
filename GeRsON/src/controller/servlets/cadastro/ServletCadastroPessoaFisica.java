@@ -189,14 +189,34 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		pessoaFisica.setNacionalidadeConjuge(request.getParameter("nacionalidadeConjuge"));
 		//dependentes
 		/*String[] nomeDependentes = request.getParameterValues("nomeDependente[]");
-		
-		pessoaFisica.criarDependentes();
-		pessoaFisica.criarDependentes();
-		pessoaFisica.getDependentes()[0].setNomeDependente(nomeDependentes[0]);
-		pessoaFisica.getDependentes()[1].setNomeDependente(nomeDependentes[1]);
-		
-		System.out.println(pessoaFisica.getDependentes()[0].getNomeDependente()+"\n" +
-				pessoaFisica.getDependentes()[1].getNomeDependente());*/
+		String[] parentescos = request.getParameterValues("parentesco[]");
+		for(int i = 0; i<nomeDependentes.length; i++)
+		{
+			pessoaFisica.criarDependentes();
+			pessoaFisica.getDependentes()[i].setNomeDependente(nomeDependentes[i]);
+			pessoaFisica.getDependentes()[i].setParentesco(parentescos[i]);
+			
+			String dataNascimentoDependenteTexto= request.getParameterValues("dataNascimentoDependente[]")[i];
+			Date dataNascimentoDependente;
+			try{
+				dataNascimentoDependente = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimentoDependenteTexto);
+				pessoaFisica.getDependentes()[i].setDataNascimentoDependente(dataNascimentoDependente);
+			} catch(ParseException e) {
+				e.printStackTrace();
+			}
+			
+			pessoaFisica.getDependentes()[i].setIRRF(Boolean.parseBoolean(request.getParameterValues("IRRF[]")[i]));
+			pessoaFisica.getDependentes()[i].setSalarioFamilia(Boolean.parseBoolean(request.getParameterValues("salarioFamilia[]")[i]));
+			
+		}
+		for(int i=0; i<nomeDependentes.length; i++)
+		{
+			System.out.println(pessoaFisica.getDependentes()[i].getNomeDependente() + 
+					" " + pessoaFisica.getDependentes()[i].getParentesco() +
+					" " + pessoaFisica.getDependentes()[i].getDataNascimentoDependente() +
+					" " + pessoaFisica.getDependentes()[i].isIRRF() +
+					" "+pessoaFisica.getDependentes()[i].isSalarioFamilia());
+		}*/
 		//Recebendo os dados do hor�rio de trabalho e verificando se o campo foi preenchido
 		String horarioTrabalho = request.getParameter("horarioTrabalho");
 		if ((horarioTrabalho == null) || (horarioTrabalho.equals(""))){

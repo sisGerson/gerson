@@ -152,7 +152,7 @@
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
 					</select>
-				</p>
+				</p><!-- 
 				<h3>Dados Pessoais</h3>
 				<table>
 					<tr>
@@ -472,7 +472,7 @@
 					</tr>
 				</table>
 	
-	
+	 -->
 	<h3>Dependentes</h3>
 	<p></p>
 	<!-- tabela dependentes inicio -->			
@@ -484,7 +484,9 @@
         <TR>
             <TD><INPUT type="checkbox" name="seleciona"/></TD>
             
-            <TD>Nome do Dependente<INPUT type="text" name="nomeDependente[]" value="" size="51" maxlength="50"/></TD>
+            <TD>Nome do Dependente<INPUT type="text" name="nomeDependente[]" value="" size="33" maxlength="50"/></TD>
+        	
+        	<TD> Parentesco<INPUT type="text" name="parentesco[]" value="" size="12" maxlength="20"/></TD>
         	
         	<TD> Data de Nascimento<INPUT type="text" 
         	onkeypress="return mascaraDATA(event,this); return false;"
@@ -495,7 +497,7 @@
 						<option value="False">Não</option>
 					</select></TD>
 			
-			<TD>Salario Familia<select name="SalarioFamilia[]">
+			<TD>Salario Familia<select name="salarioFamilia[]">
 						<option value="True">Sim</option>
 						<option value="False">Não</option>
 					</select></TD>
@@ -510,4 +512,3 @@
 	</div>
 </body>
 </html>
-

@@ -1,11 +1,16 @@
 package model.funcionarios.pf.dependentes;
 
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import model.funcionarios.pf.PessoaFisica;
 
 public class Dependentes {
 	private String nomeDependente;
 	private String parentesco;
-	private String dataNascimentoDependente;
+	@Temporal(TemporalType.DATE)
+	private Date dataNascimentoDependente;
 	private boolean IRRF;
 	private boolean salarioFamilia;
 	private PessoaFisica pessoaFisica;
@@ -31,11 +36,11 @@ public class Dependentes {
 		this.parentesco = parentesco;
 	}
 
-	public String getDataNascimentoDependente() {
+	public Date getDataNascimentoDependente() {
 		return dataNascimentoDependente;
 	}
 
-	public void setDataNascimentoDependente(String dataNascimentoDependente) {
+	public void setDataNascimentoDependente(Date dataNascimentoDependente) {
 		this.dataNascimentoDependente = dataNascimentoDependente;
 	}
 
