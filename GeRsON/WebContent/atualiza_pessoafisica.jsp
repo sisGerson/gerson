@@ -156,6 +156,8 @@
 				<h2>Cadastro de Funcionário - Pessoa Física</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
+						<option value="<%=pessoaFisica.isStatus_2() %>">
+						<%=pessoaFisica.isStatus_2() %></option>
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
 					</select>
@@ -240,6 +242,8 @@
 					</tr>
 					<tr>
 						<td>Deficiente físico? <select name="deficienteFisico">
+								<option value="<%=pessoaFisica.isDeficienteFisico() %>">
+								<%=pessoaFisica.isDeficienteFisico() %></option>
 								<option value="False">Não</option>
 								<option value="True">Sim</option>
 						</select>
@@ -247,7 +251,8 @@
 					</tr>
 					<tr>
 						<td>Sinais Particulares: <textarea name="sinaisParticulares"
-								style="overflow: auto; width: 755px; height: 40px;"></textarea>
+								style="overflow: auto; width: 755px; height: 40px;">
+								<%= pessoaFisica.getSinaisParticulares() %></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -279,6 +284,8 @@
 							CTPS: <input type="number" step="1" min="1" max="999999999999999"
 							name="serieCTPS" value="<%= pessoaFisica.getSerieCTPS() %>" size="10" maxlength="15" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * UF CTPS: <select name="UFCTPS">
+								<option value="<%=pessoaFisica.getUFCTPS() %>">
+								<%=pessoaFisica.getUFCTPS() %></option>
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
 								<option value="AP">AP</option>
@@ -340,6 +347,8 @@
 							name="cidadeResidencial" value="<%= pessoaFisica.getCidadeResidencial() %>" size="25" maxlength="50"
 							required /> &nbsp;&nbsp; * Estado Residencial: <select
 							name="UFResidencial">
+								<option value="<%=pessoaFisica.getUFResidencial() %>">
+								<%=pessoaFisica.getUFResidencial() %></option>
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
 								<option value="AP">AP</option>
@@ -421,6 +430,8 @@
 							name="horarioTrabalho" value="<%= pessoaFisica.getHorarioTrabalho() %>" size="20" maxlength="10" required />
 							&nbsp;&nbsp;&nbsp;&nbsp; * Total de Horas Semanais: <select
 							name="totalHoraSemanal">
+								<option value="<%=pessoaFisica.getTotalHoraSemanal() %>">
+								<%=pessoaFisica.getTotalHoraSemanal() %></option>
 								<option value="20">20</option>
 								<option value="30">30</option>
 								<option value="40">40</option>
@@ -437,6 +448,8 @@
 							type="text" name="cidadeFuncional" value="<%= pessoaFisica.getCidadeFuncional() %>" size="25"
 							maxlength="50" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							Estado Funcional: <select name="UFCidadeFuncional">
+								<option value="<%=pessoaFisica.getUFCidadeFuncional() %>">
+								<%=pessoaFisica.getUFCidadeFuncional() %></option>
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
 								<option value="AP">AP</option>

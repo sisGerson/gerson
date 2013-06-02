@@ -103,6 +103,8 @@
 				<h2>Ateração de dados de Empresa</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
+						<option value="<%=pessoaJuridica.isStatus_2() %>">
+						<%=pessoaJuridica.isStatus_2() %></option>
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
 					</select>
@@ -128,7 +130,8 @@
 					<tr>
 						<td>Serviços prestados <br> Descrição: <br> <textarea
 								name="descricaoServico"
-								style="overflow: auto; width: 745px; height: 40px;"></textarea>
+								style="overflow: auto; width: 745px; height: 40px;">
+								<%= pessoaJuridica.getDescricaoServico() %></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -141,6 +144,8 @@
 						<td>* Cidade Comercial: <input type="text"
 							name="cidadeFuncional" value="<%= pessoaJuridica.getCidadeFuncional() %>" size="25" maxlength="50" required />
 							&nbsp;&nbsp; Estado Comercial: <select name="UFCidadeFuncional">
+								<option value="<%=pessoaJuridica.getUFCidadeFuncional() %>">
+								<%=pessoaJuridica.getUFCidadeFuncional() %></option>
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
 								<option value="AP">AP</option>
