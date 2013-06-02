@@ -40,8 +40,9 @@
 
 <!-- Organizando a navegação dos itens de menu -->
 <% 
+//Verificando se há um item de menu para redirecionar o conteúdo da página
+if (request.getParameter("item") != null) {
 int item = Integer.parseInt(request.getParameter("item"));
-
 switch(item)
 
 {case 0://página principal
@@ -77,15 +78,38 @@ break;
 case 6: //Atualiza Pessoa Pessoa Física
 
 break;
+case 7: //Cadastra Pessoa Jurídica
+	%>
+	<%@ include file="cadastro_pessoajuridica.jsp" %>
+	<%
+break;
+case 8: //Cadastra Pessoa Jurídica
+	%>
+	<%@ include file="pesquisa_pessoajuridica.jsp" %>
+	<%
+break;
+case 9: //Resultado Cadastro Pessoa Pessoa Juridica
+	%>
+	<%@ include file="resultado_pessoajuridica.jsp" %>
+	<%
+break;
+case 10: //Atualiza Pessoa Pessoa Juridica
+
+break;
 default:
 %>
 <%@ include file="main.jsp" %>
 <%
 };
+} else {//Se não existir opção de menu ativo abre o centro da página - main básico
+	%>
+	<%@ include file="main.jsp" %>
+	<%
+};
 
 %>
 </div>
-        
+        <!-- Rodapé -->
         <div id="footer">
         <div id="footer-inside">
         <p id="copyright">&copy; 2013 - <a href="index.jsp?item=0">GeRsON</a></p>
