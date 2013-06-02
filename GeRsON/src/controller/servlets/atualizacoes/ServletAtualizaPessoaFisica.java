@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +20,6 @@ import model.funcionarios.pf.PessoaFisica;
  */
 public class ServletAtualizaPessoaFisica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private EntityManager entityManager;
        
     public ServletAtualizaPessoaFisica() {
         super();
@@ -30,8 +28,10 @@ public class ServletAtualizaPessoaFisica extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {		
 		
+		GerenteDAO gerente = new GerenteDAO();
+		
 		int id = Integer.parseInt(request.getParameter("id"));
-		PessoaFisica pessoaFisica = this.entityManager.find(PessoaFisica.class, id);
+		PessoaFisica pessoaFisica = gerente.getIdPessoaFisica(id);
 		
 		pessoaFisica.setArea(request.getParameter("area"));
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
@@ -136,7 +136,6 @@ public class ServletAtualizaPessoaFisica extends HttpServlet {
 		pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
 		
-		GerenteDAO gerente = new GerenteDAO();
 		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
 		
 		request.setAttribute("pessoaFisica", pessoaFisica);

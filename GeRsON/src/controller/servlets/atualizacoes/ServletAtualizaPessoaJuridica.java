@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,6 @@ import dao.cadastros.GerenteDAO;
  */
 public class ServletAtualizaPessoaJuridica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private EntityManager entityManager;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,8 +30,10 @@ public class ServletAtualizaPessoaJuridica extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
+		GerenteDAO gerente = new GerenteDAO();
+		
 		int id = Integer.parseInt(request.getParameter("id"));
-		PessoaJuridica pessoaJuridica = this.entityManager.find(PessoaJuridica.class, id);
+		PessoaJuridica pessoaJuridica = gerente.getIdpessoaJuridica(id);
 		
 		pessoaJuridica.setArea(request.getParameter("area"));
 		pessoaJuridica.setMatricula(request.getParameter("matricula"));
@@ -71,8 +71,7 @@ public class ServletAtualizaPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setResponsavel(request.getParameter("responsavel"));
 		pessoaJuridica.setTelefoneResponsavel(request.getParameter("telefoneResponsavel"));
 		pessoaJuridica.setDescricaoServico(request.getParameter("descricaoServico"));
-		
-		GerenteDAO gerente = new GerenteDAO();
+
 		gerente.cadastrarAlterarPessoaJuridica(pessoaJuridica);
 		
 		request.setAttribute("pessoaJuridica", pessoaJuridica);
