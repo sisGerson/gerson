@@ -253,7 +253,7 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
 		
 		request.setAttribute("pessoaFisica", pessoaFisica);
-		RequestDispatcher dispache = request.getRequestDispatcher("/resultado_pessoafisica.jsp");
+		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=5");
 		dispache.forward(request, response);
 	}
 

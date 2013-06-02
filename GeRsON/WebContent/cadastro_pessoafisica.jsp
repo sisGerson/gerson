@@ -472,10 +472,10 @@
 					</tr>
 				</table>
 	
-	 
+	 <!-- 
 	<h3>Dependentes</h3>
 	<p></p>
-	<!-- tabela dependentes inicio -->			
+	tabela dependentes inicio 			
 	<INPUT type="button" value="Adicionar Dependente" onclick="addRow('Dependentes')" />
  
     <INPUT type="button" value="Retirar Dependente" onclick="deleteRow('Dependentes')" />
