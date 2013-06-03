@@ -1,5 +1,7 @@
 package teste;
 
+import java.text.SimpleDateFormat;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,7 +14,12 @@ public class TesteHibernate {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
 		EntityManager em = factory.createEntityManager();
 		
-		PessoaFisica pessoa = em.find(PessoaFisica.class, 1);
+		PessoaFisica pessoa = em.find(PessoaFisica.class, 7);
+		
+		SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");  
+		String dataFormatada = formatador.format(pessoa.getDataAdmissao());
+		System.out.println(dataFormatada);
+		
 		System.out.println(pessoa.getNome());
 		pessoa.setNome("Mudado");
 		em.getTransaction().begin();
