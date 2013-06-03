@@ -382,7 +382,7 @@
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="" size="20"
 							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Senha:
-							<input type="number" step="1" min="1" max="99999999" name="senha"
+							<input type="password" step="1" min="1" max="99999999" name="senha"
 							value="" size="15" maxlength="8" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Área: <input type="text"
 							name="area" value="" size="40" maxlength="40" required /></td>

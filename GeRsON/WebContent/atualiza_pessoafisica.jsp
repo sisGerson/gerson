@@ -164,10 +164,14 @@
 				<h2>Cadastro de Funcionário - Pessoa Física</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
-						<option value="<%=pessoaFisica.isStatus_2() %>">
-						<%=pessoaFisica.isStatus_2() %></option>
+					<%if(pessoaFisica.isStatus_2()){ %>
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
+					<%} %>
+					<%if(!pessoaFisica.isStatus_2()){ %>
+						<option value="False">Inativo</option>
+						<option value="True">Ativo</option>
+					<%} %>
 					</select>
 				</p>
 				

@@ -39,10 +39,10 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 		dao.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
 		
 		PrintWriter out = response.getWriter();
-		//montando o cabeçalho
+		//montando o cabeï¿½alho
 		out.println("<html><head><meta http-equiv='content-type' content='text/html; charset=iso-8859-1'>" +
 				"<meta http-equiv='content-language' content='pt-br' />" +
-				"<meta name='description' content='GeRsON - Gerência de Recursos On-line' /> " +
+				"<meta name='description' content='GeRsON - GerÃªncia de Recursos On-line' /> " +
 				"<meta name='keywords' content='cadastro de cliente, controle de almoxarifado' /> " +
 				"<link rel='stylesheet' type='text/css' href='css/screen.css'>" +
 				"<title>GeRsON</title>" +
@@ -55,7 +55,7 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 				"<div id='navigation'>" +
 				"</div></div>" +
 				"<div id='main'>"); 
-		out.println("<h3>Resultado da Pesquisa - Funcionário: Pessoa Jurídica </h3>");
+		out.println("<h3>Resultado da Pesquisa - FuncionÃ¡rio: Pessoa JurÃ­dica </h3>");
 		out.println("<table>");
 		out.println("<td>Matricula</td>");
 		out.println("<td>Nome</td>");

@@ -108,10 +108,14 @@
 				<h2>Dados da Empresa escolhida</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
-						<option value="<%=pessoaJuridica.isStatus_2() %>">
-						<%=pessoaJuridica.isStatus_2() %></option>
+					<%if(pessoaJuridica.isStatus_2()){ %>
 						<option value="True">Ativo</option>
 						<option value="False">Inativo</option>
+					<%} %>
+					<%if(!pessoaJuridica.isStatus_2()){ %>
+						<option value="False">Inativo</option>
+						<option value="True">Ativo</option>
+					<%} %>
 					</select>
 				</p>
 				
