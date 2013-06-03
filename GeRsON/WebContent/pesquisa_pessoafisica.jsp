@@ -42,16 +42,11 @@
 			}
 		}
 	</script>
-
+<!-- fim Java Script -->
 	<div id="layout">
 		<div id="main">
-
-
-			<p align="right">
-				<b>Usuário logado: Gerente</b>
-			</p>
 			<form name="pesquisar_pessoafisica" action="ServletBuscaPessoaFisica"
-				method="post">
+				method="post" onsubmit="window.open('','pop_up','width=1000, height=800, resizeable=yes');" target="pop_up">
 				<h2>Pesquisa Pessoa Física</h2>
 				<h3>Dados para pesquisa</h3>
 				<table>
@@ -77,6 +72,7 @@
 				</table>
 
 				<input type="submit" value="Pesquisar">
+				<p>&nbsp;</p>
 			</form>
 		</div>
 	</div>

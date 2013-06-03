@@ -39,7 +39,23 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 		dao.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
 		
 		PrintWriter out = response.getWriter();
-		
+		//montando o cabeçalho
+		out.println("<html><head><meta http-equiv='content-type' content='text/html; charset=iso-8859-1'>" +
+				"<meta http-equiv='content-language' content='pt-br' />" +
+				"<meta name='description' content='GeRsON - Gerência de Recursos On-line' /> " +
+				"<meta name='keywords' content='cadastro de cliente, controle de almoxarifado' /> " +
+				"<link rel='stylesheet' type='text/css' href='css/screen.css'>" +
+				"<title>GeRsON</title>" +
+				"</head>" +
+				"<body>" +
+				"<div id='layout'>" +
+				"<div id='header'>" +
+				"<h1 id='logo'><a href='#' title='#'>GeRs<span>ON</span></a></h1>" +
+				" <hr class='noscreen' />  " +
+				"<div id='navigation'>" +
+				"</div></div>" +
+				"<div id='main'>"); 
+		out.println("<h3>Resultado da Pesquisa - Funcionário: Pessoa Jurídica </h3>");
 		out.println("<table>");
 		out.println("<td>Matricula</td>");
 		out.println("<td>Nome</td>");
@@ -53,7 +69,9 @@ public class ServletBuscaPessoaJuridica extends HttpServlet {
 			out.println("<td><a href='atualiza_pessoajuridica.jsp?id="+dao.getPessoasJuridicas()[i].getId()+"'>Editar</a></td>");
 			out.println("</tr>");
 		}
-		out.println("</table>");
+		out.println("</table>" +
+				"<p>&nbsp;</p><input type='button' value='Fechar Janela' onclick='window.close() ' />" +
+				"</div></body></html>");
 	}
 
 }

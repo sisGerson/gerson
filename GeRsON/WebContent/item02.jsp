@@ -17,11 +17,15 @@
 	<div id="layout">
 		<div id="main">
 <h2>Pessoa Jurídica</h2>
+<p>&nbsp;</p>
 <ul>
-<li>Cadastrar</li>
-<li>Pesquisar/Alterar</li>
+<li><a href="index.jsp?item=7">Cadastrar</a></li>
+<li><a href="index.jsp?item=8">Pesquisar/Alterar</a></li>
 </ul>
-		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>			
 </div>
 </div>
   </body>

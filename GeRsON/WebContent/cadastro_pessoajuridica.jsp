@@ -88,9 +88,6 @@
 	<div id="layout">
 		<div id="main">
 
-			<p align="right">
-				<b>Usuário logado: Gerente</b>
-			</p>
 			<form name="cadastrar_pessoajuridica"
 				action="ServletCadastroPessoaJuridica" method="post">
 				<h2>Cadastro de Funcionário - Pessoa Jurídica</h2>
@@ -106,8 +103,8 @@
 					<tr>
 						<td><br> * Empresa: <input type="text" name="nome"
 							value="" size="65" maxlength="60" required />
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * CNPJ: <input
-							type="text" name="CPF_CNPJ"
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							* CNPJ: <input type="text" name="CPF_CNPJ"
 							onkeypress="return mascaraCNPJ(event,this);return false;"
 							value="" size="30" maxlength="18" required /></td>
 					</tr>
@@ -117,21 +114,21 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Serviços prestados <br> Descrição: <br> <textarea
+						<td>Descrição dos Serviços Prestados: <br> <textarea
 								name="descricaoServico"
 								style="overflow: auto; width: 745px; height: 40px;"></textarea>
 						</td>
 					</tr>
 					<tr>
-						<td>* Endereço Comercial: <input type="text"
+						<td>* Endereço: <input type="text"
 							name="enderecoFuncional" value="" size="101" maxlength="100"
 							required />
 						</td>
 					</tr>
 					<tr>
-						<td>* Cidade Comercial: <input type="text"
+						<td>* Cidade: <input type="text"
 							name="cidadeFuncional" value="" size="25" maxlength="50" required />
-							&nbsp;&nbsp; Estado Comercial: <select name="UFCidadeFuncional">
+							&nbsp;&nbsp; Estado: <select name="UFCidadeFuncional">
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
 								<option value="AP">AP</option>
@@ -159,14 +156,14 @@
 								<option value="SP">SP</option>
 								<option value="SE">SE</option>
 								<option value="TO">TO</option>
-						</select> &nbsp;&nbsp; * CEP Comercial: <input type="text"
+						</select> &nbsp;&nbsp; * CEP: <input type="text"
 							name="CEPFuncional"
 							onkeypress="return mascaraCEP(event,this); return false;"
 							value="" size="15" maxlength="9" required />
 						</td>
 					</tr>
 					<tr>
-						<td>Telefone Comercial: <input type="text"
+						<td>Telefone: <input type="text"
 							onkeypress="return mascaraTelefone(event,this); return false;"
 							name="telefoneComercial" value="" size="15" maxlength="13" />
 						</td>
@@ -186,8 +183,8 @@
 					<tr>
 						<td>* Área: <input type="text" name="area" value="" size="40"
 							maxlength="40" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Salario: <input type="number" step="0.01" min="678.00"
-							max="15000.00" name="salario" value="" size="20" maxlength="8"
+							Valor do Contrato: <input type="number" step="0.01" min="678.00"
+							max="150000.00" name="salario" value="" size="20" maxlength="8"
 							required />
 						</td>
 					</tr>
@@ -216,6 +213,7 @@
 				</table>
 
 				<input type="submit" value="Cadastrar">
+				<p>&nbsp;</p>
 			</form>
 		</div>
 	</div>

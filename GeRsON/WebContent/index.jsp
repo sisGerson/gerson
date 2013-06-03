@@ -9,7 +9,7 @@
     <meta name="description" content="GeRsON - Gerência de Recursos On-line" />
     <meta name="keywords" content="cadastro de cliente, controle de almoxarifado" />
     <link rel="stylesheet" type="text/css" href="css/screen.css">
-    <!-- <link href="css/screen.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+
 
     <title>GeRsON</title>
   </head>
@@ -40,7 +40,7 @@
 
 <!-- Organizando a navegação dos itens de menu -->
 <% 
-//Verificando se há um item de menu para redirecionar o conteúdo da página
+//Verificando se há um item de menu ativo para redirecionar o conteúdo central da página
 if (request.getParameter("item") != null) {
 int item = Integer.parseInt(request.getParameter("item"));
 switch(item)
@@ -83,7 +83,7 @@ case 7: //Cadastra Pessoa Jurídica
 	<%@ include file="cadastro_pessoajuridica.jsp" %>
 	<%
 break;
-case 8: //Cadastra Pessoa Jurídica
+case 8: //Pesquisa Pessoa Jurídica
 	%>
 	<%@ include file="pesquisa_pessoajuridica.jsp" %>
 	<%
@@ -93,8 +93,11 @@ case 9: //Resultado Cadastro Pessoa Pessoa Juridica
 	<%@ include file="resultado_pessoajuridica.jsp" %>
 	<%
 break;
-case 10: //Atualiza Pessoa Pessoa Juridica
+case 10: //Resultado Cadastro Pessoa Pessoa Juridica
 
+	%>
+	<%@ include file="resultado_pessoajuridica.jsp" %>
+	<%
 break;
 default:
 %>

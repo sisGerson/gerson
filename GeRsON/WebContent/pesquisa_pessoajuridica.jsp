@@ -45,12 +45,8 @@
 	<div id="layout">
 		<div id="main">
 
-
-			<p align="right">
-				<b>Usuário logado: Gerente</b>
-			</p>
 			<form name="pesquisar_pessoafisica"
-				action="ServletBuscaPessoaJuridica" method="post">
+				action="ServletBuscaPessoaJuridica" method="post" onsubmit="window.open('','pop_up','width=1000, height=800, resizeable=yes');" target="pop_up">
 				<h2>Pesquisa Pessoa Jurídica</h2>
 				<h3>Dados para pesquisa</h3>
 				<table>
@@ -76,6 +72,8 @@
 				</table>
 
 				<input type="submit" value="Pesquisar">
+				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior</a></h3>
+				<p>&nbsp;</p>
 			</form>
 		</div>
 	</div>

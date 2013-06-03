@@ -16,7 +16,15 @@
 <title>GeRsON</title>
 </head>
 <body>
-	
+    <div id="layout">   
+      <div id="header">
+        <h1 id="logo"><a href="#" title="#">GeRs<span>ON</span></a></h1>
+        <hr class="noscreen" />            
+        <div id="navigation">
+        </div>
+        <hr class="noscreen" />  
+        </div>
+<div id="main">	
 	<jsp:useBean id="dao" class="dao.cadastros.GerenteDAO"></jsp:useBean>
 	<% 
 	int id = Integer.parseInt(request.getParameter("id"));
@@ -495,10 +503,10 @@
 					</tr>
 				</table>
 	
-	
+		<!--
 	<h3>Dependentes</h3>
 	<p></p>
-	<!-- tabela dependentes inicio -->			
+	tabela dependentes inicio		
 	<INPUT type="button" value="Adicionar Dependente" onclick="addRow('Dependentes')" />
  
     <INPUT type="button" value="Retirar Dependente" onclick="deleteRow('Dependentes')" />
@@ -524,12 +532,14 @@
 					</select></TD>
         </TR>
     </TABLE>
-	<!-- tabela dependentes fim -->
+ tabela dependentes fim -->
 	
-				<input type="submit" value="Enviar">
+				<input type="submit" value="Atualizar dados">
+				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outro Funcionário</a></h3>
+				<input type="button" value="Fechar Janela" onclick="window.close()" />
 				<hr>
 			</form>
 		</div>
-	</div>
+	</div></div></div>
 </body>
 </html>

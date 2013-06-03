@@ -16,7 +16,15 @@
 <title>GeRsON</title>
 </head>
 <body>
-
+    <div id="layout">   
+      <div id="header">
+        <h1 id="logo"><a href="#" title="#">GeRs<span>ON</span></a></h1>
+        <hr class="noscreen" />            
+        <div id="navigation">
+        </div>
+        <hr class="noscreen" />  
+        </div>
+<div id="main">
 	<jsp:useBean id="dao" class="dao.cadastros.GerenteDAO"></jsp:useBean>
 	<% 
 	int id = Integer.parseInt(request.getParameter("id"));
@@ -95,12 +103,9 @@
 	<div id="layout">
 		<div id="main">
 
-			<p align="right">
-				<b>Usuário logado: Gerente</b>
-			</p>
 			<form name="atualiza_pessoajuridica"
 				action="ServletAtualizaPessoaJuridica" method="post">
-				<h2>Ateração de dados de Empresa</h2>
+				<h2>Dados da Empresa escolhida</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
 						<option value="<%=pessoaJuridica.isStatus_2() %>">
@@ -229,9 +234,13 @@
 					</tr>
 				</table>
 
-				<input type="submit" value="Atualizar">
+				<input type="submit" value="Atualizar dados">
+				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outra Empresa</a></h3>
+				<input type="button" value="Fechar Janela" onclick="window.close()" />
 			</form>
 		</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -15,7 +15,17 @@
 <title>GeRsON</title>
 </head>
 <body>
-<h1>Dados da Empresa: ${pessoaJuridica.nome} alterados com Sucesso</h1><br>
-<h1><a href=index.jsp>Página Inicial</a></h1>
+    <div id="layout">   
+      <div id="header">
+        <h1 id="logo"><a href="#" title="#">GeRs<span>ON</span></a></h1>
+        <hr class="noscreen" />            
+        <div id="navigation">
+        </div>
+        <hr class="noscreen" />  
+        </div>
+<div id="main">
+<h2>Os dados da Empresa: ${pessoaJuridica.nome} foram alterados com Sucesso</h2><br>
+<input type="button" value="Fechar Janela" onclick="window.close()" />
+</div></div>
 </body>
 </html>

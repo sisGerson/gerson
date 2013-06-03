@@ -15,7 +15,16 @@
 <title>GeRsON</title>
 </head>
 <body>
-<h1>Empresa: ${pessoaJuridica.nome} cadastrada com Sucesso</h1><br>
-<h1><a href=index.jsp>Página Inicial</a></h1>
+<h2>Empresa: ${pessoaJuridica.nome} cadastrada com Sucesso</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="index.jsp?item=7">Cadastrar outro Funcionário - Pessoa Física</a></p>
+<p><a href="index.jsp?item=0">Voltar para Página Inicial</a></p>
+<p>&nbsp;</p>
 </body>
 </html>
