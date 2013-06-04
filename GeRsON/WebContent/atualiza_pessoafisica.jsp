@@ -254,10 +254,17 @@
 					</tr>
 					<tr>
 						<td>Deficiente físico? <select name="deficienteFisico">
-								<option value="<%=pessoaFisica.isDeficienteFisico() %>">
-								<%=pessoaFisica.isDeficienteFisico() %></option>
-								<option value="False">Não</option>
-								<option value="True">Sim</option>
+						
+						<%if(pessoaFisica.isDeficienteFisico()){ %>
+							<option value="True">Sim</option>
+							<option value="False">Não</option>
+						<%} %>
+						
+						<%if(!pessoaFisica.isDeficienteFisico()){ %>
+							<option value="False">Não</option>
+							<option value="True">Sim</option>
+						<%} %>
+						
 						</select>
 						</td>
 					</tr>
@@ -413,7 +420,7 @@
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="<%= pessoaFisica.getMatricula() %>" size="20"
 							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Senha:
-							<input type="number" step="1" min="1" max="99999999" name="senha"
+							<input type="text" name="senha"
 							value="<%= pessoaFisica.getSenha() %>" size="15" maxlength="8" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Área: <input type="text"
 							name="area" value="<%= pessoaFisica.getArea() %>" size="40" maxlength="40" required /></td>
