@@ -1,32 +1,21 @@
-package controller.servlets.pesquisa;
+package controller.logicas;
 
-import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.cadastros.GerenteDAO;
+import controller.interfaces.Logica;
+import dao.PesquisaDAO;
 
-/**
- * Servlet implementation class ServletBuscaPessoaFisica
- */
-public class ServletBuscaPessoaFisica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletBuscaPessoaFisica() {
-        super();
+public class BuscaPessoaFisica implements Logica {
+
+	public BuscaPessoaFisica() {
+        
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	public void executa(HttpServletRequest request, HttpServletResponse response) 
+			throws Exception {
 		String nome, matricula, cargo, area, CPF;
 		
 		nome = request.getParameter("nome").toUpperCase();
@@ -35,7 +24,7 @@ public class ServletBuscaPessoaFisica extends HttpServlet {
 		area = request.getParameter("area").toUpperCase();
 		CPF = request.getParameter("cpf").toUpperCase();
 		
-		GerenteDAO dao = new GerenteDAO();
+		PesquisaDAO dao = new PesquisaDAO();
 		dao.pesquisarPessoaFisica(nome, matricula, cargo, area, CPF);
 		
 		PrintWriter out = response.getWriter();

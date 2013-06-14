@@ -1,34 +1,25 @@
-package controller.servlets.cadastro;
+package controller.logicas;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.funcionarios.pf.PessoaFisica;
-import dao.cadastros.GerenteDAO;
+import controller.interfaces.Logica;
+import dao.CadastroDAO;
 
-/**
- * Servlet implementation class ServletCadastroPessoaFisica
- */
-public class ServletCadastroPessoaFisica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class CadastroPessoaFisica implements Logica {
 
-    public ServletCadastroPessoaFisica() {
-        super();
+    public CadastroPessoaFisica() {
+        
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	public void executa(HttpServletRequest request, HttpServletResponse response) 
+			throws Exception {
 		
 		PessoaFisica pessoaFisica = new PessoaFisica();
 
@@ -249,8 +240,8 @@ public class ServletCadastroPessoaFisica extends HttpServlet {
 		
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
 		
-		GerenteDAO gerente = new GerenteDAO();
-		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
+		CadastroDAO cadastro = new CadastroDAO();
+		cadastro.cadastrarPessoaFisica(pessoaFisica);
 		
 		request.setAttribute("pessoaFisica", pessoaFisica);
 		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=5");

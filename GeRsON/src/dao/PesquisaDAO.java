@@ -1,4 +1,4 @@
-package dao.cadastros;
+package dao;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import model.funcionarios.pf.PessoaFisica;
 import model.funcionarios.pj.PessoaJuridica;
 
-public class GerenteDAO {
+public class PesquisaDAO {
 	private EntityManagerFactory factory;
 	private EntityManager entityManager;
 	private Query query;
@@ -18,13 +18,21 @@ public class GerenteDAO {
 	private PessoaJuridica[] pessoasJuridicas = {};
 	
 
-	public GerenteDAO() {
+	public PesquisaDAO() {
 		//Fazer conexão  com o banco de dados
 		this.factory = Persistence.createEntityManagerFactory("Banco");
 		//Criar entidade para persistir no banco
 		this.entityManager = this.factory.createEntityManager();
 		
 		this.entityManager.getTransaction().begin();
+	}
+	
+	public PessoaFisica[] getPessoasFisicas() {
+		return pessoasFisicas;
+	}
+
+	public PessoaJuridica[] getPessoasJuridicas() {
+		return pessoasJuridicas;
 	}
 	
 	//Recuperar id de pessoaFisica
@@ -37,26 +45,6 @@ public class GerenteDAO {
 	public PessoaJuridica getIdpessoaJuridica(int id){
 		PessoaJuridica pessoaJuridica = this.entityManager.find(PessoaJuridica.class, id);
 		return pessoaJuridica;
-	}
-
-	public PessoaFisica[] getPessoasFisicas() {
-		return pessoasFisicas;
-	}
-
-	public PessoaJuridica[] getPessoasJuridicas() {
-		return pessoasJuridicas;
-	}
-
-	//Método para cadastrar PessoaFisica!
-	public void cadastrarAlterarPessoaFisica(PessoaFisica pessoaFisica) {
-		this.entityManager.persist(pessoaFisica);
-		this.entityManager.getTransaction().commit();
-	}
-	
-	//Método para cadastrar PessoaJuridica!
-	public void cadastrarAlterarPessoaJuridica(PessoaJuridica pessoaJuridica) {
-		this.entityManager.persist(pessoaJuridica);
-		this.entityManager.getTransaction().commit();
 	}
 	
 	//Método para buscar todas as PessoasFisicas
@@ -126,5 +114,17 @@ public class GerenteDAO {
 				adicionarPessoaJuridica(pessoa);
 			}
 		}
+	}
+	
+	//Método para alterar PessoaFisica!
+	public void alterarPessoaFisica(PessoaFisica pessoaFisica) {
+		this.entityManager.persist(pessoaFisica);
+		this.entityManager.getTransaction().commit();
+	}
+	
+	//Método para alterar PessoaJuridica!
+	public void alterarPessoaJuridica(PessoaJuridica pessoaJuridica) {
+		this.entityManager.persist(pessoaJuridica);
+		this.entityManager.getTransaction().commit();
 	}
 }

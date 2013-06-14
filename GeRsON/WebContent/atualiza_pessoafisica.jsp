@@ -25,7 +25,7 @@
         <hr class="noscreen" />  
         </div>
 <div id="main">	
-	<jsp:useBean id="dao" class="dao.cadastros.GerenteDAO"></jsp:useBean>
+	<jsp:useBean id="dao" class="dao.PesquisaDAO"></jsp:useBean>
 	<% 
 	int id = Integer.parseInt(request.getParameter("id"));
 	PessoaFisica pessoaFisica = dao.getIdPessoaFisica(id);
@@ -160,7 +160,7 @@
 		<div id="main">
 
 			<form name="atualiza_pessoafisica"
-				action="ServletAtualizaPessoaFisica" method="post">
+				action="ServletController" method="post">
 				<h2>Cadastro de Funcionário - Pessoa Física</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
@@ -544,7 +544,9 @@
         </TR>
     </TABLE>
  tabela dependentes fim -->
-	
+				
+				<input type="hidden" name="logica" value="AtualizaPessoaFisica"/>
+				
 				<input type="submit" value="Atualizar dados">
 				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outro Funcionário</a></h3>
 				<input type="button" value="Fechar Janela" onclick="window.close()" />

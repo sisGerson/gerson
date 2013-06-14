@@ -46,7 +46,7 @@
 		<div id="main">
 
 			<form name="pesquisar_pessoafisica"
-				action="ServletBuscaPessoaJuridica" method="post" onsubmit="window.open('','pop_up','width=1000, height=800, resizeable=yes');" target="pop_up">
+				action="ServletController" method="post" onsubmit="window.open('','pop_up','width=1000, height=800, resizeable=yes');" target="pop_up">
 				<h2>Pesquisa Pessoa Jurídica</h2>
 				<h3>Dados para pesquisa</h3>
 				<table>
@@ -70,7 +70,9 @@
 						</td>
 					</tr>
 				</table>
-
+				
+				<input type="hidden" name="logica" value="BuscaPessoaJuridica"/>
+				
 				<input type="submit" value="Pesquisar">
 				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior</a></h3>
 				<p>&nbsp;</p>

@@ -89,4 +89,14 @@
     <servlet-name>ServletAtualizaPessoaJuridica</servlet-name>
     <url-pattern>/ServletAtualizaPessoaJuridica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletController</display-name>
+    <servlet-name>ServletController</servlet-name>
+    <servlet-class>controller.servlets.ServletController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletController</servlet-name>
+    <url-pattern>/ServletController</url-pattern>
+  </servlet-mapping>
 </web-app>

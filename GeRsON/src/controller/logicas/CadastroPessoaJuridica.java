@@ -1,39 +1,28 @@
-package controller.servlets.atualizacoes;
+package controller.logicas;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.funcionarios.pj.PessoaJuridica;
-import dao.cadastros.GerenteDAO;
+import controller.interfaces.Logica;
+import dao.CadastroDAO;
 
-/**
- * Servlet implementation class ServletAtualizaPessoaJuridica
- */
-public class ServletAtualizaPessoaJuridica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletAtualizaPessoaJuridica() {
-        super();
-    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+public class CadastroPessoaJuridica implements Logica {
+
+	public CadastroPessoaJuridica() {
 		
-		GerenteDAO gerente = new GerenteDAO();
+	}
+
+	public void executa(HttpServletRequest request,HttpServletResponse response) 
+			throws Exception {
 		
-		int id = Integer.parseInt(request.getParameter("id"));
-		PessoaJuridica pessoaJuridica = gerente.getIdpessoaJuridica(id);
+		PessoaJuridica pessoaJuridica = new PessoaJuridica();
 		
 		pessoaJuridica.setArea(request.getParameter("area"));
 		pessoaJuridica.setMatricula(request.getParameter("matricula"));
@@ -71,11 +60,12 @@ public class ServletAtualizaPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setResponsavel(request.getParameter("responsavel"));
 		pessoaJuridica.setTelefoneResponsavel(request.getParameter("telefoneResponsavel"));
 		pessoaJuridica.setDescricaoServico(request.getParameter("descricaoServico"));
-
-		gerente.cadastrarAlterarPessoaJuridica(pessoaJuridica);
+		
+		CadastroDAO cadastro = new CadastroDAO();
+		cadastro.cadastrarPessoaJuridica(pessoaJuridica);
 		
 		request.setAttribute("pessoaJuridica", pessoaJuridica);
-		RequestDispatcher dispache = request.getRequestDispatcher("/alteracao_pessoajuridica.jsp");
+		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=9");
 		dispache.forward(request, response);
 	}
 

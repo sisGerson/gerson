@@ -1,37 +1,30 @@
-package controller.servlets.atualizacoes;
+package controller.logicas;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.cadastros.GerenteDAO;
-
 import model.funcionarios.pf.PessoaFisica;
+import controller.interfaces.Logica;
+import dao.PesquisaDAO;
 
-/**
- * Servlet implementation class ServletAtualizaPessoaFisica
- */
-public class ServletAtualizaPessoaFisica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class AtualizaPessoaFisica implements Logica {
        
-    public ServletAtualizaPessoaFisica() {
-        super();
+    public AtualizaPessoaFisica() {
+        
     }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {		
+	public void executa(HttpServletRequest request, HttpServletResponse response) 
+			throws Exception {		
 		
-		GerenteDAO gerente = new GerenteDAO();
+		PesquisaDAO pesquisa = new PesquisaDAO();
 		
 		int id = Integer.parseInt(request.getParameter("id"));
-		PessoaFisica pessoaFisica = gerente.getIdPessoaFisica(id);
+		PessoaFisica pessoaFisica = pesquisa.getIdPessoaFisica(id);
 		
 		pessoaFisica.setArea(request.getParameter("area"));
 		pessoaFisica.setMatricula(request.getParameter("matricula"));
@@ -136,7 +129,7 @@ public class ServletAtualizaPessoaFisica extends HttpServlet {
 		pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
 		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
 		
-		gerente.cadastrarAlterarPessoaFisica(pessoaFisica);
+		pesquisa.alterarPessoaFisica(pessoaFisica);
 		
 		request.setAttribute("pessoaFisica", pessoaFisica);
 		RequestDispatcher dispache = request.getRequestDispatcher("/alteracao_pessoafisica.jsp");

@@ -1,35 +1,30 @@
-package controller.servlets.cadastro;
+package controller.logicas;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.funcionarios.pj.PessoaJuridica;
+import controller.interfaces.Logica;
+import dao.PesquisaDAO;
 
-import dao.cadastros.GerenteDAO;
+public class AtualizaPessoaJuridica implements Logica {
+       
+    public AtualizaPessoaJuridica() {
+        
+    }
 
-
-/**
- * Servlet implementation class ServletCadastroPessoaJuridica
- */
-public class ServletCadastroPessoaJuridica extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	public ServletCadastroPessoaJuridica() {
-		super();
-	}
-
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	public void executa(HttpServletRequest request, HttpServletResponse response) 
+			throws Exception {
 		
-		PessoaJuridica pessoaJuridica = new PessoaJuridica();
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		PessoaJuridica pessoaJuridica = pesquisa.getIdpessoaJuridica(id);
 		
 		pessoaJuridica.setArea(request.getParameter("area"));
 		pessoaJuridica.setMatricula(request.getParameter("matricula"));
@@ -68,11 +63,10 @@ public class ServletCadastroPessoaJuridica extends HttpServlet {
 		pessoaJuridica.setTelefoneResponsavel(request.getParameter("telefoneResponsavel"));
 		pessoaJuridica.setDescricaoServico(request.getParameter("descricaoServico"));
 		
-		GerenteDAO gerente = new GerenteDAO();
-		gerente.cadastrarAlterarPessoaJuridica(pessoaJuridica);
+		pesquisa.alterarPessoaJuridica(pessoaJuridica);
 		
 		request.setAttribute("pessoaJuridica", pessoaJuridica);
-		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=9");
+		RequestDispatcher dispache = request.getRequestDispatcher("/alteracao_pessoajuridica.jsp");
 		dispache.forward(request, response);
 	}
 

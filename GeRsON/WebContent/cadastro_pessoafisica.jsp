@@ -145,7 +145,7 @@
 		<div id="main">
 
 			<form name="cadastrar_pessoafisica"
-				action="ServletCadastroPessoaFisica" method="post">
+				action="ServletController" method="post">
 				<h2>Cadastro de Funcionário - Pessoa Física</h2>
 				<p>
 					Status do Funcionário: <select name="status_2">
@@ -504,7 +504,9 @@
         </TR>
     </TABLE>
 	<!-- tabela dependentes fim -->
-	
+				
+				<input type="hidden" name="logica" value="CadastroPessoaFisica"/>
+				
 				<input type="submit" value="Cadastrar">
 				<hr>
 			</form>
