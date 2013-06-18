@@ -4,6 +4,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.business.BusinessController;
 import controller.interfaces.Logica;
 import dao.PesquisaDAO;
 
@@ -23,11 +24,14 @@ public class BuscaPessoaJuridica implements Logica {
 		CNPJ = request.getParameter("cnpj").toUpperCase();
 		responsavel = request.getParameter("responsavel").toUpperCase();
 		
-		PesquisaDAO dao = new PesquisaDAO();
-		dao.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		pesquisa.pesquisarPessoaJuridica(empresa, matricula, area, CNPJ, responsavel);
+		
+		BusinessController business = new BusinessController();
+		business.setPessoasJuridicas(pesquisa);
 		
 		//Passando o objeto dao como parâmetro para a jsp
-		request.getSession().setAttribute("pesquisa", dao);
+		request.getSession().setAttribute("pesquisa", business);
 		
 		RequestDispatcher dispache = request.getRequestDispatcher("/resultado_busca_pessoajuridica.jsp");
 		dispache.forward(request, response);

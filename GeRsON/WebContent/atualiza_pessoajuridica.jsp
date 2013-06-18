@@ -25,10 +25,10 @@
         <hr class="noscreen" />  
         </div>
 <div id="main">
-	<jsp:useBean id="dao" class="dao.PesquisaDAO"></jsp:useBean>
+	<jsp:useBean id="business" class="controller.business.BusinessController"></jsp:useBean>
 	<% 
 	int id = Integer.parseInt(request.getParameter("id"));
-	PessoaJuridica pessoaJuridica = dao.getIdpessoaJuridica(id);
+	PessoaJuridica pessoaJuridica = business.idPessoaJuridica(id);
 	%>
 
 	<!-- Java Script utilizado para validação dos campos do formulário -->

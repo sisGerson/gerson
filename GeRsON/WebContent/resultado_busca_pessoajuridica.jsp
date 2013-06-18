@@ -1,4 +1,4 @@
-<%@page import="dao.PesquisaDAO"%>
+<%@page import="controller.business.BusinessController"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 
 <!-- Pegando o parâmetro da servlet -->
 <%
-PesquisaDAO pesquisa = (PesquisaDAO)session.getAttribute("pesquisa");
+BusinessController business = (BusinessController)session.getAttribute("pesquisa");
 %>
 
 <body>
@@ -41,13 +41,13 @@ PesquisaDAO pesquisa = (PesquisaDAO)session.getAttribute("pesquisa");
 	<td>Responsável</td>
 	</tr>
 	<%
-	for(int i=0;i<pesquisa.getPessoasJuridicas().length;i++){ 
+	for(int i=0;i<business.getPessoasJuridicas().length;i++){ 
 	%>
 		<tr>
-		<td><%=pesquisa.getPessoasJuridicas()[i].getMatricula() %></td>
-		<td><%=pesquisa.getPessoasJuridicas()[i].getNome() %></td>
-		<td><%=pesquisa.getPessoasJuridicas()[i].getResponsavel() %></td>
-		<td><a href="atualiza_pessoajuridica.jsp?id=<%=pesquisa.getPessoasJuridicas()[i].getId() %>">Editar</a></td>
+		<td><%=business.getPessoasJuridicas()[i].getMatricula() %></td>
+		<td><%=business.getPessoasJuridicas()[i].getNome() %></td>
+		<td><%=business.getPessoasJuridicas()[i].getResponsavel() %></td>
+		<td><a href="atualiza_pessoajuridica.jsp?id=<%=business.getPessoasJuridicas()[i].getId() %>">Editar</a></td>
 		</tr>
 	<%} %>
 	</table>
