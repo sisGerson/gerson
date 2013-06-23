@@ -1,15 +1,23 @@
 package controller.business;
 
+import java.util.List;
+
 import dao.PesquisaDAO;
 import model.funcionarios.pf.PessoaFisica;
 import model.funcionarios.pj.PessoaJuridica;
 
 public class BusinessController {
-	PessoaFisica[] pessoasFisicas = {};
-	PessoaJuridica[] pessoasJuridicas = {};
+	private List<PessoaFisica> listaPessoasFisicas;
+	private PessoaFisica[] pessoasFisicas = {};
+	private PessoaJuridica[] pessoasJuridicas = {};
+	private String cargo;
 
 	public BusinessController() {
 
+	}
+
+	public String getCargo() {
+		return cargo;
 	}
 
 	public PessoaFisica[] getPessoasFisicas() {
@@ -39,25 +47,21 @@ public class BusinessController {
 		PesquisaDAO pesquisa = new PesquisaDAO();
 		return pesquisa.getIdpessoaJuridica(id);
 	}
+	
+	//Método para verificar se o login está correto
+	public int verificarLogin(String matricula, String senha) {
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		listaPessoasFisicas = pesquisa.buscarTodasPessoasFisicas();
 
-	// Método para pegar informar o erro matrícula e senha
-	public int MensagemDeErro(int OPCAO) {
-
-		switch (OPCAO) {
-
-		case -1:
-			return -1;
-
-		case -2:
-			return -2;
-		
-		case -3:
-			return -3;
-
-		default:
-			return 0;
-
+		for (PessoaFisica pessoa : listaPessoasFisicas) {
+			if(pessoa.getMatricula().equals(matricula) && pessoa.getSenha().equals(senha)){
+				this.cargo = pessoa.getCargo();
+				return 0;
+			}
+			else if(pessoa.getMatricula().equals(matricula)){
+				return -1;
+			}	
 		}
-
+		return -2;
 	}
 }

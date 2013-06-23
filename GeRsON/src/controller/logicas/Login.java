@@ -17,12 +17,12 @@ public class Login implements Logica {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
-		int matricula = Integer.parseInt(request.getParameter("matricula"));
+		String matricula = request.getParameter("matricula");
 		String senha = request.getParameter("senha");
 		
 		BusinessController business = new BusinessController();
-		 
-		switch (business.MensagemDeErro(OPCAO)) {// colocar aqui a opção Isaac e Pedro
+		
+		switch (business.verificarLogin(matricula, senha)) {
 		case -1:
 			request.setAttribute("Mensagem", "senha incorreta");
 			this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
@@ -33,16 +33,11 @@ public class Login implements Logica {
 			this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
 			this.dispache.forward(request, response);
 			break;
-		case -3:
-			request.setAttribute("Mensagem", "usuário e senha incorretos");
-			this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
-			this.dispache.forward(request, response);
-			break;	
-		default:
+		case 0:
 			if (business.getCargo().toLowerCase().equals("gerente")){
 				this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
 				this.dispache.forward(request, response);
-			}//Alex e Jonatas colocar aqui o retorno do seu método
+			}
 			else {
 				this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
 				this.dispache.forward(request, response);
