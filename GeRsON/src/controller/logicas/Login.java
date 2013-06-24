@@ -24,22 +24,22 @@ public class Login implements Logica {
 		
 		switch (business.verificarLogin(matricula, senha)) {
 		case -1:
-			request.setAttribute("Mensagem", "senha incorreta");
-			this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
+			//request.setAttribute("Mensagem", "senha incorreta");
+			this.dispache = request.getRequestDispatcher("/index.jsp?situacao=0");//Retorna para a p�gina principal como mensagem de erro: senha incorreta
 			this.dispache.forward(request, response);
 			break;
 		case -2:
-			request.setAttribute("Mensagem", "usuário incorreto");
-			this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
+			//request.setAttribute("Mensagem", "usuário incorreto");
+			this.dispache = request.getRequestDispatcher("/index.jsp?situacao=1");//Retorna para a p�gina principal como mensagem de erro: usu�rio incorreto
 			this.dispache.forward(request, response);
 			break;
 		case 0:
 			if (business.getCargo().toLowerCase().equals("gerente")){
-				this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
+				this.dispache = request.getRequestDispatcher("/index.jsp?situacao=2");//Retorna para a p�gina principal com menu ativo para gerente
 				this.dispache.forward(request, response);
 			}
 			else {
-				this.dispache = request.getRequestDispatcher("/index.jsp?item=5");//colocar página de login Keli e Carlos
+				this.dispache = request.getRequestDispatcher("/index.jsp?situacao=3");//Retorna para a p�gina principal com menu ativo para funcionario
 				this.dispache.forward(request, response);
 			} 
 			break;

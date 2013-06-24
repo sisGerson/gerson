@@ -16,6 +16,7 @@
 
 	<div id="layout">
 		<div id="main">
+<!-- Itens associados a pessoa Pessoa fisica -->
 <h2>Pessoa Física</h2>
 <p>&nbsp;</p>
 <ul>

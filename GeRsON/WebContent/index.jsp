@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
 <html>
   <head>
@@ -22,15 +22,58 @@
         <h1 id="logo"><a href="#" title="#">GeRs<span>ON</span></a></h1>
         <hr class="noscreen" />   
           
-              
+        <!-- menu de navegacao ativo após o login -->  
         <div id="navigation">
-        <ul>
-          <li><a href="index.jsp?item=0">Início</a></li>
-          <li><a href="index.jsp?item=1">Pessoa Física</a></li>
-          <li><a href="index.jsp?item=2">Pessoa Jurídica</a></li>
 
-        </ul>
+
+        
+        <% 
+		//Verificando se há um item de menu ativo para redirecionar o conteúdo central da página
+		if (request.getParameter("situacao") != null) {
+			int situacao = Integer.parseInt(request.getParameter("situacao"));
+			switch(situacao) 
+			{case 0:
+				%>
+				<p align="right"><font color="red" size=2 ><b>Senha incorreta! Tente novamente!&nbsp;&nbsp;</b></font></p>
+				<%
+			 break;
+			 case 1:
+				 %>
+					<p align="right"><font color="red" size=2 ><b>Usuário incorreto! Tente novamente!&nbsp;&nbsp;</b></font></p>
+					<%
+			 break;
+			 case 2:
+					%>
+					<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
+					<ul>
+					<li><a href="index.jsp?item=0&situacao=2">Início</a></li>
+					<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
+          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
+          			<li><a href="index.jsp?item=2&situacao=2">Relatórios</a></li><!-- mostra todos os relatorios -->
+          			<li><a href="index.jsp?item=2&situacao=2">Ponto</a></li>
+ 					</ul>
+					<%					
+			 break;
+			 case 3:
+					%>
+					<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
+					<ul>
+					<li><a href="index.jsp?item=0&situacao=3">Início</a></li>
+       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
+       				<!-- mostra apenas relatorios dos funcionários-->
+       				<li><a href="#">Ponto</a></li>
+					</ul>
+					<%						
+			 break;
+
+			};
+			}
+		%>
+		
+ 
         </div>
+        <!-- fim do menu de navegação  -->
+        
         <hr class="noscreen" />  
     
       </div>
@@ -46,7 +89,52 @@ int item = Integer.parseInt(request.getParameter("item"));
 switch(item)
 
 {case 0://página principal
+
+//verificando a situacao para habilitar o login
+if (request.getParameter("situacao") != null ) {
+	int situacao = Integer.parseInt(request.getParameter("situacao"));
+	
+	if (situacao==0 || situacao==1) {
 	%>
+	<!-- Formulário de Login e senha para acesso as opções de menu -->
+	
+		<form name="login"	action="ServletController" method="post">
+		<p align="right">
+			Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
+			<br>
+			Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
+			<br>
+			<input type="hidden" name="logica" value="login"/>
+			
+			<input type="submit" value="Acessar"> 
+		</p>
+		</form>
+	<!-- Fim formulário de login e Senha -->
+	
+	<%
+ }
+ }else{
+	 %>
+		<!-- Formulário de Login e senha para acesso as opções de menu -->
+		
+			<form name="login"	action="ServletController" method="post">
+			<p align="right">
+				Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
+				<br>
+				Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
+				<br>
+				<input type="hidden" name="logica" value="login"/>
+				
+				<input type="submit" value="Acessar"> 
+			</p>
+			</form>
+		<!-- Fim formulário de login e Senha -->
+		
+		<%	 
+ }
+ 
+ %>
+ 
 	<%@ include file="main.jsp" %>
 	<%
 break;
@@ -106,6 +194,19 @@ default:
 };
 } else {//Se não existir opção de menu ativo abre o centro da página - main básico
 	%>
+	<!-- Formulário de Login e senha para acesso as opções de menu -->
+		<form name="login"	action="ServletController" method="post">
+		<p align="right">
+			Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
+			<br>
+			Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
+			<br>
+			<input type="submit" value="Acessar"> 
+		</p>
+		</form>
+	<!-- Fim formulário de login e Senha -->
+
+
 	<%@ include file="main.jsp" %>
 	<%
 };
