@@ -31,8 +31,8 @@
 		//Verificando se há um item de menu ativo para redirecionar o conteúdo central da página
 		if (request.getParameter("situacao") != null) {
 			int situacao = Integer.parseInt(request.getParameter("situacao"));
-			switch(situacao) 
-			{case 0:
+			switch(situacao) {
+			case 0:
 				%>
 				<p align="right"><font color="red" size=2 ><b>Senha incorreta! Tente novamente!&nbsp;&nbsp;</b></font></p>
 				<%
@@ -67,7 +67,7 @@
 			 break;
 
 			};
-			}
+		}
 		%>
 		
  
@@ -88,13 +88,14 @@ if (request.getParameter("item") != null) {
 int item = Integer.parseInt(request.getParameter("item"));
 switch(item)
 
-{case 0://página principal
+{
+case 0://página principal
 
 //verificando a situacao para habilitar o login
-if (request.getParameter("situacao") != null ) {
-	int situacao = Integer.parseInt(request.getParameter("situacao"));
-	
-	if (situacao==0 || situacao==1) {
+	if (request.getParameter("situacao") != null ) {
+		int situacao = Integer.parseInt(request.getParameter("situacao"));
+		
+		if (situacao==0 || situacao==1) {
 	%>
 	<!-- Formulário de Login e senha para acesso as opções de menu -->
 	
@@ -123,7 +124,7 @@ if (request.getParameter("situacao") != null ) {
 				<br>
 				Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
 				<br>
-				<input type="hidden" name="logica" value="login"/>
+				<input type="hidden" name="logica" value="Login"/>
 				
 				<input type="submit" value="Acessar"> 
 			</p>
@@ -201,7 +202,9 @@ default:
 			<br>
 			Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
 			<br>
-			<input type="submit" value="Acessar"> 
+			
+			<input type="hidden" name="logica" value="Login"/>
+			<input type="submit" value="Acessar">
 		</p>
 		</form>
 	<!-- Fim formulário de login e Senha -->
