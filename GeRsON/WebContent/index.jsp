@@ -47,7 +47,8 @@
 			//Situação onde a matrícula e a senha está correta
 			//Cargo Gerente: cria uma seção para o gerente
 			//Mostra o menu do Gerente
-				 	//session.getAttribute("gerente");
+					String gerente = "gerente";
+			       	session.setAttribute("gerente", gerente);
 					%>		
 					<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
 					<ul>
@@ -63,9 +64,8 @@
 			 case 3:
 			 //Situação onde a matrícula e a senha está correta
 			 //Cargo diferente de Gerente: cria uma seção para o funcionário
-			 //Mostra o menu do Gerente
-			 	 	//session.getAttribute("funcionario");
-					%>
+			 //Mostra o menu do Funcionario
+			     	%>
 					<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
 					<ul>
 					<li><a href="index.jsp?item=0&situacao=3">Início</a></li>
@@ -151,12 +151,12 @@ case 0://inicio
 break;
 case 1://Opções Pessoa Física
 	%>
-	<%@ include file="item01.jsp" %>
+	<%@ include file="opcao_pessoafisica.jsp" %>
 	<%
 break;
 case 2: //Opções Pessoa Jurídica
 	%>
-	<%@ include file="item02.jsp" %>
+	<%@ include file="opcao_pessoajuridica.jsp" %>
 	<%
 break;
 case 3: //Cadastrar Pessoa Pessoa Física

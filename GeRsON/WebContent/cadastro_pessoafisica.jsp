@@ -1,9 +1,11 @@
 <% 
+//Busca a sessão aberta
+//Se existir uma sessão e esta sessão for do gerente mostra o conteúdo da página, senão retorna para a página principal
 //String gerente = (String) session.getAttribute("gerente");
 
-//if (//gerente == null ) {
-//	response.sendRedirect("index.jsp?item=0");
-//}
+if (session.getAttribute("gerente") == null ) {
+	response.sendRedirect("index.jsp?item=0");
+}else{
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -522,3 +524,4 @@
 	</div>
 </body>
 </html>
+<% } %>
