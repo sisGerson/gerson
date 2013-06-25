@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/screen.css">
 
 
-    <title>GeRsON</title>
+   <title>GeRsON</title>
   </head>
   <body>
 
@@ -22,28 +22,33 @@
         <h1 id="logo"><a href="#" title="#">GeRs<span>ON</span></a></h1>
         <hr class="noscreen" />   
           
-        <!-- menu de navegacao ativo após o login -->  
+        <!-- Inicio do Menu de Navegação que será ativo após o login -->  
         <div id="navigation">
-
-
-        
+       
         <% 
-		//Verificando se há um item de menu ativo para redirecionar o conteúdo central da página
+		//Verificando se existe um resultado para a pesquisa de matricula e senha 
 		if (request.getParameter("situacao") != null) {
+			//Caso exista um resultado (situação), utiliza-se um case para identificar o tipo de menu ou o tipo de mensagem 
 			int situacao = Integer.parseInt(request.getParameter("situacao"));
 			switch(situacao) {
 			case 0:
+			//Situação onde a senha está incorreta
 				%>
 				<p align="right"><font color="red" size=2 ><b>Senha incorreta! Tente novamente!&nbsp;&nbsp;</b></font></p>
 				<%
 			 break;
 			 case 1:
+			//Situação onde o usuário está incorreto
 				 %>
 					<p align="right"><font color="red" size=2 ><b>Usuário incorreto! Tente novamente!&nbsp;&nbsp;</b></font></p>
 					<%
 			 break;
 			 case 2:
-					%>
+			//Situação onde a matrícula e a senha está correta
+			//Cargo Gerente: cria uma seção para o gerente
+			//Mostra o menu do Gerente
+				 	session.getAttribute("gerente");
+					%>		
 					<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
 					<ul>
 					<li><a href="index.jsp?item=0&situacao=2">Início</a></li>
@@ -51,10 +56,15 @@
           			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
           			<li><a href="index.jsp?item=2&situacao=2">Relatórios</a></li><!-- mostra todos os relatorios -->
           			<li><a href="index.jsp?item=2&situacao=2">Ponto</a></li>
+          			<li><a href="logoff.jsp">Sair</a></li>
  					</ul>
 					<%					
 			 break;
 			 case 3:
+			 //Situação onde a matrícula e a senha está correta
+			 //Cargo diferente de Gerente: cria uma seção para o funcionário
+			 //Mostra o menu do Gerente
+				 	session.getAttribute("funcionario");
 					%>
 					<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
 					<ul>
@@ -62,6 +72,7 @@
        				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
        				<!-- mostra apenas relatorios dos funcionários-->
        				<li><a href="#">Ponto</a></li>
+       				<li><a href="logoff.jsp">Sair</a></li>
 					</ul>
 					<%						
 			 break;
@@ -69,19 +80,17 @@
 			};
 		}
 		%>
-		
- 
         </div>
-        <!-- fim do menu de navegação  -->
         
+        <!-- fim do menu de navegação  -->
         <hr class="noscreen" />  
     
       </div>
       
-
+<!-- Início do bloco central do sistema -->
 <div id="main">
 
-<!-- Organizando a navegação dos itens de menu -->
+<!-- Conteúdo do sistema -->
 <% 
 //Verificando se há um item de menu ativo para redirecionar o conteúdo central da página
 if (request.getParameter("item") != null) {
@@ -89,10 +98,11 @@ int item = Integer.parseInt(request.getParameter("item"));
 switch(item)
 
 {
-case 0://página principal
+case 0://inicio
 
 //verificando a situacao para habilitar o login
 	if (request.getParameter("situacao") != null ) {
+		
 		int situacao = Integer.parseInt(request.getParameter("situacao"));
 		
 		if (situacao==0 || situacao==1) {
@@ -194,36 +204,69 @@ default:
 <%
 };
 } else {//Se não existir opção de menu ativo abre o centro da página - main básico
-	%>
-	<!-- Formulário de Login e senha para acesso as opções de menu -->
-		<form name="login"	action="ServletController" method="post">
-		<p align="right">
-			Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
-			<br>
-			Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
-			<br>
+	//verificando a situacao para habilitar o login
+		if (request.getParameter("situacao") != null ) {
 			
-			<input type="hidden" name="logica" value="Login"/>
-			<input type="submit" value="Acessar">
-		</p>
-		</form>
-	<!-- Fim formulário de login e Senha -->
-
-
+			int situacao = Integer.parseInt(request.getParameter("situacao"));
+			
+			if (situacao==0 || situacao==1) {
+		%>
+		<!-- Formulário de Login e senha para acesso as opções de menu -->
+		
+			<form name="login"	action="ServletController" method="post">
+			<p align="right">
+				Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
+				<br>
+				Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
+				<br>
+				<input type="hidden" name="logica" value="login"/>
+				
+				<input type="submit" value="Acessar"> 
+			</p>
+			</form>
+		<!-- Fim formulário de login e Senha -->
+		
+		<%
+	 }
+	 }else{
+		 %>
+			<!-- Formulário de Login e senha para acesso as opções de menu -->
+			
+				<form name="login"	action="ServletController" method="post">
+				<p align="right">
+					Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
+					<br>
+					Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
+					<br>
+					<input type="hidden" name="logica" value="Login"/>
+					
+					<input type="submit" value="Acessar"> 
+				</p>
+				</form>
+			<!-- Fim formulário de login e Senha -->
+			
+			<%	 
+	 }
+	 
+	 %>
 	<%@ include file="main.jsp" %>
 	<%
 };
 
 %>
 </div>
-        <!-- Rodapé -->
+<!-- Final da Divisão do bloco central do sistema -->
+
+<!--Início da divisão referente ao Rodapé -->
         <div id="footer">
         <div id="footer-inside">
         <p id="copyright">&copy; 2013 - <a href="index.jsp?item=0">GeRsON</a></p>
         
                <p >Equipe de Trabalho  | GPP/MDS</p>
         
-        </div><div style="clear: both;"></div></div>
+        </div><div style="clear: both;"></div>
+        </div>
+ <!-- Final da Divisão referente ao Rodapé -->
         </div>
   </body>
 </html>
