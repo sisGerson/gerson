@@ -10,6 +10,7 @@ import model.funcionarios.pf.PessoaFisica;
 
 public class TesteHibernate {
 	
+//testar se hibernate esta mandando pro banco 
 	public static void main(String[] args) {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Banco");
 		EntityManager em = factory.createEntityManager();

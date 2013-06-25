@@ -7,6 +7,7 @@ public class Testes {
 	public Testes() {
 	}
 
+	//classe pra testar se tudo esta funcionando --> Epoca do RUP
 	public static void main(String[] args) {
 		PessoaFisica pessoaFisica = new PessoaFisica();
 
