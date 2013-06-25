@@ -65,7 +65,7 @@ public class CadastroPessoaJuridica implements Logica {
 		cadastro.cadastrarPessoaJuridica(pessoaJuridica);
 		
 		request.setAttribute("pessoaJuridica", pessoaJuridica);
-		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=9");
+		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=9&situacao=2");
 		dispache.forward(request, response);
 	}
 

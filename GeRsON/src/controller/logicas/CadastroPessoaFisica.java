@@ -244,7 +244,7 @@ public class CadastroPessoaFisica implements Logica {
 		cadastro.cadastrarPessoaFisica(pessoaFisica);
 		
 		request.setAttribute("pessoaFisica", pessoaFisica);
-		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=5");
+		RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=5&situacao=2");
 		dispache.forward(request, response);
 	}
 

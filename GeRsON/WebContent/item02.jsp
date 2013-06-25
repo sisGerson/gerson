@@ -19,8 +19,8 @@
 <h2>Pessoa Jurídica</h2>
 <p>&nbsp;</p>
 <ul>
-<li><a href="index.jsp?item=7">Cadastrar</a></li>
-<li><a href="index.jsp?item=8">Pesquisar/Alterar</a></li>
+<li><a href="index.jsp?item=7&situacao=2">Cadastrar</a></li>
+<li><a href="index.jsp?item=8&situacao=2">Pesquisar/Alterar</a></li>
 </ul>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

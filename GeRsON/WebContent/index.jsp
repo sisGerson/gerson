@@ -47,15 +47,15 @@
 			//Situação onde a matrícula e a senha está correta
 			//Cargo Gerente: cria uma seção para o gerente
 			//Mostra o menu do Gerente
-				 	session.getAttribute("gerente");
+				 	//session.getAttribute("gerente");
 					%>		
 					<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
 					<ul>
 					<li><a href="index.jsp?item=0&situacao=2">Início</a></li>
 					<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
           			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
-          			<li><a href="index.jsp?item=2&situacao=2">Relatórios</a></li><!-- mostra todos os relatorios -->
-          			<li><a href="index.jsp?item=2&situacao=2">Ponto</a></li>
+          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
+          			<li><a href="#">Ponto</a></li>
           			<li><a href="logoff.jsp">Sair</a></li>
  					</ul>
 					<%					
@@ -64,7 +64,7 @@
 			 //Situação onde a matrícula e a senha está correta
 			 //Cargo diferente de Gerente: cria uma seção para o funcionário
 			 //Mostra o menu do Gerente
-				 	session.getAttribute("funcionario");
+			 	 	//session.getAttribute("funcionario");
 					%>
 					<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
 					<ul>
@@ -204,7 +204,7 @@ default:
 <%
 };
 } else {//Se não existir opção de menu ativo abre o centro da página - main básico
-	//verificando a situacao para habilitar o login
+	//verificando a situacao para habilitar o formulario de login
 		if (request.getParameter("situacao") != null ) {
 			
 			int situacao = Integer.parseInt(request.getParameter("situacao"));

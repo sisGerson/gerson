@@ -1,3 +1,11 @@
+<% 
+//String gerente = (String) session.getAttribute("gerente");
+
+//if (gerente == null ) {
+	//response.sendRedirect("index.jsp?item=0");
+//}
+%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
