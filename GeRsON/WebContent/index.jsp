@@ -103,43 +103,16 @@ case 0://inicio
 //verificando a situacao para habilitar o login
 	if (request.getParameter("situacao") != null ) {
 		
-		int situacao = Integer.parseInt(request.getParameter("situacao"));
-		
+		int situacao = Integer.parseInt(request.getParameter("situacao"));		
 		if (situacao==0 || situacao==1) {
 	%>
-	<!-- Formulário de Login e senha para acesso as opções de menu -->
-	
-		<form name="login"	action="ServletController" method="post">
-		<p align="right">
-			Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
-			<br>
-			Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
-			<br>
-			<input type="hidden" name="logica" value="login"/>
-			
-			<input type="submit" value="Acessar"> 
-		</p>
-		</form>
-	<!-- Fim formulário de login e Senha -->
+<%@ include file="login.jsp" %>
 	
 	<%
  }
  }else{
 	 %>
-		<!-- Formulário de Login e senha para acesso as opções de menu -->
-		
-			<form name="login"	action="ServletController" method="post">
-			<p align="right">
-				Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
-				<br>
-				Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
-				<br>
-				<input type="hidden" name="logica" value="Login"/>
-				
-				<input type="submit" value="Acessar"> 
-			</p>
-			</form>
-		<!-- Fim formulário de login e Senha -->
+<%@ include file="login.jsp" %>
 		
 		<%	 
  }
@@ -211,39 +184,14 @@ default:
 			
 			if (situacao==0 || situacao==1) {
 		%>
-		<!-- Formulário de Login e senha para acesso as opções de menu -->
 		
-			<form name="login"	action="ServletController" method="post">
-			<p align="right">
-				Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
-				<br>
-				Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
-				<br>
-				<input type="hidden" name="logica" value="login"/>
-				
-				<input type="submit" value="Acessar"> 
-			</p>
-			</form>
-		<!-- Fim formulário de login e Senha -->
+<%@ include file="login.jsp" %>
 		
 		<%
 	 }
 	 }else{
 		 %>
-			<!-- Formulário de Login e senha para acesso as opções de menu -->
-			
-				<form name="login"	action="ServletController" method="post">
-				<p align="right">
-					Matrícula: <input type="number" step="1" min="1" max="99999999" name="matricula" value="" size="20"	maxlength="8" required />
-					<br>
-					Senha: <input type="password" step="1" min="1" max="99999999" name="senha"	value="" size="12" maxlength="8" required />
-					<br>
-					<input type="hidden" name="logica" value="Login"/>
-					
-					<input type="submit" value="Acessar"> 
-				</p>
-				</form>
-			<!-- Fim formulário de login e Senha -->
+<%@ include file="login.jsp" %>
 			
 			<%	 
 	 }
