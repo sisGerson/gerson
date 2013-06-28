@@ -23,14 +23,12 @@
 </head>
 <body>
 
-
 	<div id="layout">
 		<div id="main">
 
-			<form name="cadastrar_pessoafisica"
+			<form name="cadastrar_ponto"
 				action="ServletController" method="post">
 				<h2>Folha de Ponto - <%=pessoaFisica.getNome() %> </h2>
-
 				
 				<table>
 					<tr>
