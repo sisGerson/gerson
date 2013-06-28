@@ -416,8 +416,13 @@
 							max="25000.00" name="salario" value="" size="20" maxlength="8"
 							required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Cargo: <input type="text" name="cargo" value="" size="40"
-							maxlength="40" required />
+							Cargo: <select name="cargo">
+							<option value="Atendente">Atendente</option>
+							<option value="Analista Administrativo">Analista Administrativo</option>
+							<option value="Analista Financeiro">Analista Financeiro</option>
+							<option value="Designer Gráfico">Designer Gráfico</option>
+							<option value="Gerente">Gerente</option>
+							</select>
 						</td>
 					</tr>
 					<tr>

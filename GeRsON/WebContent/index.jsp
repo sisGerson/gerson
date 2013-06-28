@@ -69,7 +69,7 @@
 						<li><a href="index.jsp?situacao=2">Início</a></li>
 	       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
 	       				<!-- mostra apenas relatorios dos funcionários-->
-	       				<li><a href="#">Ponto</a></li>
+	       				<li><a href="index.jsp?item=10&situacao=2">Ponto</a></li>
 	       				<li><a href="logoff.jsp">Sair</a></li>
 						</ul>
 						<%
@@ -167,7 +167,13 @@ break;
 case 10: //Resultado Cadastro Pessoa Pessoa Juridica
 
 	%>
-	<%@ include file="resultado_pessoajuridica.jsp" %>
+	<%@ include file="opcao_ponto.jsp" %>
+	<%
+break;
+case 11: //Bater Ponto
+
+	%>
+	<%@ include file="cadastro_ponto.jsp" %>
 	<%
 break;
 default:
