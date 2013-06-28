@@ -4,8 +4,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.funcionarios.pf.PessoaFisica;
+
 import controller.business.BusinessController;
 import controller.interfaces.Logica;
+import dao.LoginDAO;
 
 public class Login implements Logica {
 
@@ -32,6 +35,10 @@ public class Login implements Logica {
 			this.dispache.forward(request, response);
 			break;
 		case 0:
+			LoginDAO login = new LoginDAO();
+			PessoaFisica pessoaFisica = login.pesquisaFuncionario(matricula, senha);
+			request.getSession().setAttribute("pessoaFisica", pessoaFisica);
+			
 			if (business.getCargo().toLowerCase().equals("gerente")){
 				this.dispache = request.getRequestDispatcher("/index.jsp?situacao=2");//Retorna para a p�gina principal com menu ativo para gerente
 				this.dispache.forward(request, response);

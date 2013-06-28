@@ -1,6 +1,6 @@
 package teste;
 
-import model.funcionarios.pf.*;
+import model.funcionarios.pf.PessoaFisica;
 
 public class Testes {
 
