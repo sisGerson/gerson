@@ -48,6 +48,8 @@
 			//Situação onde a matrícula e a senha está correta
 			//Cargo Gerente: cria uma seção para o gerente
 			//Mostra o menu do Gerente
+				if(session.getAttribute("funcionario") != null) {
+				
 					PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
 					if(pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
 					%>		
@@ -74,8 +76,9 @@
 						</ul>
 						<%
 					}
-			 break;
-			
+			 		break;
+		
+				}
 			};
 		}
 		%>

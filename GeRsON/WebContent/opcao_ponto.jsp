@@ -9,6 +9,7 @@
 		response.sendRedirect("index.jsp?item=0");
 	else {
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
+	}
 %>
 
 <head>
@@ -39,7 +40,4 @@
 		</div>
 	</div>
 </body>
-<%
-	}
-%>
 </html>
