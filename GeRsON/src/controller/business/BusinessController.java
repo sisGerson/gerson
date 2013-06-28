@@ -10,14 +10,9 @@ public class BusinessController {
 	private List<PessoaFisica> listaPessoasFisicas;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
-	private String cargo;
 
 	public BusinessController() {
 
-	}
-
-	public String getCargo() {
-		return cargo;
 	}
 
 	public PessoaFisica[] getPessoasFisicas() {
@@ -55,7 +50,6 @@ public class BusinessController {
 
 		for (PessoaFisica pessoa : listaPessoasFisicas) {
 			if(pessoa.getMatricula().equals(matricula) && pessoa.getSenha().equals(senha)){
-				this.cargo = pessoa.getCargo();
 				return 0;
 			}
 			else if(pessoa.getMatricula().equals(matricula)){

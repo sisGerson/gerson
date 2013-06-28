@@ -1,3 +1,4 @@
+<%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -47,36 +48,34 @@
 			//Situação onde a matrícula e a senha está correta
 			//Cargo Gerente: cria uma seção para o gerente
 			//Mostra o menu do Gerente
-					String gerente = "gerente";
-			       	session.setAttribute("gerente", gerente);
+					PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
+					if(pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
 					%>		
-					<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
-					<ul>
-					<li><a href="index.jsp?item=0&situacao=2">Início</a></li>
-					<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
-          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
-          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
-          			<li><a href="#">Ponto</a></li>
-          			<li><a href="logoff.jsp">Sair</a></li>
- 					</ul>
-					<%					
+						<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
+						<ul>
+						<li><a href="index.jsp?situacao=2">Início</a></li>
+						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
+	          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
+	          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
+	          			<li><a href="#">Ponto</a></li>
+	          			<li><a href="logoff.jsp">Sair</a></li>
+	 					</ul>
+					<%
+					}
+					else{
+						%>
+						<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
+						<ul>
+						<li><a href="index.jsp?situacao=2">Início</a></li>
+	       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
+	       				<!-- mostra apenas relatorios dos funcionários-->
+	       				<li><a href="#">Ponto</a></li>
+	       				<li><a href="logoff.jsp">Sair</a></li>
+						</ul>
+						<%
+					}
 			 break;
-			 case 3:
-			 //Situação onde a matrícula e a senha está correta
-			 //Cargo diferente de Gerente: cria uma seção para o funcionário
-			 //Mostra o menu do Funcionario
-			     	%>
-					<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
-					<ul>
-					<li><a href="index.jsp?item=0&situacao=3">Início</a></li>
-       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
-       				<!-- mostra apenas relatorios dos funcionários-->
-       				<li><a href="#">Ponto</a></li>
-       				<li><a href="logoff.jsp">Sair</a></li>
-					</ul>
-					<%						
-			 break;
-
+			
 			};
 		}
 		%>

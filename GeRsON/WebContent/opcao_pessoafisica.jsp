@@ -1,8 +1,22 @@
+<%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
 <html>
+	<%
+	if(session.getAttribute("funcionario") == null)
+		response.sendRedirect("index.jsp?item=0");
+	else{
+		
+	
+		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
+		
+		if(!pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
+			response.sendRedirect("index.jsp?situacao=2");
+		}
+	}
+	%>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
     <meta http-equiv="content-language" content="pt-br" />

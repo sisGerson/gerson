@@ -1,19 +1,22 @@
-<% 
-//Busca a sessão aberta
-//Se existir uma sessão e esta sessão for do gerente mostra o conteúdo da página, senão retorna para a página principal
-//String gerente = (String) session.getAttribute("gerente");
-
-if (session.getAttribute("gerente") == null ) {
-	response.sendRedirect("index.jsp?item=0");
-}else{
-%>
-
-
+<%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 
 <html>
+	<%
+	if(session.getAttribute("funcionario") == null)
+		response.sendRedirect("index.jsp?item=0");
+	else{
+		
+	
+		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
+		
+		if(!pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
+			response.sendRedirect("index.jsp?situacao=2");
+		}
+	}
+	%>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="pt-br" />
@@ -91,4 +94,3 @@ if (session.getAttribute("gerente") == null ) {
 	</div>
 </body>
 </html>
-<% } %>

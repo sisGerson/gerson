@@ -58,6 +58,7 @@ public class PessoaFisica extends Funcionario {
 	protected String cidadeResidencial;
 	protected String UFResidencial;
 	protected String CEPResidencial;
+	protected Ponto[] pontos={};
 	protected Dependentes[] dependentes = {};
 
 	public PessoaFisica() {
@@ -382,6 +383,10 @@ public class PessoaFisica extends Funcionario {
 
 	public void setCEPResidencial(String cEPResidencial) {
 		CEPResidencial = cEPResidencial;
+	}
+	
+	public Ponto[] getPontos() {
+		return pontos;
 	}
 
 	public Dependentes[] getDependentes() {

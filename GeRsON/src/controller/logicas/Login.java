@@ -37,16 +37,10 @@ public class Login implements Logica {
 		case 0:
 			LoginDAO login = new LoginDAO();
 			PessoaFisica pessoaFisica = login.pesquisaFuncionario(matricula, senha);
-			request.getSession().setAttribute("pessoaFisica", pessoaFisica);
-			
-			if (business.getCargo().toLowerCase().equals("gerente")){
-				this.dispache = request.getRequestDispatcher("/index.jsp?situacao=2");//Retorna para a p�gina principal com menu ativo para gerente
-				this.dispache.forward(request, response);
-			}
-			else {
-				this.dispache = request.getRequestDispatcher("/index.jsp?situacao=3");//Retorna para a p�gina principal com menu ativo para funcionario
-				this.dispache.forward(request, response);
-			} 
+			request.getSession().setAttribute("funcionario", pessoaFisica);
+						
+			this.dispache = request.getRequestDispatcher("/index.jsp?situacao=2");//Retorna para a p�gina principal com menu ativo para o funcionario
+			this.dispache.forward(request, response);
 			break;
 		}
 	}
