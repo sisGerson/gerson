@@ -179,6 +179,12 @@ case 11: //Bater Ponto
 	<%@ include file="cadastro_ponto.jsp" %>
 	<%
 break;
+case 12: //Solicitar Folha de Ponto
+
+	%>
+	<%@ include file="solicitar_folha_ponto.jsp" %>
+	<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>

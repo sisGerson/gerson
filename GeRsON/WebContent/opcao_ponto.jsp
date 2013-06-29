@@ -31,7 +31,7 @@
 			<p>&nbsp;</p>
 			<ul>
 				<li><a href="index.jsp?item=11&situacao=2">Bater Ponto</a></li>
-				<li><a href="#">Solicitar Ponto</a></li>
+				<li><a href="index.jsp?item=12&situacao=2">Solicitar Folha de Ponto</a></li>
 			</ul>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
