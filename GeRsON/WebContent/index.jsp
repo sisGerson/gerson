@@ -53,7 +53,7 @@
 					PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
 					if(pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
 					%>		
-						<p align="right"><font color="white">Perfil: Gerente &nbsp;&nbsp;</font></p>
+						<p align="right"><font color="red"> <b> | </b></font> <font color="white"> <b> <%=pessoaFisica.getNome() %> </b> </font><font color="grey"> - <%=pessoaFisica.getCargo() %>&nbsp;&nbsp; </font> </p>
 						<ul>
 						<li><a href="index.jsp?situacao=2">Início</a></li>
 						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
@@ -66,7 +66,7 @@
 					}
 					else{
 						%>
-						<p align="right"><font color="white">Perfil: Funcionário &nbsp;&nbsp;</font></p>
+						<p align="right"><font color="red"><b> | </b></font><font color="white"><b> <%=pessoaFisica.getNome() %> </b> - </font> <font color="grey"> <%=pessoaFisica.getCargo() %>&nbsp;&nbsp;</font></p>
 						<ul>
 						<li><a href="index.jsp?situacao=2">Início</a></li>
 	       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
@@ -76,9 +76,9 @@
 						</ul>
 						<%
 					}
-			 		break;
-		
+			 		
 				}
+			break;
 			};
 		}
 		%>
@@ -222,11 +222,61 @@ default:
 <!--Início da divisão referente ao Rodapé -->
         <div id="footer">
         <div id="footer-inside">
-        <p id="copyright">&copy; 2013 - <a href="index.jsp?item=0">GeRsON</a></p>
+        <p id="copyright">&copy; 2013 - <a href="index.jsp?item=0">GeRsON</a>
+        </p>
         
                <p >Equipe de Trabalho  | GPP/MDS</p>
+              <p align="center">
+<%
+						//Mostrando a data atual 
+						int dia = Integer.parseInt((new SimpleDateFormat("dd")).format(new Date()));
+				        int mes = Integer.parseInt((new SimpleDateFormat("M")).format(new Date()));
+				        int ano = Integer.parseInt((new SimpleDateFormat("yyyy")).format(new Date()));
+				        switch (mes) {
+				        case 1:
+				        	out.println(dia + " de Janeiro de " + ano);
+				        break;
+				        case 2:
+				        	out.println(dia + " de Fevereiro de " + ano);
+				        break;
+				        case 3:
+					        out.println(dia + " de Março de " + ano);
+					    break;
+				        case 4:
+					        out.println(dia + " de Abril de " + ano);
+					    break;
+				        case 5:
+					        out.println(dia + " de Maio de " + ano);
+					    break;
+				        case 6:
+					        out.println(dia + " de Junho de " + ano);
+					    break;
+				        case 7:
+					        out.println(dia + " de Julho de " + ano);
+					    break;
+				        case 8:
+					        out.println(dia + " de Agosto de " + ano);
+					    break;
+				        case 9:
+					        out.println(dia + " de Setembro de " + ano);
+					    break;
+				        case 10:
+					        out.println(dia + " de Outubro de " + ano);
+					    break;
+				        case 11:
+					        out.println(dia + " de Novembro de " + ano);
+					    break;
+				        case 12:
+					        out.println(dia + " de Dezembro de " + ano);
+					    break;					    
+				        }
+	
+    %>
+			</p>
         
-        </div><div style="clear: both;"></div>
+        </div>
+        <div style="clear: both;"> 
+        </div>
         </div>
  <!-- Final da Divisão referente ao Rodapé -->
         </div>
