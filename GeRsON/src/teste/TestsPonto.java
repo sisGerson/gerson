@@ -41,45 +41,9 @@ public class TestsPonto {
 	}
 	
 	@Test
-	//Teste para verificar se existe o link para a página de ponto para gerente
-	public void testPontoGerente() throws IOException, SAXException {
-		this.wc = new WebConversation();
-		
-		this.resp = this.wc.getResponse(this.urlPrincipal+"login.jsp");
-		
-		this.formulario = this.resp.getForms()[0];
-		
-		this.formulario.setParameter("matricula", "123");
-		this.formulario.setParameter("senha", "123");
-		this.formulario.submit();
-		
-		this.resp = this.wc.getCurrentPage();
-		
-		this.link = this.resp.getLinks()[3];
-		this.link.click();
-		
-		this.resp = this.wc.getCurrentPage();
-		
-		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getText(), "Bater Ponto");
-	}
-	
-	@Test
 	//Teste para verificar se existe o formulário bater ponto para funcionário
 	public void testFormPontoFuncionario() throws IOException, SAXException {
 		testPontoFuncionario();
-		
-		this.link.click();
-		this.resp = this.wc.getCurrentPage();
-		
-		this.formulario = this.resp.getForms()[0];
-		assertEquals(this.formulario.getName(), "cadastrar_ponto");
-	}
-	
-	@Test
-	//Teste para verificar se existe o formulário bater ponto para gerente
-	public void testFormPontoGerente() throws IOException, SAXException {
-		testPontoGerente();
 		
 		this.link.click();
 		this.resp = this.wc.getCurrentPage();

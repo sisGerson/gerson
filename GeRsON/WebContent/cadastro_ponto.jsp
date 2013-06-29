@@ -10,7 +10,8 @@
 <%
 	if(session.getAttribute("funcionario") == null)
 		response.sendRedirect("index.jsp?item=0");
-	else{
+	
+	else {
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
 	%>
 

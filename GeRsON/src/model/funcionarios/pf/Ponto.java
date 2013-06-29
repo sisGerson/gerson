@@ -15,8 +15,8 @@ public class Ponto {
 	private Date data;
 	@Temporal(TemporalType.TIME)
 	private Date hora;
-	private PessoaFisica pessoaFisica;
 	private String opcao;
+	private PessoaFisica pessoaFisica;
 	
 	public Ponto() {
 		
