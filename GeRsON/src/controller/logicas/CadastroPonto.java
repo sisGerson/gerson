@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.funcionarios.pf.Ponto;
 
 import controller.interfaces.Logica;
+import dao.CadastroDAO;
 
 public class CadastroPonto implements Logica{
 
@@ -25,6 +26,9 @@ public class CadastroPonto implements Logica{
 		ponto.setHora(calendario.getTime());
 		
 		ponto.setOpcao(request.getParameter("opcao"));
+		
+		CadastroDAO cadastro = new CadastroDAO();
+		cadastro.cadastrarPonto(ponto);
 	}
 	
 	

@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import model.funcionarios.pf.PessoaFisica;
+import model.funcionarios.pf.Ponto;
 import model.funcionarios.pj.PessoaJuridica;
 
 public class CadastroDAO {
@@ -31,4 +32,10 @@ public class CadastroDAO {
 		this.entityManager.persist(pessoaJuridica);
 		this.entityManager.getTransaction().commit();
 	}
+
+	public void cadastrarPonto(Ponto ponto) {
+		this.entityManager.persist(ponto);
+		this.entityManager.getTransaction().commit();		
+	}
+	
 }

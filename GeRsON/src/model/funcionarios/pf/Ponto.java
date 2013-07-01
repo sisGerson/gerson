@@ -2,24 +2,24 @@ package model.funcionarios.pf;
 
 import java.util.Date;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-public class Ponto {
-	@Id
-	@GeneratedValue
-	private int id;
+import model.funcionarios.Funcionario;
+
+@Entity
+@PrimaryKeyJoinColumn (name = "id")
+public class Ponto extends Funcionario {
 	@Temporal(TemporalType.DATE)
 	private Date data;
 	@Temporal(TemporalType.TIME)
 	private Date hora;
 	private String opcao;
-	private PessoaFisica pessoaFisica;
 	
 	public Ponto() {
-		
+		super();
 	}
 
 	public Date getData() {
@@ -44,14 +44,6 @@ public class Ponto {
 
 	public void setOpcao(String opcao) {
 		this.opcao = opcao;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public PessoaFisica getPessoaFisica() {
-		return pessoaFisica;
 	}
 		
 }
