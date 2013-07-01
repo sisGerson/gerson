@@ -33,7 +33,7 @@
 				<table>
 					<tr>
 						<td> Ano de Referência: 
-						   <select name="referência">
+						   <select name="referencia">
 								
 								<option value="2013">2013</option>
 							</select> 
