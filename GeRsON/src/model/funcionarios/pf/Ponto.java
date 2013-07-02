@@ -5,26 +5,23 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 
 @Entity
-@PrimaryKeyJoinColumn (name = "id")
 public class Ponto {
 	@Id
 	@GeneratedValue
-	protected int id;
+	protected int idPonto;
 	@Temporal(TemporalType.DATE)
 	private Date data;
 	@Temporal(TemporalType.TIME)
 	private Date hora;
 	private String opcao;
-	private int idpf;
+	private int idFuncionario;
 	
 	public Ponto() {
-		//super();
 	}
 
 	public Date getData() {
@@ -51,16 +48,16 @@ public class Ponto {
 		this.opcao = opcao;
 	}
 	
-	public int getId() {
-		return id;
+	public int getIdPonto() {
+		return idPonto;
 	}
 
-	public int getIdpf() {
-		return idpf;
+	public int getIdFuncionario() {
+		return idFuncionario;
 	}
 
-	public void setIdpf(int idpf) {
-		this.idpf = idpf;
+	public void setIdFuncionario(int idFuncionario) {
+		this.idFuncionario = idFuncionario;
 	}
 	
 		
