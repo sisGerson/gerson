@@ -118,7 +118,6 @@ function showFilled(Value)
 					</tr>
 
 				</table>
-				
 				<input type="hidden" name="logica" value="CadastroPonto"/>
 				<input type="submit" value="Bater Ponto" />
 				<hr>

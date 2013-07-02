@@ -32,7 +32,8 @@ public class CadastroDAO {
 		this.entityManager.persist(pessoaJuridica);
 		this.entityManager.getTransaction().commit();
 	}
-
+	
+	//Método para cadastrar Ponto de Pessoa Fisica!
 	public void cadastrarPonto(Ponto ponto) {
 		this.entityManager.persist(ponto);
 		this.entityManager.getTransaction().commit();		
