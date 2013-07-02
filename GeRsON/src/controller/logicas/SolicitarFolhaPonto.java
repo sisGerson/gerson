@@ -1,10 +1,12 @@
 package controller.logicas;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.funcionarios.pf.PessoaFisica;
 
+import controller.business.BusinessController;
 import controller.interfaces.Logica;
 import dao.PesquisaDAO;
 
@@ -25,6 +27,13 @@ public class SolicitarFolhaPonto implements Logica{
 		
 		pesquisa.solicitarFolhaPonto(ano, mes, pessoaFisica.getId());
 		
+		BusinessController business = new BusinessController();
+		
+		business.setPontos(pesquisa);
+		
+		request.getSession().setAttribute("pesquisa", business);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/resultado_pontos.jsp");
+		dispatcher.forward(request, response);
 	}
 	
 }

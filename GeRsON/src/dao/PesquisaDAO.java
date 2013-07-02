@@ -17,6 +17,7 @@ public class PesquisaDAO {
 	private Query query;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
+	private Ponto[] pontos = {};
 	
 
 	public PesquisaDAO() {
@@ -28,6 +29,10 @@ public class PesquisaDAO {
 		this.entityManager.getTransaction().begin();
 	}
 	
+	public Ponto[] getPontos() {
+		return pontos;
+	}
+
 	public PessoaFisica[] getPessoasFisicas() {
 		return pessoasFisicas;
 	}
@@ -135,6 +140,18 @@ public class PesquisaDAO {
 		return this.query.getResultList();
 	}
 	
+	//Método adicionar ponto
+	private void adicionarPonto(Ponto ponto) {
+		Ponto[] novoPonto = new Ponto[this.pontos.length+1];
+		
+		for(int i=0;i<this.pontos.length;i++){
+			novoPonto[i] = this.pontos[i];
+		}
+		novoPonto[this.pontos.length] = ponto;
+		this.pontos = novoPonto;
+	}
+	
+	//Método que retorna os pontos pesquisados
 	public void solicitarFolhaPonto(String ano, String mes, int idFuncionario){
 		List<Ponto> pontos = buscarTodosPontos(idFuncionario);
 
@@ -142,7 +159,7 @@ public class PesquisaDAO {
 			String data = ponto.getData().toString();
 			
 			if(data.startsWith(ano+"-"+mes))
-				System.out.println(data);
+				adicionarPonto(ponto);
 		}
 	}
 }

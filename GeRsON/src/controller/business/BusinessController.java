@@ -2,15 +2,17 @@ package controller.business;
 
 import java.util.List;
 
-import dao.PesquisaDAO;
 import model.funcionarios.pf.PessoaFisica;
+import model.funcionarios.pf.Ponto;
 import model.funcionarios.pj.PessoaJuridica;
+import dao.PesquisaDAO;
 
 public class BusinessController {
 	private List<PessoaFisica> listaPessoasFisicas;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
-
+	private Ponto[] pontos= {};
+	
 	public BusinessController() {
 
 	}
@@ -21,6 +23,14 @@ public class BusinessController {
 
 	public void setPessoasFisicas(PesquisaDAO pesquisa) {
 		this.pessoasFisicas = pesquisa.getPessoasFisicas();
+	}
+	
+	public Ponto[] getPontos() {
+		return pontos;
+	}
+
+	public void setPontos(PesquisaDAO pesquisa) {
+		this.pontos = pesquisa.getPontos();
 	}
 
 	public PessoaJuridica[] getPessoasJuridicas() {
