@@ -99,6 +99,7 @@ public class TestsPontoFuncionaio {
 		this.formulario.setParameter("ano", "2013");
 		this.formulario.setParameter("mes", "01");
 		this.formulario.submit();
+		assertTrue(this.resp.getText().contains("Relatório de Ponto Mês de Janeiro"));
 	}
 	
 	@Test
@@ -109,7 +110,9 @@ public class TestsPontoFuncionaio {
 		this.formulario.setParameter("ano", "2013");
 		this.formulario.setParameter("mes", "07");
 		this.formulario.submit();
-		
+				
 		this.resp = this.wc.getCurrentPage();
-	}
+		assertTrue(this.resp.getText().contains("Relatório de Ponto Mês de Julho"));
+		assertTrue(this.resp.getText().contains("Entrada"));
+	}	
 }
