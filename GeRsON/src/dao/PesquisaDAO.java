@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import model.funcionarios.pf.PessoaFisica;
+import model.funcionarios.pf.Ponto;
 import model.funcionarios.pj.PessoaJuridica;
 
 public class PesquisaDAO {
@@ -126,5 +127,22 @@ public class PesquisaDAO {
 	public void alterarPessoaJuridica(PessoaJuridica pessoaJuridica) {
 		this.entityManager.persist(pessoaJuridica);
 		this.entityManager.getTransaction().commit();
+	}
+	
+	@SuppressWarnings("unchecked")
+	private List<Ponto> buscarTodosPontos(int idFuncionario){
+		this.query = this.entityManager.createQuery("SELECT pont FROM Ponto pont where idFuncionario="+idFuncionario);
+		return this.query.getResultList();
+	}
+	
+	public void solicitarFolhaPonto(String ano, String mes, int idFuncionario){
+		List<Ponto> pontos = buscarTodosPontos(idFuncionario);
+
+		for (Ponto ponto : pontos) {
+			String data = ponto.getData().toString();
+			
+			if(data.startsWith(ano+"-"+mes))
+				System.out.println(data);
+		}
 	}
 }

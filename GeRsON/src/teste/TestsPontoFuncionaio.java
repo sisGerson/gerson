@@ -96,8 +96,20 @@ public class TestsPontoFuncionaio {
 	public void testSubmitSolicitarPonto() throws IOException, SAXException {
 		testFormSolicitarPonto();
 		
-		this.formulario.setParameter("referencia", "2013");
-		this.formulario.setParameter("mes", "Janeiro");
-		//this.formulario.submit();
+		this.formulario.setParameter("ano", "2013");
+		this.formulario.setParameter("mes", "01");
+		this.formulario.submit();
+	}
+	
+	@Test
+	//Teste para submeter uma solicitação de folha de ponto (Mês de Julho)
+	public void testSubmitSolicitarPonto2() throws IOException, SAXException {
+		testFormSolicitarPonto();
+		
+		this.formulario.setParameter("ano", "2013");
+		this.formulario.setParameter("mes", "07");
+		this.formulario.submit();
+		
+		this.resp = this.wc.getCurrentPage();
 	}
 }
