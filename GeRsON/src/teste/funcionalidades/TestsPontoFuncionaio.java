@@ -1,4 +1,4 @@
-package teste;
+package teste.funcionalidades;
 
 import static org.junit.Assert.*;
 
@@ -99,7 +99,9 @@ public class TestsPontoFuncionaio {
 		this.formulario.setParameter("ano", "2013");
 		this.formulario.setParameter("mes", "01");
 		this.formulario.submit();
-		assertTrue(this.resp.getText().contains("Relatório de Ponto Mês de Janeiro"));
+		
+		this.resp = this.wc.getCurrentPage();
+		assertTrue(this.resp.getText().contains("Relatório de Ponto"));
 	}
 	
 	@Test
@@ -112,7 +114,7 @@ public class TestsPontoFuncionaio {
 		this.formulario.submit();
 				
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Relatório de Ponto Mês de Julho"));
+		assertTrue(this.resp.getText().contains("Relatório de Ponto"));
 		assertTrue(this.resp.getText().contains("Entrada"));
 	}	
 }

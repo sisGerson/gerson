@@ -1,4 +1,4 @@
-package teste;
+package teste.funcionalidades;
 
 import static org.junit.Assert.*;
 
