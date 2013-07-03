@@ -28,15 +28,15 @@
 
 
 </head>
-<body onload="UR_Start()">
+<body onload="BuscarHora()">
 <!-- Script para montar o relogio dinamico e mostrar -->
 <script type="text/javascript">
-function UR_Start() 
+function BuscarHora() 
 {
-	UR_Nu = new Date;
-	UR_Indhold = showFilled(UR_Nu.getHours()) + ":" + showFilled(UR_Nu.getMinutes()) + ":" + showFilled(UR_Nu.getSeconds());
-	document.getElementById("ur").innerHTML = UR_Indhold;
-	setTimeout("UR_Start()",1000);
+	Data = new Date;
+	HoraCompleta = showFilled(Data.getHours()) + ":" + showFilled(Data.getMinutes()) + ":" + showFilled(Data.getSeconds());
+	document.getElementById("relogio").innerHTML = HoraCompleta;
+	setTimeout("BuscarHora()",1000);
 }
 function showFilled(Value) 
 {
@@ -100,7 +100,7 @@ function showFilled(Value)
 	
     %>
     <!-- Mostrando a hora/minuto/segundo dinâmico -->
-     - <b><font id="ur" size="2" face="Trebuchet MS, Verdana, Arial, sans-serif" color="red"></font></b>
+     - <b><font id="relogio" size="2" face="Trebuchet MS, Verdana, Arial, sans-serif" color="red"></font></b>
 
 						</td>
 					</tr>
