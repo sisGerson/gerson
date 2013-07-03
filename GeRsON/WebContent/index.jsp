@@ -185,15 +185,23 @@ case 12: //Solicitar Folha de Ponto
 	<%
 break;
 case 13: //Exibir Folha de ponto
-
 	%>
 	<%@ include file="resultado_pontos.jsp" %>
 	<%
 break;
 case 14: //Confirmacao do ponto cadastrado
-
 	%>
 	<%@ include file="confirmacao_ponto.jsp" %>
+	<%
+break;
+case 15: //Solicitando relatório de hora extra mensal
+	%>
+	<%@ include file="visualizar_hora_extra.jsp" %>
+	<%
+break;
+case 16: //Resultado da hora extra
+	%>
+	<%@ include file="resultado_hora_extra.jsp" %>
 	<%
 break;
 default:
