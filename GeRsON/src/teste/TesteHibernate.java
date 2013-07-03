@@ -17,7 +17,7 @@ public class TesteHibernate {
 		PessoaFisica pessoa = new PessoaFisica();
 		Ponto ponto1 = new Ponto();
 		Ponto ponto2 = new Ponto();
-		pessoa.setNome("josé");
+		pessoa.setNome("jose");
 		
 		ponto1.setOpcao("entrada");
 		ponto2.setOpcao("saida");
@@ -65,7 +65,7 @@ public class TesteHibernate {
 		em.getTransaction().commit();
 		
 		
-		//Teste da listagem de todos os funcionários
+		//Teste da listagem de todos os funcion��rios
 		GerenteDAO dao = new GerenteDAO();
 		
 		for(int i=0;i<dao.getPessoasFisicas().length;i++){
