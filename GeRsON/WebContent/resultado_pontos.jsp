@@ -31,15 +31,6 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 
 <body>
 	<div id="layout">
-		<div id="header">
-			<h1 id="logo">
-				<a href="#" title="#">GeRs<span>ON</span></a>
-			</h1>
-			<hr class="noscreen" />
-			<div id="navigation"></div>
-			<hr class="noscreen" />
-		</div>
-	</div>
 	<div id="main">
 	
 	<h3>Relatório de Ponto - <%=pessoaFisica.getNome() %></h3>
@@ -60,7 +51,8 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 		</tr>
 	<%} %>
 	</table>
-	<p>&nbsp;</p><input type='button' value='Fechar Janela' onclick='window.close() ' />
+	<br><br><br>
+	</div>
 	</div>
 </body>
 	<%

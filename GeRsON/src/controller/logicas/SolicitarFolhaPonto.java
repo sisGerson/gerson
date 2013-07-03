@@ -32,7 +32,7 @@ public class SolicitarFolhaPonto implements Logica{
 		business.setPontos(pesquisa);
 		
 		request.getSession().setAttribute("pesquisa", business);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/resultado_pontos.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp?item=13&situacao=2");
 		dispatcher.forward(request, response);
 	}
 	
