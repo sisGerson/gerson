@@ -59,7 +59,6 @@
 						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
 	          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
 	          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
-	          			<li><a href="#">Ponto</a></li>
 	          			<li><a href="logoff.jsp">Sair</a></li>
 	 					</ul>
 					<%
@@ -189,6 +188,12 @@ case 13: //Exibir Folha de ponto
 
 	%>
 	<%@ include file="resultado_pontos.jsp" %>
+	<%
+break;
+case 14: //Confirmacao do ponto cadastrado
+
+	%>
+	<%@ include file="confirmacao_ponto.jsp" %>
 	<%
 break;
 default:

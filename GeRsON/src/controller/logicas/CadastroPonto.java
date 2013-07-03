@@ -38,7 +38,7 @@ public class CadastroPonto implements Logica{
 		CadastroDAO cadastro = new CadastroDAO();
 		cadastro.cadastrarPonto(ponto);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp?situacao=2");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp?item=14&situacao=2");
 		dispatcher.forward(request, response);
 	}
 }
