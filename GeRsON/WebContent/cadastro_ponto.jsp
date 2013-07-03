@@ -105,6 +105,9 @@ function showFilled(Value)
 						</td>
 					</tr>
 					<tr>
+					<%
+					if(pessoaFisica.getTotalHoraSemanal()==40) {
+					%>
 						<td> Opção: <select name="opcao">
 								
 								<option value="Entrada">Entrada</option>
@@ -115,6 +118,21 @@ function showFilled(Value)
 						<br>
 						<br>
 						</td>
+					<%
+					}
+					else {
+					%>
+						<td> Opção: <select name="opcao">
+								
+								<option value="Entrada">Entrada</option>
+								<option value="Saida">Saída</option>
+						</select>
+						<br>
+						<br>
+						</td>
+					<% 
+					}
+					%>
 					</tr>
 
 				</table>

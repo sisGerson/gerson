@@ -130,9 +130,6 @@ public class TestsLogin {
 		assertEquals(this.link.getText(), "Relatórios");
 		
 		this.link = this.resp.getLinks()[5];
-		assertEquals(this.link.getText(), "Ponto");
-		
-		this.link = this.resp.getLinks()[6];
 		assertEquals(this.link.getText(), "Sair");
 	}
 }
