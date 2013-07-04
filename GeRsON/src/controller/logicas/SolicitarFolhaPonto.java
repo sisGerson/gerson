@@ -25,7 +25,7 @@ public class SolicitarFolhaPonto implements Logica{
 		
 		PesquisaDAO pesquisa = new PesquisaDAO();
 		
-		pesquisa.solicitarFolhaPonto(ano, mes, pessoaFisica.getId());
+		pesquisa.solicitarFolhaPonto(ano, mes, pessoaFisica.getId(), pessoaFisica.getTotalHoraSemanal());
 		
 		BusinessController business = new BusinessController();
 		

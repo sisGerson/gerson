@@ -34,12 +34,10 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	<div id="main">
 	
 	<h3><%=pessoaFisica.getNome() %></h3>
-	
 	<table>
 	<tr>
-	<td>Ponto cadastrado com sucesso!</td>
+	<td><%=session.getAttribute("erro") %></td>
 	</tr>
-
 	</table>
 	<br><br><br>
 	</div>

@@ -36,20 +36,44 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	<h3>Relatório de Ponto - <%=pessoaFisica.getNome() %></h3>
 	
 	<table>
-	<tr>
-	<td>Opção</td>
-	<td>Data</td>
-	<td>Horário</td>
-	</tr>
-	<%
-	for(int i=0;i<business.getPontos().length;i++){ 
-	%>
+	<%if(pessoaFisica.getTotalHoraSemanal() == 40){ %>
 		<tr>
-		<td><%=business.getPontos()[i].getOpcao() %></td>
-		<td><%=business.getPontos()[i].getData() %></td>
-		<td><%=business.getPontos()[i].getHora() %></td>
+		<td>Data</td>
+		<td>Entrada</td>
+		<td>Início do Almoço</td>
+		<td>Fim do Almoço</td>
+		<td>Saída</td>
 		</tr>
-	<%} %>
+		<%
+		for(int i=0;i<business.getPontos().length;i++){ 
+		%>
+			<tr>
+			<td><%=business.getPontos()[i].getData() %></td>
+			<td><%=business.getPontos()[i].getHoraEntrada() %></td>
+			<td><%=business.getPontos()[i].getHoraInicioAlmoco() %></td>
+			<td><%=business.getPontos()[i].getHoraFimAlmoco() %></td>
+			<td><%=business.getPontos()[i].getHoraSaida() %></td>
+			</tr>
+		<%
+		}
+	} 
+	else { %>
+		<tr>
+		<td>Data</td>
+		<td>Entrada</td>
+		<td>Saída</td>
+		</tr>
+		<%
+		for(int i=0;i<business.getPontos().length;i++){ 
+		%>
+			<tr>
+			<td><%=business.getPontos()[i].getData() %></td>
+			<td><%=business.getPontos()[i].getHoraEntrada() %></td>
+			<td><%=business.getPontos()[i].getHoraSaida() %></td>
+			</tr>
+		<%
+		}
+	}%>
 	</table>
 	<br><br><br>
 	</div>

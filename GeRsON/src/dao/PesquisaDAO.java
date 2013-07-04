@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import controller.business.BusinessHoraExtra;
+
 import model.funcionarios.pf.PessoaFisica;
 import model.funcionarios.pf.Ponto;
 import model.funcionarios.pj.PessoaJuridica;
@@ -17,8 +19,7 @@ public class PesquisaDAO {
 	private Query query;
 	private PessoaFisica[] pessoasFisicas = {};
 	private PessoaJuridica[] pessoasJuridicas = {};
-	private Ponto[] pontos = {};
-	
+	private Ponto[] pontos = {};	
 
 	public PesquisaDAO() {
 		//Fazer conexão  com o banco de dados
@@ -51,6 +52,12 @@ public class PesquisaDAO {
 	public PessoaJuridica getIdpessoaJuridica(int id){
 		PessoaJuridica pessoaJuridica = this.entityManager.find(PessoaJuridica.class, id);
 		return pessoaJuridica;
+	}
+	
+	//Recuperar id de ponto
+	public Ponto getIdPonto(int id){
+		Ponto ponto = this.entityManager.find(Ponto.class, id);
+		return ponto;
 	}
 	
 	//Método para buscar todas as PessoasFisicas
@@ -134,8 +141,13 @@ public class PesquisaDAO {
 		this.entityManager.getTransaction().commit();
 	}
 	
+	public void alterarPonto(Ponto ponto){
+		this.entityManager.persist(ponto);
+		this.entityManager.getTransaction().commit();
+	}
+	
 	@SuppressWarnings("unchecked")
-	private List<Ponto> buscarTodosPontos(int idFuncionario){
+	public List<Ponto> buscarTodosPontos(int idFuncionario){
 		this.query = this.entityManager.createQuery("SELECT pont FROM Ponto pont where idFuncionario="+idFuncionario);
 		return this.query.getResultList();
 	}
@@ -152,14 +164,19 @@ public class PesquisaDAO {
 	}
 	
 	//Método que retorna os pontos pesquisados
-	public void solicitarFolhaPonto(String ano, String mes, int idFuncionario){
+	public void solicitarFolhaPonto(String ano, String mes, int idFuncionario, int totalHoraSemanal){
 		List<Ponto> pontos = buscarTodosPontos(idFuncionario);
-
+		
+		BusinessHoraExtra horaExtra = new BusinessHoraExtra();
+		horaExtra.setHoraExtra(horaExtra);
+		
 		for (Ponto ponto : pontos) {
 			String data = ponto.getData().toString();
 			
-			if(data.startsWith(ano+"-"+mes))
+			if(data.startsWith(ano+"-"+mes)) {
 				adicionarPonto(ponto);
+				horaExtra.totalHorasTrabalhadas(ponto);
+			}
 		}
 	}
 }

@@ -196,6 +196,18 @@ case 14: //Confirmacao do ponto cadastrado
 	<%@ include file="confirmacao_ponto.jsp" %>
 	<%
 break;
+case 15: //Confirmacao do ponto cadastrado
+
+	%>
+	<%@ include file="solicitar_hora_extra.jsp" %>
+	<%
+break;
+case 16: //Confirmacao do ponto cadastrado
+
+	%>
+	<%@ include file="visualizar_hora_extra.jsp" %>
+	<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>

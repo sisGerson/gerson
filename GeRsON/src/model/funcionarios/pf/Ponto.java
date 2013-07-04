@@ -17,7 +17,7 @@ public class Ponto {
 	@Temporal(TemporalType.DATE)
 	private Date data;
 	@Temporal(TemporalType.TIME)
-	private Date hora;
+	private Date horaEntrada, horaSaida, horaInicioAlmoco, horaFimAlmoco;
 	private String opcao;
 	private int idFuncionario;
 	
@@ -32,12 +32,36 @@ public class Ponto {
 		this.data = data;
 	}
 
-	public Date getHora() {
-		return hora;
+	public Date getHoraEntrada() {
+		return horaEntrada;
 	}
 
-	public void setHora(Date hora) {
-		this.hora = hora;
+	public void setHoraEntrada(Date horaEntrada) {
+		this.horaEntrada = horaEntrada;
+	}
+
+	public Date getHoraSaida() {
+		return horaSaida;
+	}
+
+	public void setHoraSaida(Date horaSaida) {
+		this.horaSaida = horaSaida;
+	}
+
+	public Date getHoraInicioAlmoco() {
+		return horaInicioAlmoco;
+	}
+
+	public void setHoraInicioAlmoco(Date horaInicioAlmoco) {
+		this.horaInicioAlmoco = horaInicioAlmoco;
+	}
+
+	public Date getHoraFimAlmoco() {
+		return horaFimAlmoco;
+	}
+
+	public void setHoraFimAlmoco(Date horaFimAlmoco) {
+		this.horaFimAlmoco = horaFimAlmoco;
 	}
 
 	public String getOpcao() {
@@ -60,5 +84,4 @@ public class Ponto {
 		this.idFuncionario = idFuncionario;
 	}
 	
-		
 }
