@@ -208,6 +208,18 @@ case 16: //Confirmacao do ponto cadastrado
 	<%@ include file="visualizar_hora_extra.jsp" %>
 	<%
 break;
+case 17: //Confirmacao do ponto cadastrado
+
+	%>
+	<%@ include file="solicitar_contra_cheque.jsp" %>
+	<%
+break;
+case 18: //Confirmacao do ponto cadastrado
+
+	%>
+	<%@ include file="resultado_contra_cheque.jsp" %>
+	<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>

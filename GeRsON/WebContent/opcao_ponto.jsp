@@ -33,6 +33,7 @@
 				<li><a href="index.jsp?item=11&situacao=2">Bater Ponto</a></li>
 				<li><a href="index.jsp?item=12&situacao=2">Solicitar Folha de Ponto</a></li>
 				<li><a href="index.jsp?item=15&situacao=2">Visualizar Hora Extra</a></li>
+				<li><a href="index.jsp?item=17&situacao=2">Solicitar Contra Cheque</a></li>
 			</ul>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
