@@ -4,13 +4,16 @@
 <!DOCTYPE html>
 
 <html>
-<%
-	if (session.getAttribute("funcionario") == null)
+	<%
+	boolean permitirFerias = (boolean)session.getAttribute("permitirFerias");
+	if(session.getAttribute("funcionario") == null)
 		response.sendRedirect("index.jsp?item=0");
-	else {
+	else{
+		
+	
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
-%>
-
+	}
+	%>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="pt-br" />
@@ -19,34 +22,30 @@
 	content="cadastro de cliente, controle de almoxarifado" />
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
 
+
 <title>GeRsON</title>
 </head>
 <body>
 
-	<div id="layout">
-		<div id="main">
-			<!-- Itens associados a pessoa Pessoa fisica -->
-			<h2>Férias</h2>
-			<p>&nbsp;</p>
-		<%
-			if(!pessoaFisica.getCargo().equals("Gerente")){
-			
-		%>
-			<ul>
-				<li><a href="index.jsp?item=21&situacao=2">Pedir Férias</a></li>
-				<li><a href="#">Verificar Pedido de Férias</a></li>
-			</ul>
-		<%
-			}
-		%>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-		</div>
-	</div>
-</body>
 <%
-	}
+if(permitirFerias == false) {
 %>
+	<h1>Você nao pode pedir férias para essa data!</h1><br>
+<%
+}
+else {
+%>
+	<h1>Pedido de férias efetuado com sucesso!</h1><br>
+<%
+}
+%>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+</body>
 </html>

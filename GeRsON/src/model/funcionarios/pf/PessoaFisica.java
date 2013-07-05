@@ -58,6 +58,8 @@ public class PessoaFisica extends Funcionario {
 	protected String cidadeResidencial;
 	protected String UFResidencial;
 	protected String CEPResidencial;
+	protected boolean statusFerias = false;
+	protected Date ultimasFerias;
 	protected Dependentes[] dependentes = {};
 
 	public PessoaFisica() {
@@ -384,8 +386,24 @@ public class PessoaFisica extends Funcionario {
 		CEPResidencial = cEPResidencial;
 	}
 	
+	public boolean isStatusFerias() {
+		return statusFerias;
+	}
+
+	public void setStatusFerias(boolean statusFerias) {
+		this.statusFerias = statusFerias;
+	}
+
 	public Dependentes[] getDependentes() {
 		return dependentes;
+	}
+
+	public Date getUltimasFerias() {
+		return ultimasFerias;
+	}
+
+	public void setUltimasFerias(Date ultimasFerias) {
+		this.ultimasFerias = ultimasFerias;
 	}
 
 	// Método para criar dependentes do funcionário

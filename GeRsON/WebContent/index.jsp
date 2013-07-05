@@ -228,12 +228,24 @@ case 19: //Relatórios para funcionário
 	<%@ include file="relatorios_funcionario.jsp" %>
 	<%
 break;
-case 20: //Solicitar Férias
+case 20: //Opção de férias
 
 	%>
 	<%@ include file="opcao_ferias.jsp" %>
 	<%
 break;
+case 21: //Solicitar Férias
+
+	%>
+	<%@ include file="pedir_ferias.jsp" %>
+	<%
+break;	
+case 22: //Resultado Pedido
+
+	%>
+	<%@ include file="resultado_ferias.jsp" %>
+	<%
+break;	
 default:
 %>
 <%@ include file="main.jsp" %>
