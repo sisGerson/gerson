@@ -59,6 +59,7 @@
 						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
 	          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
 	          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
+	          			<li><a href="#">Férias</a></li>
 	          			<li><a href="logoff.jsp">Sair</a></li>
 	 					</ul>
 					<%
@@ -68,9 +69,10 @@
 						<p align="right"><font color="red"><b> | </b></font><font color="white"><b> <%=pessoaFisica.getNome() %> </b> - </font> <font color="grey"> <%=pessoaFisica.getCargo() %>&nbsp;&nbsp;</font></p>
 						<ul>
 						<li><a href="index.jsp?situacao=2">Início</a></li>
-	       				<li><a href="#">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
+	       				<li><a href="index.jsp?item=19&situacao=2">Relatórios</a></li><!-- Folha de Ponto, Contra-Cheque, Horas Extras -->
 	       				<!-- mostra apenas relatorios dos funcionários-->
 	       				<li><a href="index.jsp?item=10&situacao=2">Ponto</a></li>
+	       				<li><a href="index.jsp?item=20&situacao=2">Férias</a></li>
 	       				<li><a href="logoff.jsp">Sair</a></li>
 						</ul>
 						<%
@@ -196,28 +198,40 @@ case 14: //Confirmacao do ponto cadastrado
 	<%@ include file="confirmacao_ponto.jsp" %>
 	<%
 break;
-case 15: //Confirmacao do ponto cadastrado
+case 15: //Solicitar o relatório de horas extras em um mês
 
 	%>
 	<%@ include file="solicitar_hora_extra.jsp" %>
 	<%
 break;
-case 16: //Confirmacao do ponto cadastrado
+case 16: //Visualizar hora extra
 
 	%>
 	<%@ include file="visualizar_hora_extra.jsp" %>
 	<%
 break;
-case 17: //Confirmacao do ponto cadastrado
+case 17: //Solicitar o contra-cheque
 
 	%>
 	<%@ include file="solicitar_contra_cheque.jsp" %>
 	<%
 break;
-case 18: //Confirmacao do ponto cadastrado
+case 18: //Visualizar o contra-cheque
 
 	%>
 	<%@ include file="resultado_contra_cheque.jsp" %>
+	<%
+break;
+case 19: //Relatórios para funcionário
+
+	%>
+	<%@ include file="relatorios_funcionario.jsp" %>
+	<%
+break;
+case 20: //Solicitar Férias
+
+	%>
+	<%@ include file="opcao_ferias.jsp" %>
 	<%
 break;
 default:

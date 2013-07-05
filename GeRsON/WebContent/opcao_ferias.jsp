@@ -27,10 +27,11 @@
 	<div id="layout">
 		<div id="main">
 			<!-- Itens associados a pessoa Pessoa fisica -->
-			<h2>Ponto Eletrônico</h2>
+			<h2>Férias</h2>
 			<p>&nbsp;</p>
 			<ul>
-				<li><a href="index.jsp?item=11&situacao=2">Bater Ponto</a></li>
+				<li><a href="#">Pedir Férias</a></li>
+				<li><a href="#">Verificar Pedido de Férias</a></li>
 			</ul>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>

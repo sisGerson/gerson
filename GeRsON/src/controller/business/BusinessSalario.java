@@ -48,6 +48,9 @@ public class BusinessSalario {
 		
 		this.salarioLiquido = this.salarioHorasTrabalhadas - this.INSS - this.impostoRenda - this.planoSaude - this.outrosImpostos;
 		this.descontos = this.salarioHorasTrabalhadas - this.salarioLiquido;
+		
+		if(this.salarioLiquido<0)
+			this.salarioLiquido = 0;
 	}
 
 }

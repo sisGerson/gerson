@@ -42,7 +42,7 @@ public class TestsHoraExtra {
 	public void testLinkHoraExtra() throws IOException, SAXException {
 		testLoginFuncionario();
 		
-		this.link = this.resp.getLinks()[3];
+		this.link = this.resp.getLinks()[2];
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();

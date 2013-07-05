@@ -47,7 +47,7 @@ public class TestsPontoFuncionaio {
 		
 		this.resp = this.wc.getCurrentPage();
 		
-		this.link = this.resp.getLinks()[5];
+		this.link = this.resp.getLinks()[6];
 		assertEquals(this.link.getText(), "Bater Ponto");
 		this.link.click();
 	}
@@ -78,13 +78,28 @@ public class TestsPontoFuncionaio {
 	@Test
 	//Teste para clicar no link de Solicitar Ponto
 	public void testLinkSolicitarPonto() throws SAXException, IOException {
-		testPontoFuncionario();
+		this.wc = new WebConversation();
+		
+		this.resp = this.wc.getResponse(this.urlPrincipal+"login.jsp");
+		
+		this.formulario = this.resp.getForms()[0];
+		
+		this.formulario.setParameter("matricula", "321");
+		this.formulario.setParameter("senha", "321");
+		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
 		
+		this.link = this.resp.getLinks()[2];
+		assertEquals(this.link.getText(), "Relatórios");
+		this.link.click();
+		
+		this.resp = this.wc.getCurrentPage();
 		this.link = this.resp.getLinks()[6];
+		
 		assertEquals(this.link.getText(), "Solicitar Folha de Ponto");
 		this.link.click();
+		this.resp = this.wc.getCurrentPage();
 	}
 	
 	@Test

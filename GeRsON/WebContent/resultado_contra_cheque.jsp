@@ -37,7 +37,7 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	<div id="main">
 	
 	<h3>Contra-Cheque - <%=pessoaFisica.getNome() %></h3>
-	<p>Referencia:</p>
+	<p>Referencia: <%=request.getParameter("mes") %> de <%=request.getParameter("ano") %></p>
 	<table>
 	<tr>
 	<td colspan="2">Empresa: Fields Comunicação</td>
