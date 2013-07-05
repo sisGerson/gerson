@@ -1,5 +1,9 @@
 package teste.funcionalidades;
 
+/**
+ * Todos os testes referentes as horas extras passaram nessa classe
+ */
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -44,7 +48,7 @@ public class TestsHoraExtra {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getName(), "Visualizar Hora Extra");
+		assertEquals(this.link.getText(), "Visualizar Hora Extra");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -57,7 +61,7 @@ public class TestsHoraExtra {
 		
 		this.formulario = this.resp.getForms()[0];
 		
-		assertEquals(this.formulario.getText(), "visualizar_hora_extra");
+		assertEquals(this.formulario.getName(), "solicitar_hora_extra");
 		
 		this.formulario.setParameter("ano", "2013");
 		this.formulario.setParameter("mes", "07");
@@ -72,7 +76,6 @@ public class TestsHoraExtra {
 	public void testResultHoraExtra() throws IOException, SAXException{
 		testFormHoraExtra();
 		
-		assertTrue(this.resp.getText().contains("Hora Extra: Julho de 2013"));
-		assertTrue(this.resp.getText().contains("Total: 10"));
+		assertTrue(this.resp.getText().contains("Horas Extras -"));
 	}
 }

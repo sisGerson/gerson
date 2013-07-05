@@ -26,7 +26,7 @@
 	<div id="layout">
 		<div id="main">
 
-			<form name="solicitar_folha_ponto"
+			<form name="solicitar_hora_extra"
 				action="ServletController" method="post">
 				<h2>Visualizar Hora Extra - <%=pessoaFisica.getNome() %> </h2>
 				

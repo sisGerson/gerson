@@ -12,6 +12,10 @@ import com.meterware.httpunit.WebForm;
 import com.meterware.httpunit.WebLink;
 import com.meterware.httpunit.WebResponse;
 
+/**
+ * Testes referentes ao login estão todos passando como o esperado
+ * */
+
 public class TestsLogin {
 	private WebConversation wc;
 	private WebResponse resp;

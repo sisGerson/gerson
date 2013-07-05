@@ -1,5 +1,9 @@
 package teste.funcionalidades;
 
+/**
+ * Todos os testes referentes ao ponto passaram conforme o esperado nesta classe
+ */
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -64,8 +68,11 @@ public class TestsPontoFuncionaio {
 	public void testSubmitBaterPonto() throws IOException, SAXException {
 		testFormBaterPonto();
 		
-		this.formulario.setParameter("opcao", "Entrada");
+		this.formulario.setParameter("opcao", "Saida");
 		this.formulario.submit();
+		
+		this.resp = this.wc.getCurrentPage();
+		assertTrue(this.resp.getText().contains("Ponto cadastrado com sucesso!"));		
 	}
 	
 	@Test

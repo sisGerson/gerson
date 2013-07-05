@@ -31,7 +31,6 @@ public class VisualizarHoraExtra implements Logica{
 		BusinessHoraExtra horaExtra = BusinessHoraExtra.getHoraExtra();
 		
 		double horasExtras = horaExtra.getHorasExtras(pessoaFisica);
-		System.out.println(horasExtras);
 		String horaExtraTotal = "00:00";
 		
 		int totalHoras = (int) horasExtras;
