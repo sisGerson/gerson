@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="controller.business.BusinessSalario"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@page import="controller.business.BusinessController"%>
@@ -65,34 +66,45 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	</td>
 	</tr>
 	
+	<%
+	DecimalFormat form = new DecimalFormat("0.00");
+	
+	String salariHorasTrabalhadas = form.format(salario.getSalarioHorasTrabalhadas());
+	String INSS = form.format(salario.getINSS());
+	String impostoRenda = form.format(salario.getImpostoRenda());
+	String outrosImpostos = form.format(salario.getOutrosImpostos());
+	String planoSaude = form.format(salario.getPlanoSaude());
+	String descontos = form.format(salario.getDescontos());
+	String salarioLiquido = form.format(salario.getSalarioLiquido());
+	%>
 	<tr>
 	<td>Salário pelas horas trabalhadas: </td>
-	<td>R$ <%=salario.getSalarioHorasTrabalhadas() %>
+	<td>R$ <%=salariHorasTrabalhadas %>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>INSS: </td>
-	<td>R$<%=salario.getINSS()	%>
+	<td>R$<%=INSS %>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Imposto de Renda: </td>
-	<td>R$<%=salario.getImpostoRenda()	%>
+	<td>R$<%=impostoRenda	%>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Outros Impostos: </td>
-	<td>R$ <%=salario.getOutrosImpostos() %>
+	<td>R$ <%=outrosImpostos %>
 	
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Plano de Saúde: </td>
-	<td>R$ <%=salario.getPlanoSaude() %>
+	<td>R$ <%=planoSaude %>
 	</td>
 	</tr>
 	</table>
@@ -100,12 +112,12 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	<table>
 	<tr>
 	<td>Total Descontos: </td>
-	<td>R$ <%=salario.getDescontos() %></td>
+	<td>R$ <%=descontos %></td>
 	</tr>
 	 
 	<tr>
 	<td>Salário Líquido: </td>
-	<td>R$ <%=salario.getSalarioLiquido() %></td>
+	<td>R$ <%=salarioLiquido %></td>
 	</tr>
 	</table>
 	

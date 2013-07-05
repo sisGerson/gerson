@@ -1,8 +1,9 @@
 package controller.business;
 
 public class BusinessSalario {
+	
 	private double INSS, impostoRenda, planoSaude, outrosImpostos, salarioHorasTrabalhadas, salarioLiquido, descontos;
-
+	
 	public BusinessSalario() {
 	
 	}
