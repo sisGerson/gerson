@@ -4,13 +4,17 @@ import model.funcionarios.pf.PessoaFisica;
 import model.funcionarios.pf.Ponto;
 
 public class BusinessHoraExtra {
-	private int totalHorasTrabalhadas = 0;
+	private double totalHorasTrabalhadas = 0;
 	private static BusinessHoraExtra horaExtra;
 
 	public BusinessHoraExtra() {
 
 	}
 	
+	public double getTotalHorasTrabalhadas() {
+		return totalHorasTrabalhadas;
+	}
+
 	public static BusinessHoraExtra getHoraExtra() {
 		return horaExtra;
 	}

@@ -1,3 +1,4 @@
+<%@page import="controller.business.BusinessSalario"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@page import="controller.business.BusinessController"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -27,6 +28,7 @@
 <!-- Pegando o parâmetro da servlet -->
 <%
 BusinessController business = (BusinessController)session.getAttribute("pesquisa");
+BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 %>
 
 <body>
@@ -64,26 +66,33 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	</tr>
 	
 	<tr>
-	<td>INSS: </td>
-	<td>R$<%=pessoaFisica.getSalario()*0.11	%>
-	<%double descontoINSS = pessoaFisica.getSalario()*0.11;
-	double somaDescontos = descontoINSS;%>
+	<td>Salário pelas horas trabalhadas: </td>
+	<td>R$ <%=salario.getSalarioHorasTrabalhadas() %>
 	</td>
 	</tr>
 	
 	<tr>
-	<td>Impostos: </td>
-	<td>R$ <%=pessoaFisica.getSalario()*0.08%>
-	<%double Impostos = pessoaFisica.getSalario()*0.11;
-	somaDescontos = somaDescontos + Impostos ;%>
+	<td>INSS: </td>
+	<td>R$<%=salario.getINSS()	%>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>Imposto de Renda: </td>
+	<td>R$<%=salario.getImpostoRenda()	%>
+	</td>
+	</tr>
+	
+	<tr>
+	<td>Outros Impostos: </td>
+	<td>R$ <%=salario.getOutrosImpostos() %>
 	
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Plano de Saúde: </td>
-	<td>R$ 99,00
-	<% somaDescontos = somaDescontos + 99;%>
+	<td>R$ <%=salario.getPlanoSaude() %>
 	</td>
 	</tr>
 	</table>
@@ -91,12 +100,12 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	<table>
 	<tr>
 	<td>Total Descontos: </td>
-	<td>R$ <%= somaDescontos %></td>
+	<td>R$ <%=salario.getDescontos() %></td>
 	</tr>
-	
+	 
 	<tr>
 	<td>Salário Líquido: </td>
-	<td>R$ <%= pessoaFisica.getSalario() - somaDescontos %></td>
+	<td>R$ <%=salario.getSalarioLiquido() %></td>
 	</tr>
 	</table>
 	

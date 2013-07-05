@@ -6,7 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.funcionarios.pf.PessoaFisica;
 
-import controller.business.BusinessController;
+import controller.business.BusinessHoraExtra;
+import controller.business.BusinessSalario;
 import controller.interfaces.Logica;
 import dao.PesquisaDAO;
 
@@ -26,12 +27,14 @@ public class SolicitarContraCheque implements Logica{
 		PesquisaDAO pesquisa = new PesquisaDAO();
 		
 		pesquisa.solicitarFolhaPonto(ano, mes, pessoaFisica.getId(), pessoaFisica.getTotalHoraSemanal());
+
+		BusinessHoraExtra horaExtra = BusinessHoraExtra.getHoraExtra();
 		
-		BusinessController business = new BusinessController();
+		BusinessSalario salario = new BusinessSalario();
 		
-		business.setPontos(pesquisa);
+		salario.calculoSalario(pessoaFisica.getSalario(), horaExtra.getTotalHorasTrabalhadas(), pessoaFisica.getTotalHoraSemanal());
 		
-		request.getSession().setAttribute("pesquisa", business);
+		request.getSession().setAttribute("salario", salario);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp?item=18&situacao=2");
 		dispatcher.forward(request, response);
 	}
