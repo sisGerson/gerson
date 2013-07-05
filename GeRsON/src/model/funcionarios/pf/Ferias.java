@@ -17,7 +17,7 @@ public class Ferias {
 	private Date dataPedido;
 	private String resultado;
 	private int idFuncionario;
-	
+	private double periodoTrabalhado;
 	public Ferias() {
 	}
 
@@ -48,6 +48,13 @@ public class Ferias {
 	public void setIdFuncionario(int idFuncionario) {
 		this.idFuncionario = idFuncionario;
 	}
-	
+
+	public double getPeriodoTrabalhado() {
+		return periodoTrabalhado;
+	}
+
+	public void setPeriodoTrabalhado(double periodoTrabalhado) {
+		this.periodoTrabalhado = periodoTrabalhado;
+	}
 	
 }

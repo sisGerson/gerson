@@ -35,14 +35,16 @@ public class PedirFerias implements Logica{
 		ferias.setIdFuncionario(pessoaFisica.getId());
 		
 		BusinessFerias business = new BusinessFerias();
-		boolean permitirFerias = business.pedidoFeriasPermitido(pessoaFisica, data.getTime());
+		business.pedidoFeriasPermitido(pessoaFisica, data.getTime());
 		
-		if(permitirFerias == true) {
+		ferias.setPeriodoTrabalhado(business.getPeriodoTrabalhado());
+		
+		if(business.isPedidoFerias() == true) {
 			CadastroDAO cadastro = new CadastroDAO();
 			cadastro.cadastrarFerias(ferias);
 		}
 		
-		request.getSession().setAttribute("permitirFerias", permitirFerias);
+		request.getSession().setAttribute("permitirFerias", business);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp?item=22&situacao=2");
 		dispatcher.forward(request, response);
 	}

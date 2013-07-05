@@ -58,7 +58,7 @@
 						<li><a href="index.jsp?situacao=2">Início</a></li>
 						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
 	          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
-	          			<li><a href="#">Relatórios</a></li><!-- mostra todos os relatorios -->
+	          			<li><a href="index.jsp?item=23&situacao=2">Relatórios</a></li><!-- mostra todos os relatorios -->
 	          			<li><a href="#">Férias</a></li>
 	          			<li><a href="logoff.jsp">Sair</a></li>
 	 					</ul>
@@ -246,6 +246,17 @@ case 22: //Resultado Pedido
 	<%@ include file="resultado_ferias.jsp" %>
 	<%
 break;	
+case 23: //Relatorios de gerente
+
+	%>
+	<%@ include file="relatorios_gerente.jsp" %>
+	<%
+break;	
+case 24: //Visualizar pedidos de férias
+%>
+<%@ include file="visualizar_pedidos_ferias.jsp" %>
+<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>

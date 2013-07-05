@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import controller.business.BusinessHoraExtra;
 
+import model.funcionarios.pf.Ferias;
 import model.funcionarios.pf.PessoaFisica;
 import model.funcionarios.pf.Ponto;
 import model.funcionarios.pj.PessoaJuridica;
@@ -71,6 +72,13 @@ public class PesquisaDAO {
 	@SuppressWarnings("unchecked")
 	public List<PessoaJuridica> buscarTodasPessoasJuridicas(){
 		this.query = this.entityManager.createQuery("SELECT func FROM PessoaJuridica func");
+		return this.query.getResultList();
+	}
+	
+	//Método para buscar todos os pedidos de férias
+	@SuppressWarnings("unchecked")
+	public List<Ferias> buscarTodosPedidosFerias(){
+		this.query = this.entityManager.createQuery("SELECT func FROM Ferias func");
 		return this.query.getResultList();
 	}
 	
