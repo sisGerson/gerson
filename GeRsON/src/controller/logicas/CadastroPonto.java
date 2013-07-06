@@ -41,33 +41,43 @@ public class CadastroPonto implements Logica{
 		PesquisaDAO pesquisa = new PesquisaDAO();
 		
 		List<Ponto> pontos = pesquisa.buscarTodosPontos(pessoaFisica.getId());
-		//Pegar o último ponto cadastrado
-		Ponto pontoAtual = pesquisa.getIdPonto(pontos.size());
+
+		//Pegar o último ponto cadastrado se já existir algum ponto com o id desse funcionário cadastrado
+		if(pontos.size()>0) {
+			int idPonto=1;
+			
+			//Laço para rodar e pegar o id do último ponto do funcionário
+			for (Ponto pontoFuncionario : pontos) {
+				idPonto = pontoFuncionario.getIdPonto();
+			}
+			
+			Ponto pontoAtual = pesquisa.getIdPonto(idPonto);
 		
-		//Se a data do ponto que está sendo batido já existir entrará nessa condição
-		if(pontoAtual.getData().toString().equals(dataFormatada)){
-			if(ponto.getOpcao().equals("Entrada")){
-				//Tentar cadastrar outra entrada com a mesma data
-				erro = "Já existe um ponto de entrada cadastrado hoje!";
+			//Se a data do ponto que está sendo batido já existir entrará nessa condição
+			if(pontoAtual.getData().toString().equals(dataFormatada)){
+				if(ponto.getOpcao().equals("Entrada")){
+					//Tentar cadastrar outra entrada com a mesma data
+					erro = "Já existe um ponto de entrada cadastrado hoje!";
+				}
+				else if(ponto.getOpcao().equals("Saida")){
+					pontoAtual.setHoraSaida(calendario.getTime());
+					pontoAtual.setOpcao(request.getParameter("opcao"));
+				}
+				else if(ponto.getOpcao().equals("Início Almoço")){
+					pontoAtual.setHoraInicioAlmoco(calendario.getTime());
+					pontoAtual.setOpcao(request.getParameter("opcao"));
+				}
+				else if(ponto.getOpcao().equals("Fim Almoço") && pontoAtual.getHoraInicioAlmoco() != null){
+					pontoAtual.setHoraFimAlmoco(calendario.getTime());
+					pontoAtual.setOpcao(request.getParameter("opcao"));
+				}
+				else{
+					//Tentar cadastrar fim do almoço sem ter o início almoço
+					erro = "Não existe nenhum ponto de início de almoço cadastrado hoje!";
+				}
+				//Atualizar este ponto
+				pesquisa.alterarPonto(pontoAtual);
 			}
-			else if(ponto.getOpcao().equals("Saida")){
-				pontoAtual.setHoraSaida(calendario.getTime());
-				pontoAtual.setOpcao(request.getParameter("opcao"));
-			}
-			else if(ponto.getOpcao().equals("Início Almoço")){
-				pontoAtual.setHoraInicioAlmoco(calendario.getTime());
-				pontoAtual.setOpcao(request.getParameter("opcao"));
-			}
-			else if(ponto.getOpcao().equals("Fim Almoço") && pontoAtual.getHoraInicioAlmoco() != null){
-				pontoAtual.setHoraFimAlmoco(calendario.getTime());
-				pontoAtual.setOpcao(request.getParameter("opcao"));
-			}
-			else{
-				//Tentar cadastrar fim do almoço sem ter o início almoço
-				erro = "Não existe nenhum ponto de início de almoço cadastrado hoje!";
-			}
-			//Atualizar este ponto
-			pesquisa.alterarPonto(pontoAtual);
 		}
 		//Se for um novo dia entrará nessa condição
 		else{

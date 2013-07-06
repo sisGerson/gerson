@@ -43,6 +43,7 @@
 						<td>Cargo</td>
 						<td>Area</td>
 						<td>Período Trabalhado</td>
+						<td>Férias para</td>
 						<td>Permitir</td>
 					</tr>
 						<%
@@ -66,6 +67,7 @@
 							<td><%=funcionario.getCargo() %></td>
 							<td><%=funcionario.getArea() %></td>
 							<td><%=anos %> anos e <%=meses %> meses </td>
+							<td><%=ferias.getPedidosAtivos()[i].getDataPedido() %></td>
 							<td>
 							
 							<form name="resultado_ferias"

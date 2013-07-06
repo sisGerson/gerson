@@ -111,9 +111,9 @@ function showFilled(Value)
 						<td> Opção: <select name="opcao">
 								
 								<option value="Entrada">Entrada</option>
-								<option value="Saida">Saída</option>
 								<option value="Início Almoço">Início Almoço</option>
 								<option value="Fim Almoço">Fim Almoço</option>
+								<option value="Saida">Saída</option>
 						</select>
 						<br>
 						<br>

@@ -45,9 +45,14 @@
 				<h3>Seu pedido de férias foi rejeitado!</h3><br>
 			<%
 			}
-			else {
+			else if(ferias1.getResultadoPedido().equals("Aprovado")) {
 			%>
 				<h3>Seu pedido de férias foi aprovado!</h3><br>
+			<%
+			}
+			else {
+			%>
+				<h3>Você não tem nem um pedido de férias feito no momento!</h3><br>
 			<%
 			}
 			%>

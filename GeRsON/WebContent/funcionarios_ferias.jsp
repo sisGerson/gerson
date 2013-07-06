@@ -1,4 +1,3 @@
-<%@page import="controller.business.BusinessController"%>
 <%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -42,6 +41,7 @@
 						<td>Nome</td>
 						<td>Cargo</td>
 						<td>Area</td>
+						<td>Data das Férias</td>
 					</tr>
 						<%
 						BusinessFerias ferias2 = new BusinessFerias();
@@ -54,6 +54,7 @@
 							<td><%=ferias2.getPedidosAceitos()[i].getNome() %></td>
 							<td><%=ferias2.getPedidosAceitos()[i].getCargo() %></td>
 							<td><%=ferias2.getPedidosAceitos()[i].getArea() %></td>
+							<td><%=ferias2.getPedidosAceitos()[i].getUltimasFerias() %></td>
 							</tr>
 						<%} %>
 						

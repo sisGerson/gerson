@@ -58,6 +58,7 @@ public class PessoaFisica extends Funcionario {
 	protected String cidadeResidencial;
 	protected String UFResidencial;
 	protected String CEPResidencial;
+	@Temporal(TemporalType.DATE)
 	protected Date ultimasFerias;
 	protected Dependentes[] dependentes = {};
 
