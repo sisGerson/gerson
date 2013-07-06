@@ -31,7 +31,13 @@ public class CadastroPessoaFisica implements Logica {
 			pessoaFisica.setArea(request.getParameter("area"));
 		}
 		
-		pessoaFisica.setMatricula(request.getParameter("matricula"));
+		//Recebendo os dados da matrícula e validando se o campo está fazio
+		String matricula = request.getParameter("matricula");
+		if ((matricula == null) || (matricula.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setMatricula(request.getParameter("matricula"));
+		}
 		
 		String dataAdmissaoTexto = request.getParameter("dataAdmissao");
 		Date dataAdmissao;
@@ -51,10 +57,19 @@ public class CadastroPessoaFisica implements Logica {
 			e.printStackTrace();
 		}
 		pessoaFisica.setStatus_2(Boolean.parseBoolean(request.getParameter("status_2")));
-		pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
+		
+		//Recebendo os dados de salario e validando se o campo está fazio
+		String salario = request.getParameter("salario");
+		if ((salario == null) || (salario.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setSalario(Double.parseDouble(request.getParameter("salario")));
+		}
+		
 		pessoaFisica.setEnderecoFuncional(request.getParameter("enderecoFuncional"));	
 		pessoaFisica.setTelefoneComercial(request.getParameter("telefoneComercial"));
 		pessoaFisica.setTipoFuncionario("Pessoa F�sica");
+		
 		//Recebendo os dados no nome e validando se o campo est� preenchido
 		String nome = request.getParameter("nome");
 		if ((nome == null) || (nome.equals(""))){
@@ -62,12 +77,35 @@ public class CadastroPessoaFisica implements Logica {
 		}else{
 			pessoaFisica.setNome(request.getParameter("nome"));	
 		}
-		pessoaFisica.setCPF_CNPJ(request.getParameter("CPF_CNPJ"));
-		pessoaFisica.setEmail(request.getParameter("email"));
-		pessoaFisica.setSenha(request.getParameter("senha"));
+		
+		//Recebendo os dados de CPF e validando se o campo está fazio
+		String CPF_CNPJ = request.getParameter("CPF_CNPJ");
+		if ((CPF_CNPJ == null) || (CPF_CNPJ.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCPF_CNPJ(request.getParameter("CPF_CNPJ"));
+		}
+		
+		//Recebendo os dados de email e validando se o campo está fazio
+		String email = request.getParameter("email");
+		if ((email == null) || (email.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setEmail(request.getParameter("email"));
+		}
+		
+		//Recebendo os dados de senha e validando se o campo está fazio
+		String senha = request.getParameter("senha");
+		if ((senha == null) || (senha.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setSenha(request.getParameter("senha"));
+		}
+		
 		pessoaFisica.setCEPFuncional(request.getParameter("CEPFuncional"));
 		pessoaFisica.setCidadeFuncional(request.getParameter("cidadeFuncional"));
 		pessoaFisica.setUFCidadeFuncional(request.getParameter("UFCidadeFuncional"));
+		
 		//Recebendo os dados do cargo e validando se o campo est� preenchido
 		String cargo = request.getParameter("cargo");
 		if ((cargo == null) || (cargo.equals(""))){
@@ -75,8 +113,17 @@ public class CadastroPessoaFisica implements Logica {
 		}else{
 			pessoaFisica.setCargo(request.getParameter("cargo"));	
 		}
+		
 		pessoaFisica.setTotalHoraSemanal(Integer.parseInt(request.getParameter("totalHoraSemanal")));
-		pessoaFisica.setRG(request.getParameter("RG"));
+		
+		//Recebendo os dados de RG e validando se o campo está preenchido
+		String RG = request.getParameter("RG");
+		if ((RG == null) || (RG.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setRG(request.getParameter("RG"));	
+		}
+		
 		//Recebendo os dados do �rg�o emissor e validando se o campo est� preenchido
 		String orgaoEmissor = request.getParameter("orgaoEmissor");
 		if ((orgaoEmissor == null) || (orgaoEmissor.equals(""))){
@@ -94,8 +141,16 @@ public class CadastroPessoaFisica implements Logica {
 			e.printStackTrace();
 		}
 		
-		pessoaFisica.setCTPS(request.getParameter("CTPS"));
+		//Recebendo os dados de CTPS e validando se o campo está preenchido
+		String CTPS = request.getParameter("CTPS");
+		if ((CTPS == null) || (CTPS.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCTPS(request.getParameter("CTPS"));	
+		}
+		
 		pessoaFisica.setPIS(request.getParameter("PIS"));
+		
 		//Validando data de Nascimento
 		String dataNascimentoTexto = request.getParameter("dataNascimento");
 		Date dataNascimento;
@@ -105,8 +160,10 @@ public class CadastroPessoaFisica implements Logica {
 		} catch(ParseException e) {
 			e.printStackTrace();
 		}
+		
 		pessoaFisica.setTelefoneCelular(request.getParameter("telefoneCelular"));
 		pessoaFisica.setTelefoneResidencial(request.getParameter("telefoneResidencial"));
+		
 		//Recebendo os dados do estado civil e validando se o campo est� preenchido
 		String estadoCivil = request.getParameter("estadoCivil");
 		if ((estadoCivil == null) || (estadoCivil.equals(""))){
@@ -114,6 +171,7 @@ public class CadastroPessoaFisica implements Logica {
 		}else{
 			pessoaFisica.setEstadoCivil(request.getParameter("estadoCivil"));
 		}
+		
 		//Recebendo os dados da nacionalidade e verificando se o campo foi preenchido
 		String nacionalidade = request.getParameter("nacionalidade");
 		if ((nacionalidade == null) || (nacionalidade.equals(""))){
@@ -121,15 +179,31 @@ public class CadastroPessoaFisica implements Logica {
 		}else{
 			pessoaFisica.setNacionalidade(request.getParameter("nacionalidade"));
 		}
+		
 		//Recebendo os dados da naturalidade e verificando se o campo foi preenchido
 		String naturalidade = request.getParameter("naturalidade");
 		if ((naturalidade == null) || (naturalidade.equals(""))){
 			throw new RuntimeException();
 		}else{
 			pessoaFisica.setNaturalidade(request.getParameter("naturalidade"));
-		}		
-		pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
-		pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));
+		}
+		
+		//Recebendo os dados da altura e verificando se o campo foi preenchido
+		String altura = request.getParameter("altura");
+		if ((altura == null) || (altura.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setAltura(Double.parseDouble(request.getParameter("altura")));
+		}
+		
+		//Recebendo os dados do peso e verificando se o campo foi preenchido
+		String peso = request.getParameter("peso");
+		if ((peso == null) || (peso.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setPeso(Double.parseDouble(request.getParameter("peso")));
+		}
+		
 		//Recebendo os dados da cor do cabelo e verificando se o campo foi preenchido
 		String corCabelo = request.getParameter("corCabelo");
 		if ((corCabelo == null) || (corCabelo.equals(""))){
@@ -144,7 +218,7 @@ public class CadastroPessoaFisica implements Logica {
 		}else{
 			pessoaFisica.setCorOlhos(request.getParameter("corOlhos"));
 		}		
-		//Recebendo os dados da cor dos olhos e verificando se o campo foi preenchido
+		//Recebendo os dados da raça e verificando se o campo foi preenchido
 		String racaCor = request.getParameter("racaCor");
 		if ((racaCor == null) || (racaCor.equals(""))){
 			throw new RuntimeException();
@@ -158,8 +232,16 @@ public class CadastroPessoaFisica implements Logica {
 		pessoaFisica.setNomePai(request.getParameter("nomePai"));
 		pessoaFisica.setNacionalidadeMae(request.getParameter("nacionalidadeMae"));
 		pessoaFisica.setNacionalidadePai(request.getParameter("nacionalidadePai"));
-		pessoaFisica.setSerieCTPS(request.getParameter("serieCTPS"));
 		
+		//Recebendo os dados da serie da CTPS e verificando se o campo foi preenchido
+		String serieCTPS = request.getParameter("serieCTPS");
+		if ((serieCTPS == null) || (serieCTPS.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setSerieCTPS(request.getParameter("serieCTPS"));
+		}
+		
+		//validando data de emissao da CTPS
 		String emissaoCTPSTexto= request.getParameter("emissaoCTPS");
 		Date emissaoCTPS;
 		try{
@@ -170,12 +252,42 @@ public class CadastroPessoaFisica implements Logica {
 		}
 		
 		pessoaFisica.setUFCTPS(request.getParameter("UFCTPS"));
-		pessoaFisica.setTituloEleitoral(request.getParameter("tituloEleitoral"));
-		pessoaFisica.setZonaTitulo(request.getParameter("zonaTitulo"));
-		pessoaFisica.setSecaoTitulo(request.getParameter("secaoTitulo"));
+		
+		//Recebendo os dados do titulo eleitoral e verificando se o campo foi preenchido
+		String tituloEleitoral = request.getParameter("tituloEleitoral");
+		if ((tituloEleitoral == null) || (tituloEleitoral.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setTituloEleitoral(request.getParameter("tituloEleitoral"));
+		}
+		
+		//Recebendo os dados da zona do titulo eleitoral e verificando se o campo foi preenchido
+		String zonaTitulo = request.getParameter("zonaTitulo");
+		if ((zonaTitulo == null) || (zonaTitulo.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setZonaTitulo(request.getParameter("zonaTitulo"));
+		}
+
+		//Recebendo os dados da seção do titulo eleitoral e verificando se o campo foi preenchido
+		String secaoTitulo = request.getParameter("secaoTitulo");
+		if ((secaoTitulo == null) || (secaoTitulo.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setSecaoTitulo(request.getParameter("secaoTitulo"));
+		}
+		
 		pessoaFisica.setCNH(request.getParameter("CNH"));
 		pessoaFisica.setReservista(request.getParameter("reservista"));
-		pessoaFisica.setGrauInstrucao(request.getParameter("grauInstrucao"));
+		
+		//Recebendo os dados do grau de instrução e verificando se o campo foi preenchido
+		String grauInstrucao = request.getParameter("grauInstrucao");
+		if ((grauInstrucao == null) || (grauInstrucao.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setGrauInstrucao(request.getParameter("grauInstrucao"));
+		}
+		
 		pessoaFisica.setNomeConjuge(request.getParameter("nomeConjuge"));
 		pessoaFisica.setNacionalidadeConjuge(request.getParameter("nacionalidadeConjuge"));
 		//dependentes - o recebimento dos dados dos dependentes está funcionando, porém o envio para o banco não
@@ -238,7 +350,13 @@ public class CadastroPessoaFisica implements Logica {
 			pessoaFisica.setUFResidencial(request.getParameter("UFResidencial"));
 		}	
 		
-		pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
+		//Recebendo os dados do CEP residencial e verificando se o campo foi preenchido
+		String CEPResidencial = request.getParameter("CEPResidencial");
+		if ((CEPResidencial == null) || (CEPResidencial.equals(""))){
+			throw new RuntimeException();
+		}else{
+			pessoaFisica.setCEPResidencial(request.getParameter("CEPResidencial"));
+		}
 		
 		CadastroDAO cadastro = new CadastroDAO();
 		cadastro.cadastrarPessoaFisica(pessoaFisica);
