@@ -34,8 +34,6 @@
 	<div id="layout">
 		<div id="main">
 
-			<form name="visualizar_pedidos_ferias"
-				action="ServletController" method="post" onsubmit="window.open('','pop_up','width=1000, height=800, resizeable=yes');" target="pop_up">
 				<h2>Pedidos de Férias</h2>
 				<h3>Dados para pesquisa</h3>
 				<table>
@@ -56,7 +54,7 @@
 						
 						for(int i=0;i<ferias.getPedidosAtivos().length;i++){ 
 							
-							funcionario=controller.idPessoaFisica(ferias.getPedidosAtivos()[i].getIdFuncionario());
+							funcionario = controller.idPessoaFisica(ferias.getPedidosAtivos()[i].getIdFuncionario());
 							
 							int anos = (int)ferias.getPedidosAtivos()[i].getPeriodoTrabalhado();
 							int meses = (int)((ferias.getPedidosAtivos()[i].getPeriodoTrabalhado()-(double)anos)*12);
@@ -69,19 +67,26 @@
 							<td><%=funcionario.getArea() %></td>
 							<td><%=anos %> anos e <%=meses %> meses </td>
 							<td>
-							<a href="#">Sim</a>
-							<a href="#">Não</a>
+							
+							<form name="resultado_ferias"
+								action="ServletController" method="post">
+								
+							<select name="resultado">
+								<option value="Sim">Sim</option>
+								<option value="Não">Não</option>
+							</select> 
+							
+							<input type="hidden" name="idFerias" value="<%=ferias.getPedidosAtivos()[i].getIdFerias() %>"/>
+							<input type="hidden" name="logica" value="ResultadoFerias"/>
+							
+							<input type="submit" value="Enviar" />
+							</form>
 							</td>
 							</tr>
 						<%} %>
+						
 				</table>
-				
-				<input type="hidden" name="logica" value="BuscaPessoaJuridica"/>
-				
-				<input type="submit" value="Pesquisar">
-				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior</a></h3>
 				<p>&nbsp;</p>
-			</form>
 		</div>
 	</div>
 </body>

@@ -59,7 +59,6 @@
 						<li><a href="index.jsp?item=1&situacao=2">Pessoa Física</a></li>
 	          			<li><a href="index.jsp?item=2&situacao=2">Pessoa Jurídica</a></li>
 	          			<li><a href="index.jsp?item=23&situacao=2">Relatórios</a></li><!-- mostra todos os relatorios -->
-	          			<li><a href="#">Férias</a></li>
 	          			<li><a href="logoff.jsp">Sair</a></li>
 	 					</ul>
 					<%

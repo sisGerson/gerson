@@ -27,8 +27,6 @@ public class PesquisaDAO {
 		this.factory = Persistence.createEntityManagerFactory("Banco");
 		//Criar entidade para persistir no banco
 		this.entityManager = this.factory.createEntityManager();
-		
-		this.entityManager.getTransaction().begin();
 	}
 	
 	public Ponto[] getPontos() {
@@ -59,6 +57,12 @@ public class PesquisaDAO {
 	public Ponto getIdPonto(int id){
 		Ponto ponto = this.entityManager.find(Ponto.class, id);
 		return ponto;
+	}
+	
+	//Recuperar id de férias
+	public Ferias getIdFerias(int id){
+		Ferias ferias = this.entityManager.find(Ferias.class, id);
+		return ferias;
 	}
 	
 	//Método para buscar todas as PessoasFisicas
@@ -139,18 +143,29 @@ public class PesquisaDAO {
 	
 	//Método para alterar PessoaFisica!
 	public void alterarPessoaFisica(PessoaFisica pessoaFisica) {
+		this.entityManager.getTransaction().begin();
 		this.entityManager.persist(pessoaFisica);
 		this.entityManager.getTransaction().commit();
 	}
 	
 	//Método para alterar PessoaJuridica!
 	public void alterarPessoaJuridica(PessoaJuridica pessoaJuridica) {
+		this.entityManager.getTransaction().begin();
 		this.entityManager.persist(pessoaJuridica);
 		this.entityManager.getTransaction().commit();
 	}
 	
+	//Método para alterar Ponto
 	public void alterarPonto(Ponto ponto){
+		this.entityManager.getTransaction().begin();
 		this.entityManager.persist(ponto);
+		this.entityManager.getTransaction().commit();
+	}
+	
+	//Método para alterar Férias
+	public void alterarFerias(Ferias ferias){
+		this.entityManager.getTransaction().begin();
+		this.entityManager.persist(ferias);
 		this.entityManager.getTransaction().commit();
 	}
 	
