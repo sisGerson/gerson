@@ -1,21 +1,24 @@
+<%@page import="controller.business.BusinessController"%>
+<%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 
 <html>
-<%
-	if (session.getAttribute("funcionario") == null)
+	<%
+	if(session.getAttribute("funcionario") == null)
 		response.sendRedirect("index.jsp?item=0");
-	else {
+	else{
 		
+	
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
 		
 		if(!pessoaFisica.getCargo().equalsIgnoreCase("gerente")){
 			response.sendRedirect("index.jsp?situacao=2");
 		}
+	}
 	%>
-	
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="pt-br" />
@@ -24,27 +27,39 @@
 	content="cadastro de cliente, controle de almoxarifado" />
 <link rel="stylesheet" type="text/css" href="css/formulario.css">
 
+
 <title>GeRsON</title>
 </head>
 <body>
-
 	<div id="layout">
 		<div id="main">
-			<!-- Itens associados a pessoa Pessoa fisica -->
-			<h2>Relatórios: <%=pessoaFisica.getNome() %></h2>
-			<p>&nbsp;</p>
-			<ul>
-				<li><a href="index.jsp?item=24&situacao=2">Visualizar pedidos de férias</a></li>
-				<li><a href="index.jsp?item=26&situacao=2">Visualizar funcionários de férias</a></li>
-			</ul>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+
+				<h2>Funcionários de Férias</h2>
+				<h3>Dados para pesquisa</h3>
+				<table>
+					<tr>
+						<td>Matrícula</td>
+						<td>Nome</td>
+						<td>Cargo</td>
+						<td>Area</td>
+					</tr>
+						<%
+						BusinessFerias ferias2 = new BusinessFerias();
+						ferias2.buscarPedidos();
+						
+						for(int i=0;i<ferias2.getPedidosAceitos().length;i++){ 
+						%>
+							<tr>
+							<td><%=ferias2.getPedidosAceitos()[i].getMatricula() %></td>
+							<td><%=ferias2.getPedidosAceitos()[i].getNome() %></td>
+							<td><%=ferias2.getPedidosAceitos()[i].getCargo() %></td>
+							<td><%=ferias2.getPedidosAceitos()[i].getArea() %></td>
+							</tr>
+						<%} %>
+						
+				</table>
+				<p>&nbsp;</p>
 		</div>
 	</div>
 </body>
-	<%
-	}
-	%>
 </html>

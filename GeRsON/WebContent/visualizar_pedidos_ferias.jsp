@@ -50,7 +50,7 @@
 						BusinessController controller = new BusinessController();
 						PessoaFisica funcionario = new PessoaFisica();
 						
-						ferias.buscarPedidosAtivos();
+						ferias.buscarPedidos();
 						
 						for(int i=0;i<ferias.getPedidosAtivos().length;i++){ 
 							

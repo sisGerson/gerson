@@ -256,6 +256,16 @@ case 24: //Visualizar pedidos de férias
 <%@ include file="visualizar_pedidos_ferias.jsp" %>
 <%
 break;
+case 25: //Verificar pedidos de férias
+%>
+<%@ include file="verificar_pedido.jsp" %>
+<%
+break;
+case 26: //Verificar pedidos de férias
+%>
+<%@ include file="funcionarios_ferias.jsp" %>
+<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>
