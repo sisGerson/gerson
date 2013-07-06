@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="model.funcionarios.pj.PessoaJuridica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -43,6 +44,8 @@
 	<% 
 	int id = Integer.parseInt(request.getParameter("id"));
 	PessoaJuridica pessoaJuridica = business.idPessoaJuridica(id);
+	
+	SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
 	%>
 
 	<!-- Java Script utilizado para validação dos campos do formulário -->
@@ -229,13 +232,26 @@
 						</td>
 					</tr>
 					<tr>
+					<% 
+					String dataAdmissao = "";
+					
+					if(pessoaJuridica.getDataAdmissao() != null)
+						dataAdmissao = formataData.format(pessoaJuridica.getDataAdmissao());
+					%>
 						<td>* Data de Admissão: <input type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataAdmissao" value="<%= pessoaJuridica.getDataAdmissao() %>" size="10" maxlength="10" required />
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data
-							de Desligamento: <input type="text"
+							name="dataAdmissao" value="<%=dataAdmissao %>" size="10" maxlength="10" required />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							
+							<%
+							String dataDeligamento = "";
+							
+							if(pessoaJuridica.getDataDesligamento() != null)
+								dataDeligamento = formataData.format(pessoaJuridica.getDataDesligamento());
+							%>
+							Data de Desligamento: <input type="text"
 							onkeypress="return mascaraDATA(event,this); return false;"
-							name="dataDesligamento" value="<%= pessoaJuridica.getDataDesligamento() %>" size="10" maxlength="10" />
+							name="dataDesligamento" value="<%=dataDeligamento %>" size="10" maxlength="10" />
 						</td>
 					</tr>
 					<tr>
