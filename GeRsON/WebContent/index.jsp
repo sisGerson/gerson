@@ -266,6 +266,11 @@ case 26: //Verificar pedidos de férias
 <%@ include file="funcionarios_ferias.jsp" %>
 <%
 break;
+case 27: //Verificar funcionário que irão tirar férias
+%>
+<%@ include file="funcionarios_tirar_ferias.jsp" %>
+<%
+break;
 default:
 %>
 <%@ include file="main.jsp" %>

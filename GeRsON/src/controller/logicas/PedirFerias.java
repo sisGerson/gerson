@@ -28,12 +28,22 @@ public class PedirFerias implements Logica{
 		PessoaFisica pessoaFisica = (PessoaFisica)request.getSession().getAttribute("funcionario");
 		
 		Calendar data = Calendar.getInstance();
+		Calendar dataFim = Calendar.getInstance();
+		
 		data.set(ano, (mes-1), 1);
+		
+		if(mes-1==12){
+			dataFim.set(ano+1, 1, 1);
+		}
+		else{
+			dataFim.set(ano, mes, 1);
+		}
 		
 		Ferias ferias = new Ferias();
 		
 		ferias.setResultado("Aguarde");
 		ferias.setDataPedido(data.getTime());
+		ferias.setDataRetorno(dataFim.getTime());
 		ferias.setIdFuncionario(pessoaFisica.getId());
 		
 		BusinessFerias business = new BusinessFerias();

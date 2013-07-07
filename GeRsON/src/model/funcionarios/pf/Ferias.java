@@ -15,6 +15,10 @@ public class Ferias {
 	private int idFerias;
 	@Temporal(TemporalType.DATE)
 	private Date dataPedido;
+	@Temporal(TemporalType.DATE)
+	private Date dataRetorno;
+	@Temporal(TemporalType.DATE)
+	private Date dataTemp;
 	private String resultado;
 	private int idFuncionario;
 	private double periodoTrabalhado;
@@ -56,5 +60,22 @@ public class Ferias {
 	public void setPeriodoTrabalhado(double periodoTrabalhado) {
 		this.periodoTrabalhado = periodoTrabalhado;
 	}
+
+	public Date getDataRetorno() {
+		return dataRetorno;
+	}
+
+	public void setDataRetorno(Date dataRetorno) {
+		this.dataRetorno = dataRetorno;
+	}
+
+	public Date getDataTemp() {
+		return dataTemp;
+	}
+
+	public void setDataTemp(Date dataTemp) {
+		this.dataTemp = dataTemp;
+	}
+	
 	
 }

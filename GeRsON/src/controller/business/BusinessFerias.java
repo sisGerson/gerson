@@ -1,6 +1,9 @@
 package controller.business;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import dao.PesquisaDAO;
@@ -11,7 +14,8 @@ import model.funcionarios.pf.PessoaFisica;
 public class BusinessFerias {
 	private boolean pedidoFerias = false;
 	private Ferias[] pedidosAtivos = {};
-	private PessoaFisica[] pedidosAceitos = {};
+	private PessoaFisica[] funcionariosFerias = {};
+	private PessoaFisica[] funcionariosTirarFerias = {};
 	private double periodoTrabalhado = 0;
 	private String resultadoPedido = "Sem pedidos";
 	public BusinessFerias() {
@@ -30,8 +34,12 @@ public class BusinessFerias {
 		return pedidosAtivos;
 	}
 	
-	public PessoaFisica[] getPedidosAceitos() {
-		return pedidosAceitos;
+	public PessoaFisica[] getFuncionariosFerias() {
+		return funcionariosFerias;
+	}
+
+	public PessoaFisica[] getFuncionariosTirarFerias() {
+		return funcionariosTirarFerias;
 	}
 
 	public String getResultadoPedido() {
@@ -73,22 +81,34 @@ public class BusinessFerias {
 		this.pedidosAtivos = novaFerias;
 	}
 	
-	//Método para popular o vetor de funcionários que tiveram suas férias aceitas pelo gerente
-	private void adicionarFeriasAceitas(PessoaFisica pessoaFisica){
-		PessoaFisica[] novaPessoa = new PessoaFisica[this.pedidosAceitos.length+1];
+	//Método para popular o vetor de funcionários que estão de férias
+	private void adicionarFuncionariosFerias(PessoaFisica pessoaFisica){
+		PessoaFisica[] novaPessoa = new PessoaFisica[this.funcionariosFerias.length+1];
 		
-		for(int i=0;i<this.pedidosAceitos.length;i++){
-			novaPessoa[i] = this.pedidosAceitos[i];
+		for(int i=0;i<this.funcionariosFerias.length;i++){
+			novaPessoa[i] = this.funcionariosFerias[i];
 		}
-		novaPessoa[this.pedidosAceitos.length] = pessoaFisica;
-		this.pedidosAceitos = novaPessoa;
+		novaPessoa[this.funcionariosFerias.length] = pessoaFisica;
+		this.funcionariosFerias = novaPessoa;
 	}
+	
+	//Método para popular o vetor de funcionários que irão de férias
+		private void adicionarFuncionariosTirarFerias(PessoaFisica pessoaFisica){
+			PessoaFisica[] novaPessoa = new PessoaFisica[this.funcionariosTirarFerias.length+1];
+			
+			for(int i=0;i<this.funcionariosTirarFerias.length;i++){
+				novaPessoa[i] = this.funcionariosTirarFerias[i];
+			}
+			novaPessoa[this.funcionariosTirarFerias.length] = pessoaFisica;
+			this.funcionariosTirarFerias = novaPessoa;
+		}
 	
 	/**
 	 * Método que busca dentre todos os pedidos os que então em aguarde ou que foram aprovados
 	 * para se ter os dois vetores populados: pedidosAtivos e pedidosAceitos
+	 * @throws ParseException 
 	 */
-	public void buscarPedidos(){
+	public void buscarPedidos() throws ParseException{
 		PesquisaDAO pesquisa = new PesquisaDAO();
 		
 		List<Ferias> pedidos = pesquisa.buscarTodosPedidosFerias();
@@ -97,9 +117,64 @@ public class BusinessFerias {
 			if(ferias.getResultado().equals("Aguarde")){
 				adicionarFerias(ferias);
 			}
-			else if(ferias.getResultado().equals("Aprovado")) {
+		}
+	}
+	/*
+	 * @throws ParseException
+	 */
+	public void buscarTirarFuncionariosFerias() throws ParseException{
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		
+		List<Ferias> pedidos = pesquisa.buscarTodosPedidosFerias();
+		
+		for (Ferias ferias : pedidos) {
+			
+			GregorianCalendar calendario = new GregorianCalendar();
+			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
+			System.out.println(ferias.getDataRetorno());
+			System.out.println(ferias.getDataTemp()+"\n\n\n\n\n\n\n\n\n\n\n\n");
+			
+			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
+			String dataFormatada = formatador.format(ferias.getDataTemp());
+			
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			Date minhaData = format.parse(dataFormatada);
+			
+			if(ferias.getResultado().equals("Aprovado") && ferias.getDataPedido().after(minhaData)) {
 				PessoaFisica pessoaFisica = pesquisa.getIdPessoaFisica(ferias.getIdFuncionario());
-				adicionarFeriasAceitas(pessoaFisica);
+				adicionarFuncionariosTirarFerias(pessoaFisica);
+			}
+		}
+	}
+	
+	/*
+	 * @throws ParseException
+	 */
+	public void buscarFuncionariosFerias() throws ParseException{
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		
+		List<Ferias> pedidos = pesquisa.buscarTodosPedidosFerias();
+		
+		for (Ferias ferias : pedidos) {
+			
+			GregorianCalendar calendario = new GregorianCalendar();
+			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
+			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
+			String dataFormatada = formatador.format(ferias.getDataTemp());
+			
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			Date minhaData = format.parse(dataFormatada);
+			
+			if(ferias.getResultado().equals("Aprovado") && ferias.getDataPedido().before(minhaData)) {
+				
+				if(ferias.getDataRetorno().after(minhaData)){
+					PessoaFisica pessoaFisica = pesquisa.getIdPessoaFisica(ferias.getIdFuncionario());
+					adicionarFuncionariosFerias(pessoaFisica);
+				}
+				else{
+					ferias.setResultado("Retorno");
+					pesquisa.alterarFerias(ferias);
+				}
 			}
 		}
 	}

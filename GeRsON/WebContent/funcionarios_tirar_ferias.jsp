@@ -1,3 +1,4 @@
+<!-- mudei o método q a BusinessFerias chama -->
 <%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -33,7 +34,7 @@
 	<div id="layout">
 		<div id="main">
 
-				<h2>Funcionários de Férias</h2>
+				<h2>Funcionários que irão tirar Férias</h2>
 				<h3>Dados para pesquisa</h3>
 				<table>
 					<tr>
@@ -44,17 +45,17 @@
 						<td>Data das Férias</td>
 					</tr>
 						<%
-						BusinessFerias ferias2 = new BusinessFerias();
-						ferias2.buscarFuncionariosFerias();
+						BusinessFerias ferias3 = new BusinessFerias();
+						ferias3.buscarTirarFuncionariosFerias();
 						
-						for(int i=0;i<ferias2.getFuncionariosFerias().length;i++){ 
+						for(int i=0;i<ferias3.getFuncionariosTirarFerias().length;i++){ 
 						%>
 							<tr>
-							<td><%=ferias2.getFuncionariosFerias()[i].getMatricula() %></td>
-							<td><%=ferias2.getFuncionariosFerias()[i].getNome() %></td>
-							<td><%=ferias2.getFuncionariosFerias()[i].getCargo() %></td>
-							<td><%=ferias2.getFuncionariosFerias()[i].getArea() %></td>
-							<td><%=ferias2.getFuncionariosFerias()[i].getUltimasFerias() %></td>
+							<td><%=ferias3.getFuncionariosTirarFerias()[i].getMatricula() %></td>
+							<td><%=ferias3.getFuncionariosTirarFerias()[i].getNome() %></td>
+							<td><%=ferias3.getFuncionariosTirarFerias()[i].getCargo() %></td>
+							<td><%=ferias3.getFuncionariosTirarFerias()[i].getArea() %></td>
+							<td><%=ferias3.getFuncionariosTirarFerias()[i].getUltimasFerias() %></td>
 							</tr>
 						<%} %>
 						

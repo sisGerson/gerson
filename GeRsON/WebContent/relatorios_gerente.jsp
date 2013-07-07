@@ -36,6 +36,7 @@
 			<ul>
 				<li><a href="index.jsp?item=24&situacao=2">Visualizar pedidos de férias</a></li>
 				<li><a href="index.jsp?item=26&situacao=2">Visualizar funcionários de férias</a></li>
+				<li><a href="index.jsp?item=27&situacao=2">Visualizar funcionários que irão tirar férias</a></li>
 			</ul>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>

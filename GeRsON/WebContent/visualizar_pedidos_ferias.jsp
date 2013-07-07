@@ -66,7 +66,7 @@
 							<td><%=funcionario.getNome() %></td>
 							<td><%=funcionario.getCargo() %></td>
 							<td><%=funcionario.getArea() %></td>
-							<td><%=anos %> anos e <%=meses %> meses </td>
+							<td><%=anos %> ano(s) e <%=meses %> mes(es) </td>
 							<td><%=ferias.getPedidosAtivos()[i].getDataPedido() %></td>
 							<td>
 							
