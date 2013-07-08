@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="controller.business.BusinessController"%>
 <%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
@@ -53,6 +54,8 @@
 						
 						ferias.buscarPedidos();
 						
+						SimpleDateFormat formataData3 = new SimpleDateFormat("dd/MM/yyyy");
+						
 						for(int i=0;i<ferias.getPedidosAtivos().length;i++){ 
 							
 							funcionario = controller.idPessoaFisica(ferias.getPedidosAtivos()[i].getIdFuncionario());
@@ -67,7 +70,14 @@
 							<td><%=funcionario.getCargo() %></td>
 							<td><%=funcionario.getArea() %></td>
 							<td><%=anos %> ano(s) e <%=meses %> mes(es) </td>
-							<td><%=ferias.getPedidosAtivos()[i].getDataPedido() %></td>
+							
+							<%
+							String pedidosAtivos = "";
+							
+							if(ferias.getPedidosAtivos()[i].getDataPedido() != null)
+								pedidosAtivos = formataData3.format(ferias.getPedidosAtivos()[i].getDataPedido());
+							%>
+							<td><%=pedidosAtivos %></td>
 							<td>
 							
 							<form name="resultado_ferias"

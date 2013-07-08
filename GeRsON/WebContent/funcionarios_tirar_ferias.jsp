@@ -1,4 +1,5 @@
 <!-- mudei o método q a BusinessFerias chama -->
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -48,6 +49,8 @@
 						BusinessFerias ferias3 = new BusinessFerias();
 						ferias3.buscarTirarFuncionariosFerias();
 						
+						SimpleDateFormat formataData5 = new SimpleDateFormat("dd/MM/yyyy");
+						
 						for(int i=0;i<ferias3.getFuncionariosTirarFerias().length;i++){ 
 						%>
 							<tr>
@@ -55,7 +58,12 @@
 							<td><%=ferias3.getFuncionariosTirarFerias()[i].getNome() %></td>
 							<td><%=ferias3.getFuncionariosTirarFerias()[i].getCargo() %></td>
 							<td><%=ferias3.getFuncionariosTirarFerias()[i].getArea() %></td>
-							<td><%=ferias3.getFuncionariosTirarFerias()[i].getUltimasFerias() %></td>
+							<%
+							String ultimasFerias = "";
+							if(ferias3.getFuncionariosTirarFerias()[i].getUltimasFerias() != null)
+								ultimasFerias = formataData5.format(ferias3.getFuncionariosTirarFerias()[i].getUltimasFerias());
+							%>
+							<td><%=ultimasFerias %></td>
 							</tr>
 						<%} %>
 						

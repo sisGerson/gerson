@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@page import="controller.business.BusinessController"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -45,10 +46,17 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 		<td>Saída</td>
 		</tr>
 		<%
+		SimpleDateFormat formataData4 = new SimpleDateFormat("dd/MM/yyyy");
+		
 		for(int i=0;i<business.getPontos().length;i++){ 
 		%>
 			<tr>
-			<td><%=business.getPontos()[i].getData() %></td>
+			<%
+			String data = "";
+			if(business.getPontos()[i].getData() != null)
+				data = formataData4.format(business.getPontos()[i].getData());
+			%>
+			<td><%=data %></td>
 			<td><%=business.getPontos()[i].getHoraEntrada() %></td>
 			<td><%=business.getPontos()[i].getHoraInicioAlmoco() %></td>
 			<td><%=business.getPontos()[i].getHoraFimAlmoco() %></td>
