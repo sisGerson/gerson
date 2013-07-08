@@ -1,7 +1,7 @@
 package teste.funcionalidades;
 
 /**
- * Todos os testes referentes as contra-cheque passaram nessa classe
+ * Testes referentes a Cadastro pessoa fisica
  */
 
 import static org.junit.Assert.*;

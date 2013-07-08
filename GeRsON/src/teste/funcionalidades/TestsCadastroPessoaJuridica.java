@@ -1,5 +1,9 @@
 package teste.funcionalidades;
 
+/**
+ * Testes referentes a busca pessoa fisica
+ */
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;

@@ -1,5 +1,8 @@
 package teste.funcionalidades;
 
+/**
+ * Testes referentes a Cadastro Pessoa Juridica
+ */
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -25,7 +28,7 @@ public class TestsBuscaPessoaJuridica {
 	private WebWindow[] window;
 	
 	@Test
-	//Logando como gerente
+	//Logando como gerente para acesso a funcionalidade
 	public void gerenteLoginTest() throws IOException, SAXException {
 		this.wc = new WebConversation();
 		this.resp = this.wc.getResponse(this.urlPrincipal+"login.jsp");
