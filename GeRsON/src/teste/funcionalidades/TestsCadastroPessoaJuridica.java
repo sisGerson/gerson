@@ -1,4 +1,4 @@
-package teste;
+package teste.funcionalidades;
 
 import static org.junit.Assert.*;
 
@@ -12,7 +12,7 @@ import com.meterware.httpunit.WebForm;
 import com.meterware.httpunit.WebLink;
 import com.meterware.httpunit.WebResponse;
 
-public class CadastroPessoaJuridicaTest {
+public class TestsCadastroPessoaJuridica {
 
 	private WebConversation wc;
 	private WebResponse resp;

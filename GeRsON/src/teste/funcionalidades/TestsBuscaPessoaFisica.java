@@ -1,4 +1,4 @@
-package teste;
+package teste.funcionalidades;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,7 @@ import com.meterware.httpunit.WebResponse;
 import com.meterware.httpunit.WebTable;
 import com.meterware.httpunit.WebWindow;
 
-public class BuscaPessoaFisicaTest {
+public class TestsBuscaPessoaFisica {
 
 	private WebConversation wc;
 	private WebResponse resp;
