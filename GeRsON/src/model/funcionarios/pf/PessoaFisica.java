@@ -58,6 +58,8 @@ public class PessoaFisica extends Funcionario {
 	protected String cidadeResidencial;
 	protected String UFResidencial;
 	protected String CEPResidencial;
+	@Temporal(TemporalType.DATE)
+	protected Date ultimasFerias;
 	protected Dependentes[] dependentes = {};
 
 	public PessoaFisica() {
@@ -383,9 +385,17 @@ public class PessoaFisica extends Funcionario {
 	public void setCEPResidencial(String cEPResidencial) {
 		CEPResidencial = cEPResidencial;
 	}
-	
+
 	public Dependentes[] getDependentes() {
 		return dependentes;
+	}
+
+	public Date getUltimasFerias() {
+		return ultimasFerias;
+	}
+
+	public void setUltimasFerias(Date ultimasFerias) {
+		this.ultimasFerias = ultimasFerias;
 	}
 
 	// Método para criar dependentes do funcionário

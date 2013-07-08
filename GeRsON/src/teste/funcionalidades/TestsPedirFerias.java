@@ -1,7 +1,7 @@
 package teste.funcionalidades;
 
 /**
- * Todos os testes referentes as horas extras passaram nessa classe
+ * Todos os testes dessa classe passaram com sucesso
  */
 
 import static org.junit.Assert.*;
@@ -16,7 +16,7 @@ import com.meterware.httpunit.WebForm;
 import com.meterware.httpunit.WebLink;
 import com.meterware.httpunit.WebResponse;
 
-public class TestsHoraExtra {
+public class TestsPedirFerias {
 	private WebConversation wc;
 	private WebResponse resp;
 	private WebForm formulario;
@@ -38,44 +38,56 @@ public class TestsHoraExtra {
 	}
 	
 	@Test
-	//teste para verificar o link de hora extra
-	public void testLinkHoraExtra() throws IOException, SAXException {
+	//teste para verificar o link de pedir férias
+	public void testLinkPedirFerias() throws IOException, SAXException {
 		testLoginFuncionario();
 		
-		this.link = this.resp.getLinks()[2];
+		this.link = this.resp.getLinks()[4];
+		this.link.click();
+		
+		this.resp = this.wc.getCurrentPage();
+		
+		this.link = this.resp.getLinks()[6];
+		assertEquals(this.link.getText(), "Pedir Férias");
+		this.link.click();
+		
+		this.resp = this.wc.getCurrentPage();
+	}
+	
+	@Test
+	//teste para verificar o formulário e o resultado do pedido de férias
+	public void testFormResult() throws IOException, SAXException{
+		testLinkPedirFerias();
+		
+		this.formulario = this.resp.getForms()[0];
+		
+		assertEquals(this.formulario.getName(), "pedir_ferias");
+		
+		this.formulario.setParameter("ano", "2013");
+		this.formulario.setParameter("mes", "02");
+		
+		this.formulario.submit();
+		
+		this.resp = this.wc.getCurrentPage();
+		
+		assertTrue(this.resp.getText().contains("Pedido de férias efetuado com sucesso!"));
+	}
+
+	@Test
+	//Teste para verificar situação das férias
+	public void testVerificarResult() throws IOException, SAXException {
+		testLoginFuncionario();
+		
+		this.link = this.resp.getLinks()[4];
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getText(), "Visualizar Hora Extra");
+		assertEquals(this.link.getText(), "Verificar Pedido de Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
-	}
-	
-	@Test
-	//teste para verificar o formulário
-	public void testFormHoraExtra() throws IOException, SAXException{
-		testLinkHoraExtra();
-		
-		this.formulario = this.resp.getForms()[0];
-		
-		assertEquals(this.formulario.getName(), "solicitar_hora_extra");
-		
-		this.formulario.setParameter("ano", "2013");
-		this.formulario.setParameter("mes", "07");
-		
-		this.formulario.submit();
-		
-		this.resp = this.wc.getCurrentPage();
-	}
-	
-	@Test
-	//teste para verificar o resultado da visualização da hora extra
-	public void testResultHoraExtra() throws IOException, SAXException{
-		testFormHoraExtra();
-		
-		assertTrue(this.resp.getText().contains("Horas Extras -"));
+		assertTrue(this.resp.getText().contains("Aguarde seu pedido ainda não foi processado!"));
 	}
 }

@@ -9,7 +9,6 @@
 		response.sendRedirect("index.jsp?item=0");
 	else {
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
-	}
 %>
 
 <head>
@@ -27,11 +26,19 @@
 	<div id="layout">
 		<div id="main">
 			<!-- Itens associados a pessoa Pessoa fisica -->
-			<h2>Ponto Eletrônico</h2>
+			<h2>Férias</h2>
 			<p>&nbsp;</p>
+		<%
+			if(!pessoaFisica.getCargo().equals("Gerente")){
+			
+		%>
 			<ul>
-				<li><a href="index.jsp?item=11&situacao=2">Bater Ponto</a></li>
+				<li><a href="index.jsp?item=21&situacao=2">Pedir Férias</a></li>
+				<li><a href="index.jsp?item=25&situacao=2">Verificar Pedido de Férias</a></li>
 			</ul>
+		<%
+			}
+		%>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
@@ -39,4 +46,7 @@
 		</div>
 	</div>
 </body>
+<%
+	}
+%>
 </html>

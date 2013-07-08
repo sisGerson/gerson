@@ -9,9 +9,8 @@
 		response.sendRedirect("index.jsp?item=0");
 	else {
 		PessoaFisica pessoaFisica = (PessoaFisica) session.getAttribute("funcionario");
-	}
-%>
-
+	%>
+	
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="content-language" content="pt-br" />
@@ -27,10 +26,12 @@
 	<div id="layout">
 		<div id="main">
 			<!-- Itens associados a pessoa Pessoa fisica -->
-			<h2>Ponto Eletrônico</h2>
+			<h2>Relatórios: <%=pessoaFisica.getNome() %></h2>
 			<p>&nbsp;</p>
 			<ul>
-				<li><a href="index.jsp?item=11&situacao=2">Bater Ponto</a></li>
+				<li><a href="index.jsp?item=12&situacao=2">Solicitar Folha de Ponto</a></li>
+				<li><a href="index.jsp?item=15&situacao=2">Visualizar Hora Extra</a></li>
+				<li><a href="index.jsp?item=17&situacao=2">Solicitar Contra Cheque</a></li>
 			</ul>
 			<p>&nbsp;</p>
 			<p>&nbsp;</p>
@@ -39,4 +40,7 @@
 		</div>
 	</div>
 </body>
+	<%
+	}
+	%>
 </html>
