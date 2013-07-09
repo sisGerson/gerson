@@ -135,12 +135,8 @@ public class BusinessFerias {
 		for (Ferias ferias : pedidos) {
 			
 			GregorianCalendar calendario = new GregorianCalendar();
-			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
-			System.out.println(ferias.getDataRetorno());
-			System.out.println(ferias.getDataTemp()+"\n\n\n\n\n\n\n\n\n\n\n\n");
-			
 			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
-			String dataFormatada = formatador.format(ferias.getDataTemp());
+			String dataFormatada = formatador.format(calendario.getTime());
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			Date minhaData = format.parse(dataFormatada);
@@ -163,9 +159,8 @@ public class BusinessFerias {
 		for (Ferias ferias : pedidos) {
 			
 			GregorianCalendar calendario = new GregorianCalendar();
-			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
 			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
-			String dataFormatada = formatador.format(ferias.getDataTemp());
+			String dataFormatada = formatador.format(calendario.getTime());
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			Date minhaData = format.parse(dataFormatada);
