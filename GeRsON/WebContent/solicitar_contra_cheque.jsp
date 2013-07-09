@@ -34,7 +34,19 @@
 					<tr>
 						<td> Ano de Referência: 
 						   <select name="ano">
-								
+								<option value="2013">2000</option>
+								<option value="2013">2001</option>
+								<option value="2013">2002</option>
+								<option value="2013">2003</option>
+								<option value="2013">2004</option>
+								<option value="2013">2005</option>
+								<option value="2013">2006</option>
+								<option value="2013">2007</option>
+								<option value="2013">2008</option>
+								<option value="2013">2009</option>
+								<option value="2013">2010</option>
+								<option value="2013">2011</option>
+								<option value="2013">2012</option>
 								<option value="2013">2013</option>
 							</select> 
 						</td>

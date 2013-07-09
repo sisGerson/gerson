@@ -48,7 +48,12 @@ public class BusinessFerias {
 	
 	//Método que verifica se o funcionário pode ou não pedir férias, e retorna também o periodo trabalhado
 	public void pedidoFeriasPermitido(PessoaFisica pessoaFisica, Date data){
-		if(pessoaFisica.getUltimasFerias() == null){
+		GregorianCalendar dataHoje = new GregorianCalendar();
+		
+		if(data.before(dataHoje.getTime()))
+			this.pedidoFerias = false;
+		
+		else if(pessoaFisica.getUltimasFerias() == null){
 			if((data.getTime() - pessoaFisica.getDataAdmissao().getTime())/3600000 >=1){
 				this.periodoTrabalhado = (data.getTime() - pessoaFisica.getDataAdmissao().getTime())/3600000;
 				
