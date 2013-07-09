@@ -38,7 +38,7 @@
 <p>&nbsp;</p>
 <hr>
 <p><a href="index.jsp?item=7">Cadastrar outro Funcionário - Pessoa Física</a></p>
-<p><a href="index.jsp?item=0">Voltar para Página Inicial</a></p>
+<p><a href="index.jsp?situacao=2">Voltar para Página Inicial</a></p>
 <p>&nbsp;</p>
 </body>
 </html>

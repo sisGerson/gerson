@@ -102,13 +102,6 @@ public class FuncionarioTeste {
 	}
 
 	@Test
-	public void testSetSenha() {
-		Funcionario f1 = new Funcionario();
-		f1.setSenha("minhaSenha789!");
-		assertEquals("minhaSenha789!",f1.getSenha());
-	}
-
-	@Test
 	public void testSetCEPFuncional() {
 		Funcionario f1 = new Funcionario();
 		f1.setCEPFuncional("72548-780");

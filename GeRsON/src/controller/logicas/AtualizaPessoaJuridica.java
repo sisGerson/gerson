@@ -104,14 +104,6 @@ public class AtualizaPessoaJuridica implements Logica {
 		}else{
 			pessoaJuridica.setEmail(request.getParameter("email"));
 		}		
-		
-		//Recebendo os dados da senha e verificando se o mesmo está vazio
-		String senha = request.getParameter("senha");
-		if ((senha == null || senha.equals(""))){
-			throw new RuntimeException();
-		}else{
-			pessoaJuridica.setSenha(request.getParameter("senha"));
-		}		
 
 		//Recebendo os dados do CEP e verificando se o mesmo está vazio
 		String CEPFuncional = request.getParameter("CEPFuncional");

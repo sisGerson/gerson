@@ -60,6 +60,7 @@ public class PessoaFisica extends Funcionario {
 	protected String CEPResidencial;
 	@Temporal(TemporalType.DATE)
 	protected Date ultimasFerias;
+	protected String senha;
 	protected Dependentes[] dependentes = {};
 
 	public PessoaFisica() {
@@ -384,6 +385,14 @@ public class PessoaFisica extends Funcionario {
 
 	public void setCEPResidencial(String cEPResidencial) {
 		CEPResidencial = cEPResidencial;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public Dependentes[] getDependentes() {
