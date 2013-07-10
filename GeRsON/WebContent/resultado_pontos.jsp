@@ -28,6 +28,9 @@
 <!-- Pegando o parâmetro da servlet -->
 <%
 BusinessController business = (BusinessController)session.getAttribute("pesquisa");
+
+SimpleDateFormat formataData4 = new SimpleDateFormat("dd/MM/yyyy");
+SimpleDateFormat formataHora = new SimpleDateFormat("HH:mm:ss");
 %>
 
 <body>
@@ -46,21 +49,32 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 		<td>Saída</td>
 		</tr>
 		<%
-		SimpleDateFormat formataData4 = new SimpleDateFormat("dd/MM/yyyy");
-		
 		for(int i=0;i<business.getPontos().length;i++){ 
 		%>
 			<tr>
 			<%
-			String data = "";
+			String data = "", horaEntrada = "", horaInicioAlmoco = "", horaFimAlmoco = "", horaSaida = "";
+			
 			if(business.getPontos()[i].getData() != null)
 				data = formataData4.format(business.getPontos()[i].getData());
+			
+			if(business.getPontos()[i].getHoraEntrada() != null)
+				horaEntrada = formataHora.format(business.getPontos()[i].getHoraEntrada());
+			
+			if(business.getPontos()[i].getHoraInicioAlmoco() != null)
+				horaInicioAlmoco = formataHora.format(business.getPontos()[i].getHoraInicioAlmoco());
+			
+			if(business.getPontos()[i].getHoraFimAlmoco() != null)
+				horaFimAlmoco = formataHora.format(business.getPontos()[i].getHoraFimAlmoco());
+			
+			if(business.getPontos()[i].getHoraSaida() != null)
+				horaSaida = formataHora.format(business.getPontos()[i].getHoraSaida());
 			%>
 			<td><%=data %></td>
-			<td><%=business.getPontos()[i].getHoraEntrada() %></td>
-			<td><%=business.getPontos()[i].getHoraInicioAlmoco() %></td>
-			<td><%=business.getPontos()[i].getHoraFimAlmoco() %></td>
-			<td><%=business.getPontos()[i].getHoraSaida() %></td>
+			<td><%=horaEntrada %></td>
+			<td><%=horaInicioAlmoco %></td>
+			<td><%=horaFimAlmoco %></td>
+			<td><%=horaSaida %></td>
 			</tr>
 		<%
 		}
@@ -73,11 +87,22 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 		</tr>
 		<%
 		for(int i=0;i<business.getPontos().length;i++){ 
+		
+			String data = "", horaEntrada = "", horaSaida = "";
+			
+			if(business.getPontos()[i].getData() != null)
+				data = formataData4.format(business.getPontos()[i].getData());
+			
+			if(business.getPontos()[i].getHoraEntrada() != null)
+				horaEntrada = formataHora.format(business.getPontos()[i].getHoraEntrada());
+			
+			if(business.getPontos()[i].getHoraSaida() != null)
+				horaSaida = formataHora.format(business.getPontos()[i].getHoraSaida());
 		%>
 			<tr>
-			<td><%=business.getPontos()[i].getData() %></td>
-			<td><%=business.getPontos()[i].getHoraEntrada() %></td>
-			<td><%=business.getPontos()[i].getHoraSaida() %></td>
+			<td><%=data %></td>
+			<td><%=horaEntrada %></td>
+			<td><%=horaSaida %></td>
 			</tr>
 		<%
 		}

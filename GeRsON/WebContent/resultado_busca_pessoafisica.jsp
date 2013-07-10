@@ -53,6 +53,7 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	<td>Matricula</td>
 	<td>Nome</td>
 	<td>Cargo</td>
+	<td>Editar</td>
 	</tr>
 	<%
 	for(int i=0;i<business.getPessoasFisicas().length;i++){ 
@@ -61,7 +62,9 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 		<td><%=business.getPessoasFisicas()[i].getMatricula() %></td>
 		<td><%=business.getPessoasFisicas()[i].getNome() %></td>
 		<td><%=business.getPessoasFisicas()[i].getCargo() %></td>
-		<td><a href="atualiza_pessoafisica.jsp?id=<%=business.getPessoasFisicas()[i].getId() %>">Editar</a></td>
+		<td><a href="atualiza_pessoafisica.jsp?id=<%=business.getPessoasFisicas()[i].getId() %>">Dados/</a>
+			<a href="solicitar_folha_ponto_gerente.jsp?id=<%=business.getPessoasFisicas()[i].getId() %>">Pontos</a>
+		</td>
 		</tr>
 	<%} %>
 	</table>
