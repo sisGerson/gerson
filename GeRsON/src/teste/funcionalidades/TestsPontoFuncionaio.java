@@ -68,7 +68,7 @@ public class TestsPontoFuncionaio {
 	public void testSubmitBaterPonto() throws IOException, SAXException {
 		testFormBaterPonto();
 		
-		this.formulario.setParameter("opcao", "Saida");
+		this.formulario.setParameter("opcao", "Entrada");
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -91,7 +91,7 @@ public class TestsPontoFuncionaio {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "RelatÃ³rios");
+		assertEquals(this.link.getText(), "Relatórios");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -123,7 +123,7 @@ public class TestsPontoFuncionaio {
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("RelatÃ³rio de Ponto"));
+		assertTrue(this.resp.getText().contains("Relatório de Ponto"));
 	}
 	
 	@Test
@@ -136,7 +136,7 @@ public class TestsPontoFuncionaio {
 		this.formulario.submit();
 				
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("RelatÃ³rio de Ponto"));
+		assertTrue(this.resp.getText().contains("Relatório de Ponto"));
 		assertTrue(this.resp.getText().contains("Entrada"));
 	}	
 }

@@ -101,17 +101,17 @@ public class TestsBuscaPessoaJuridica {
 		this.resp = window[1].getCurrentPage();
 		
 		//verifica se a nova janela que abriu é a janela com o resultado da pesquisa 
-		assertTrue(this.resp.getText().contains("Resultado da Pesquisa - Funcionário: Pessoa Física"));
-		/*OBS: MUDAR EM RESULTADO_BUSCA_PESSOAJURIDICA.JSP*/
+		assertTrue(this.resp.getText().contains("Resultado da Pesquisa - Funcionário: Pessoa Jurídica"));
+
 	}
 	
 	@Test
-	//Confere que há uma pessoa juridica com matricula 12345 catalogada no banco de dados
+	//Confere que há uma pessoa juridica com matricula 4321 catalogada no banco de dados
 	public void verificaPessoaJuridica12345Test() throws IOException, SAXException{
 		pesquisaPessoaJuridicaMatriculaTest();
 		
 		this.table = this.resp.getTables()[0];
 		//verifica se o texto da celula(linha 1, coluna 0) é "12345"
-		assertEquals(table.getCellAsText(1, 0), "12345");
+		assertEquals(table.getCellAsText(1, 0), "4321");
 	}
 }

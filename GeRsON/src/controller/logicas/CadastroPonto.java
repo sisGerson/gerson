@@ -57,25 +57,25 @@ public class CadastroPonto implements Logica{
 			if(pontoAtual.getData().toString().equals(dataFormatada)){
 				if(ponto.getOpcao().equals("Entrada")){
 					//Tentar cadastrar outra entrada com a mesma data
-					erro = "JÃ¡ existe um ponto de entrada cadastrado hoje!";
+					erro = "Já existe um ponto de entrada cadastrado hoje!";
 				}
 				else{
 					if(pessoaFisica.getTotalHoraSemanal() == 40){
-						if(ponto.getOpcao().equals("InÃ­cio AlmoÃ§o")){
+						if(ponto.getOpcao().equals("Início Almoço")){
 							if(pontoAtual.getHoraInicioAlmoco() != null){
-								erro = "JÃ¡ existe um ponto de InÃ­cio de AlmoÃ§o cadastrado hoje!";
+								erro = "Já existe um ponto de Início de Almoço cadastrado hoje!";
 							}
 							else{
 								pontoAtual.setHoraInicioAlmoco(calendario.getTime());
 								pontoAtual.setOpcao(request.getParameter("opcao"));
 							}
 						}
-						else if(ponto.getOpcao().equals("Fim AlmoÃ§o")){
+						else if(ponto.getOpcao().equals("Fim Almoço")){
 							if(pontoAtual.getHoraFimAlmoco() != null){
-								erro = "JÃ¡ existe um ponto de Fim de AlmoÃ§o cadastrado hoje!";
+								erro = "Já existe um ponto de Fim de Almoço cadastrado hoje!";
 							}
 							else if(pontoAtual.getHoraInicioAlmoco() == null){
-								erro = "NÃ£o existe nenhum ponto de InÃ­cio de AlmoÃ§o cadastrado hoje!";
+								erro = "Não existe nenhum ponto de Início de Almoço cadastrado hoje!";
 							}
 							else{
 								pontoAtual.setHoraFimAlmoco(calendario.getTime());
@@ -84,10 +84,10 @@ public class CadastroPonto implements Logica{
 						}
 						else if(ponto.getOpcao().equals("Saida")){
 							if(pontoAtual.getHoraFimAlmoco() == null){
-								erro="NÃ£o existe nenhum ponto de Fim de AlmoÃ§o cadastrado hoje!";
+								erro="Não existe nenhum ponto de Fim de Almoço cadastrado hoje!";
 							}
 							else if(pontoAtual.getHoraSaida() != null){
-								erro="JÃ¡ existe um ponto de SaÃ­da cadastrado hoje!";
+								erro="Já existe um ponto de Saída cadastrado hoje!";
 							}
 							else{
 								pontoAtual.setHoraSaida(calendario.getTime());
@@ -101,7 +101,7 @@ public class CadastroPonto implements Logica{
 						if(ponto.getOpcao().equals("Saida")){
 							
 							if(pontoAtual.getHoraSaida() != null){
-								erro="JÃ¡ existe um ponto de SaÃ­da cadastrado hoje!";
+								erro="Já existe um ponto de Saída cadastrado hoje!";
 							}
 							else{
 								pontoAtual.setHoraSaida(calendario.getTime());
@@ -126,7 +126,7 @@ public class CadastroPonto implements Logica{
 			}
 			else{
 				//Tentar cadastrar um novo ponto sem entrada
-				erro = "NÃ£o existe nenhum ponto de entrada cadastrado hoje!";
+				erro = "Não existe nenhum ponto de entrada cadastrado hoje!";
 			}
 		}
 		

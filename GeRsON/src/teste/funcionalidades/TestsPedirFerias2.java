@@ -30,8 +30,8 @@ public class TestsPedirFerias2 {
 		this.resp = this.wc.getResponse(this.urlPrincipal+ "login.jsp");
 		this.formulario = this.resp.getForms()[0];
 		
-		this.formulario.setParameter("matricula", "456");
-		this.formulario.setParameter("senha", "456");
+		this.formulario.setParameter("matricula", "321");
+		this.formulario.setParameter("senha", "321");
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -48,7 +48,7 @@ public class TestsPedirFerias2 {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[6];
-		assertEquals(this.link.getText(), "Pedir FÃ©rias");
+		assertEquals(this.link.getText(), "Pedir Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -70,7 +70,7 @@ public class TestsPedirFerias2 {
 		
 		this.resp = this.wc.getCurrentPage();
 		
-		assertTrue(this.resp.getText().contains("VocÃª nao pode pedir fÃ©rias para essa data!"));
+		assertTrue(this.resp.getText().contains("Você nao pode pedir férias para essa data!"));
 	}
 	
 	@Test
@@ -84,11 +84,11 @@ public class TestsPedirFerias2 {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getText(), "Verificar Pedido de FÃ©rias");
+		assertEquals(this.link.getText(), "Verificar Pedido de Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("VocÃª nÃ£o tem nem um pedido de fÃ©rias feito no momento!"));
+		assertTrue(this.resp.getText().contains("Você não tem nem um pedido de férias feito no momento!"));
 	}
 
 }

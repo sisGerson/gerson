@@ -61,7 +61,7 @@ public class TestsLogin {
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Usu√°rio incorreto! Tente novamente!"));
+		assertTrue(this.resp.getText().contains("Usu·rio incorreto! Tente novamente!"));
 	}
 	
 	@Test
@@ -73,7 +73,7 @@ public class TestsLogin {
 		this.formulario = this.resp.getForms()[0];
 		
 		this.formulario.setParameter("matricula", "123");
-		this.formulario.setParameter("senha", "333");
+		this.formulario.setParameter("senha", "223");
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -95,16 +95,16 @@ public class TestsLogin {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In√≠cio");
+		assertEquals(this.link.getText(), "InÌcio");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Relat√≥rios");
+		assertEquals(this.link.getText(), "RelatÛrios");
 		
 		this.link = this.resp.getLinks()[3];
 		assertEquals(this.link.getText(), "Ponto");
 		
 		this.link = this.resp.getLinks()[4];
-		assertEquals(this.link.getText(), "F√©rias");
+		assertEquals(this.link.getText(), "FÈrias");
 		
 		this.link = this.resp.getLinks()[5];
 		assertEquals(this.link.getText(), "Sair");
@@ -125,16 +125,16 @@ public class TestsLogin {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In√≠cio");
+		assertEquals(this.link.getText(), "InÌcio");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Pessoa F√≠sica");
+		assertEquals(this.link.getText(), "Pessoa FÌsica");
 		
 		this.link = this.resp.getLinks()[3];
-		assertEquals(this.link.getText(), "Pessoa Jur√≠dica");
+		assertEquals(this.link.getText(), "Pessoa JurÌdica");
 		
 		this.link = this.resp.getLinks()[4];
-		assertEquals(this.link.getText(), "Relat√≥rios");
+		assertEquals(this.link.getText(), "RelatÛrios");
 		
 		this.link = this.resp.getLinks()[5];
 		assertEquals(this.link.getText(), "Sair");
