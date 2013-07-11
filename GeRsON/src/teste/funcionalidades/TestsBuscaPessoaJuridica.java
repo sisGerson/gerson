@@ -111,7 +111,7 @@ public class TestsBuscaPessoaJuridica {
 		pesquisaPessoaJuridicaMatriculaTest();
 		
 		this.table = this.resp.getTables()[0];
-		//verifica se o texto da celula(linha 1, coluna 0) é "12345"
-		assertEquals(table.getCellAsText(1, 0), "4321");
+		//verifica se o texto da celula(linha 1, coluna 0) é "4321"
+		assertEquals(table.getCellAsText(1, 1), "4321");
 	}
 }
