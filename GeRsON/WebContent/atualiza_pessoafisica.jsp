@@ -608,7 +608,7 @@
 				<input type="hidden" name="logica" value="AtualizaPessoaFisica"/>
 				
 				<input type="submit" value="Atualizar dados">
-				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outro Funcionário</a></h3>
+				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="button" value="Fechar Janela" onclick="window.close()" />
 				<hr>
 			</form>

@@ -268,9 +268,7 @@
 				
 				<input type="hidden" name="logica" value="AtualizaPessoaJuridica"/>
 				
-				<input type="submit" value="Atualizar dados">
-				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outra Empresa</a></h3>
-				<input type="button" value="Fechar Janela" onclick="window.close()" />
+				<input type="submit" value="Atualizar dados"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Fechar Janela" onclick="window.close()" />
 			</form>
 		</div>
 	</div>
