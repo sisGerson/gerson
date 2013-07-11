@@ -105,6 +105,13 @@
 			<form name="cadastrar_pessoajuridica"
 				action="ServletController" method="post">
 				<h2>Cadastro de Funcionário - Pessoa Jurídica</h2>
+				
+				<%
+				if(session.getAttribute("erroMatricula") != null) {
+				%>
+				<h3><%=session.getAttribute("erroMatricula") %></h3>
+				<%} %>
+				
 				<p>
 					Status do Funcionário: <select name="status_2">
 						<option value="True">Ativo</option>

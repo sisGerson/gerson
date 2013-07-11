@@ -3,6 +3,7 @@ package controller.logicas;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.funcionarios.pf.PessoaFisica;
 import controller.interfaces.Logica;
 import dao.CadastroDAO;
+import dao.PesquisaDAO;
 
 public class CadastroPessoaFisica implements Logica {
 
@@ -20,6 +22,21 @@ public class CadastroPessoaFisica implements Logica {
 
 	public void executa(HttpServletRequest request, HttpServletResponse response) 
 			throws Exception {
+		
+		//Testar se não está tentando cadastrar uma matrícula já existente
+		String testeMatricula = request.getParameter("matricula");
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		List<PessoaFisica> pessoas = pesquisa.buscarTodasPessoasFisicas();
+		
+		for (PessoaFisica pessoa : pessoas) {
+			if(pessoa.getMatricula().equalsIgnoreCase(testeMatricula)) {
+				String erroMatricula = "Já existe um funcionário com essa matrícula";
+				request.getSession().setAttribute("erroMatricula", erroMatricula);
+				RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=3&situacao=2");
+				dispache.forward(request, response);
+				return;
+			}
+		}
 		
 		PessoaFisica pessoaFisica = new PessoaFisica();
 

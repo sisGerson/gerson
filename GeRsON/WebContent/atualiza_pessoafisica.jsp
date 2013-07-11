@@ -457,7 +457,7 @@
 					<tr>
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="<%= pessoaFisica.getMatricula() %>" size="20"
-							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Senha:
+							maxlength="8" required disabled="disabled"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Senha:
 							<input type="text" name="senha"
 							value="<%= pessoaFisica.getSenha() %>" size="15" maxlength="8" required />
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * Área: <input type="text"

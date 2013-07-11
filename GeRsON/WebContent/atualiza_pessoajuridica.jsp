@@ -219,7 +219,7 @@
 					<tr>
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="<%= pessoaJuridica.getMatricula() %>" size="20"
-							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
+							maxlength="8" required disabled="disabled"/>
 					</tr>
 					<tr>
 						<td>* Área: <input type="text" name="area" value="<%= pessoaJuridica.getArea() %>" size="40"
