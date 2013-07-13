@@ -30,7 +30,7 @@ public class BusinessHoraExtra {
 	public void totalHorasTrabalhadas(Ponto ponto){
 		double subTotal = 0;
 		
-		//Verificar se o funcionário trabalha menos de 40hs semanais
+		//Verificar se o funcionário trabalha menos de 20hs semanais
 		if(ponto.getHoraInicioAlmoco() == null || ponto.getHoraFimAlmoco() == null) {
 			if(ponto.getHoraSaida() != null) {
 				subTotal = (double)ponto.getHoraSaida().getTime() - (double)ponto.getHoraEntrada().getTime();
