@@ -16,6 +16,11 @@ public class TestFuncionario {
 	public void testFuncionario() {
 		assertNotNull(f1);
 	}
+	
+	@Test
+	public void testGetId() {
+		assertEquals(0, f1.getId());
+	}
 
 	
 	@Test

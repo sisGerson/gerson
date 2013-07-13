@@ -16,6 +16,10 @@ public class TestPessoaFisica {
 	public void testPessoaFisica() {
 		assertNotNull(p1);
 		p1.criarDependentes();
+		p1.criarDependentes();
+		
+		assertNotNull(p1.getDependentes()[0]);
+		assertNotNull(p1.getDependentes()[1]);
 	}
 	
 	@Test
