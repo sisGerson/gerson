@@ -43,7 +43,7 @@ public class TestCadastroPessoaFisica {
 		this.link.click();
 		this.resp = this.wc.getCurrentPage();
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Pessoa F�sica");
+		assertEquals(this.link.getText(), "Pessoa Física");
 		this.link.click();		
 		this.resp = this.wc.getCurrentPage();
 	}

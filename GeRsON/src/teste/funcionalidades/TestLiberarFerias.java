@@ -48,11 +48,11 @@ public class TestLiberarFerias {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[6];
-		assertEquals(this.link.getText(), "Visualizar pedidos de f�rias");
+		assertEquals(this.link.getText(), "Visualizar pedidos de férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Pedidos de F�rias"));
+		assertTrue(this.resp.getText().contains("Pedidos de Férias"));
 		assertTrue(this.resp.getText().contains("Dados para pesquisa"));
 	}
 	

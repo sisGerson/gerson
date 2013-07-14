@@ -48,7 +48,7 @@ public class TestPedirFerias {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[6];
-		assertEquals(this.link.getText(), "Pedir F�rias");
+		assertEquals(this.link.getText(), "Pedir Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -70,7 +70,7 @@ public class TestPedirFerias {
 		
 		this.resp = this.wc.getCurrentPage();
 		
-		assertTrue(this.resp.getText().contains("Pedido de f�rias efetuado com sucesso!"));
+		assertTrue(this.resp.getText().contains("Pedido de férias efetuado com sucesso!"));
 	}
 
 	@Test
@@ -84,10 +84,10 @@ public class TestPedirFerias {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getText(), "Verificar Pedido de F�rias");
+		assertEquals(this.link.getText(), "Verificar Pedido de Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Aguarde seu pedido ainda n�o foi processado!"));
+		assertTrue(this.resp.getText().contains("Aguarde seu pedido ainda não foi processado!"));
 	}
 }

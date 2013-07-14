@@ -48,7 +48,7 @@ public class TestPedirFerias2 {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[6];
-		assertEquals(this.link.getText(), "Pedir F�rias");
+		assertEquals(this.link.getText(), "Pedir Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
@@ -70,7 +70,7 @@ public class TestPedirFerias2 {
 		
 		this.resp = this.wc.getCurrentPage();
 		
-		assertTrue(this.resp.getText().contains("Voc� nao pode pedir f�rias para essa data!"));
+		assertTrue(this.resp.getText().contains("Você nao pode pedir férias para essa data!"));
 	}
 	
 	@Test
@@ -84,11 +84,11 @@ public class TestPedirFerias2 {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[7];
-		assertEquals(this.link.getText(), "Verificar Pedido de F�rias");
+		assertEquals(this.link.getText(), "Verificar Pedido de Férias");
 		this.link.click();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Voc� n�o tem nem um pedido de f�rias feito no momento!"));
+		assertTrue(this.resp.getText().contains("Você não tem nem um pedido de férias feito no momento!"));
 	}
 
 }

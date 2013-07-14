@@ -41,5 +41,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/nekohtml-0.9.5.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xercesImpl-2.6.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlParserAPIs-2.6.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/easymock-3.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

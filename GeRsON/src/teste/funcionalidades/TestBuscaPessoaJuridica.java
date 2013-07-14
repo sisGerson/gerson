@@ -41,16 +41,16 @@ public class TestBuscaPessoaJuridica {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In�cio");
+		assertEquals(this.link.getText(), "Início");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Pessoa F�sica");
+		assertEquals(this.link.getText(), "Pessoa Física");
 		
 		this.link = this.resp.getLinks()[3];
-		assertEquals(this.link.getText(), "Pessoa Jur�dica");
+		assertEquals(this.link.getText(), "Pessoa Jurídica");
 		
 		this.link = this.resp.getLinks()[4];
-		assertEquals(this.link.getText(), "Relat�rios");
+		assertEquals(this.link.getText(), "Relatórios");
 		
 		this.link = this.resp.getLinks()[5];
 		assertEquals(this.link.getText(), "Sair");
@@ -101,7 +101,7 @@ public class TestBuscaPessoaJuridica {
 		this.resp = window[1].getCurrentPage();
 		
 		//verifica se a nova janela que abriu � a janela com o resultado da pesquisa 
-		assertTrue(this.resp.getText().contains("Resultado da Pesquisa - Funcion�rio: Pessoa Jur�dica"));
+		assertTrue(this.resp.getText().contains("Resultado da Pesquisa - Funcionário: Pessoa Jurídica"));
 
 	}
 	

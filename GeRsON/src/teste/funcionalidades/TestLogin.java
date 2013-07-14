@@ -45,7 +45,7 @@ public class TestLogin {
 		
 		assertTrue(this.formulario.hasParameterNamed("matricula"));
 		assertTrue(this.formulario.hasParameterNamed("senha"));
-		assertTrue(this.formulario.hasParameterNamed("logica"));		
+		assertTrue(this.formulario.hasParameterNamed("logica"));
 	}
 	
 	@Test
@@ -61,7 +61,7 @@ public class TestLogin {
 		this.formulario.submit();
 		
 		this.resp = this.wc.getCurrentPage();
-		assertTrue(this.resp.getText().contains("Usu�rio incorreto! Tente novamente!"));
+		assertTrue(this.resp.getText().contains("Usuário incorreto! Tente novamente!"));
 	}
 	
 	@Test
@@ -82,7 +82,7 @@ public class TestLogin {
 	
 	@Test
 	//Teste para verificar a página inicial de um funcionário
-	public void testProfileManager() throws IOException, SAXException {
+	public void testProfileFunctionary() throws IOException, SAXException {
 		this.wc = new WebConversation();
 		
 		this.resp = wc.getResponse(this.urlPrincipal+"login.jsp");
@@ -95,16 +95,16 @@ public class TestLogin {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In�cio");
+		assertEquals(this.link.getText(), "Início");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Relat�rios");
+		assertEquals(this.link.getText(), "Relatórios");
 		
 		this.link = this.resp.getLinks()[3];
 		assertEquals(this.link.getText(), "Ponto");
 		
 		this.link = this.resp.getLinks()[4];
-		assertEquals(this.link.getText(), "F�rias");
+		assertEquals(this.link.getText(), "Férias");
 		
 		this.link = this.resp.getLinks()[5];
 		assertEquals(this.link.getText(), "Sair");
@@ -112,7 +112,7 @@ public class TestLogin {
 	
 	@Test
 	//Teste para verificar a página inicial de um gerente
-	public void testProfileFunctionary() throws IOException, SAXException {
+	public void testProfileManager() throws IOException, SAXException {
 		this.wc = new WebConversation();
 		
 		this.resp = this.wc.getResponse(this.urlPrincipal+"login.jsp");
@@ -125,16 +125,16 @@ public class TestLogin {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In�cio");
+		assertEquals(this.link.getText(), "Início");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Pessoa F�sica");
+		assertEquals(this.link.getText(), "Pessoa Física");
 		
 		this.link = this.resp.getLinks()[3];
-		assertEquals(this.link.getText(), "Pessoa Jur�dica");
+		assertEquals(this.link.getText(), "Pessoa Jurídica");
 		
 		this.link = this.resp.getLinks()[4];
-		assertEquals(this.link.getText(), "Relat�rios");
+		assertEquals(this.link.getText(), "Relatórios");
 		
 		this.link = this.resp.getLinks()[5];
 		assertEquals(this.link.getText(), "Sair");

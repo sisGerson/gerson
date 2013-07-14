@@ -39,13 +39,13 @@ public class TestCadastroPessoaJuridica {
 		this.resp = this.wc.getCurrentPage();
 		
 		this.link = this.resp.getLinks()[1];
-		assertEquals(this.link.getText(), "In�cio");
+		assertEquals(this.link.getText(), "Início");
 		
 		this.link = this.resp.getLinks()[2];
-		assertEquals(this.link.getText(), "Pessoa F�sica");
+		assertEquals(this.link.getText(), "Pessoa Física");
 		
 		this.link = this.resp.getLinks()[3];
-		assertEquals(this.link.getText(), "Pessoa Jur�dica");
+		assertEquals(this.link.getText(), "Pessoa Jurídica");
 	}
 	
 	@Test
@@ -53,7 +53,7 @@ public class TestCadastroPessoaJuridica {
 	public void linkCadastroPessoaJuridicaTest() throws IOException, SAXException{
 		loginTest();
 		this.link = this.resp.getLinks()[3];
-		assertEquals(this.link.getText(), "Pessoa Jur�dica");
+		assertEquals(this.link.getText(), "Pessoa Jurídica");
 		
 		this.link.click();
 		
