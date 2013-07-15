@@ -5,7 +5,8 @@ import static org.easymock.EasyMock.createNiceMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -14,34 +15,42 @@ import javax.servlet.http.HttpServletResponse;
 import org.junit.Before;
 import org.junit.Test;
 
-import controller.logicas.ResultadoFerias;
+import controller.logicas.Login;
 
-public class TestResultadoFerias {
+public class TestLogin {
 
-	ResultadoFerias resultado = new ResultadoFerias();
-	
+	Login login = new Login();
 	@Before
-	public void testResultadoFerias() {
-		assertNotNull(resultado);
+	public void testLogin() {
+		assertNotNull(login);
 	}
 
 	@Test
 	public void testExecuta1() throws Exception {
 		HttpServletRequest requestMock = requestMock1();  
-        resultado.executa(requestMock, responseMock());  
+        login.executa(requestMock, responseMock());  
         verify(requestMock);
 	}
+	
 	@Test
-	public void testExecuta2() throws Exception{
+	public void testExecuta2() throws Exception {
 		HttpServletRequest requestMock = requestMock2();  
-        resultado.executa(requestMock, responseMock());  
+        login.executa(requestMock, responseMock());  
         verify(requestMock);
 	}
+	
+	@Test
+	public void testExecuta3() throws Exception {
+		HttpServletRequest requestMock = requestMock3();  
+        login.executa(requestMock, responseMock());  
+        verify(requestMock);
+	}
+	
 	private HttpServletRequest requestMock1() {  
         HttpServletRequest requestMock = createMock(HttpServletRequest.class);  
-        expect(requestMock.getParameter("resultado")).andReturn("Sim");  
-        expect(requestMock.getParameter("idFerias")).andReturn("1");  
-        expect(requestMock.getRequestDispatcher("/index.jsp?item=24&situacao=2")).  
+        expect(requestMock.getParameter("matricula")).andReturn("123");  
+        expect(requestMock.getParameter("senha")).andReturn("321");  
+        expect(requestMock.getRequestDispatcher("/index.jsp?situacao=0")).  
             andReturn(requestDispatcher());  
         replay(requestMock);  
         return requestMock;  
@@ -49,9 +58,19 @@ public class TestResultadoFerias {
 	
 	private HttpServletRequest requestMock2() {  
         HttpServletRequest requestMock = createMock(HttpServletRequest.class);  
-        expect(requestMock.getParameter("resultado")).andReturn("Não");  
-        expect(requestMock.getParameter("idFerias")).andReturn("1");  
-        expect(requestMock.getRequestDispatcher("/index.jsp?item=24&situacao=2")).  
+        expect(requestMock.getParameter("matricula")).andReturn("3212");  
+        expect(requestMock.getParameter("senha")).andReturn("123");  
+        expect(requestMock.getRequestDispatcher("/index.jsp?situacao=1")).  
+            andReturn(requestDispatcher());  
+        replay(requestMock);  
+        return requestMock;  
+    }
+	
+	private HttpServletRequest requestMock3() {  
+        HttpServletRequest requestMock = createMock(HttpServletRequest.class);  
+        expect(requestMock.getParameter("matricula")).andReturn("123");  
+        expect(requestMock.getParameter("senha")).andReturn("123");  
+        expect(requestMock.getRequestDispatcher("/index.jsp?situacao=2")).  
             andReturn(requestDispatcher());  
         replay(requestMock);  
         return requestMock;  
@@ -68,4 +87,5 @@ public class TestResultadoFerias {
         replay(responseMock);  
         return responseMock;  
     }
+
 }
