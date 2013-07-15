@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -76,6 +77,10 @@ public class AlterarPonto implements Logica{
 		}
 		
 		pesquisa.alterarPonto(ponto);
+		
+		request.setAttribute("ponto", ponto);
+		RequestDispatcher dispache = request.getRequestDispatcher("/alteracao_ponto.jsp");
+		dispache.forward(request, response);
 	}
 
 }
