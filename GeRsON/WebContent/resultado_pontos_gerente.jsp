@@ -36,6 +36,15 @@ PessoaFisica funcionario = business.idPessoaFisica(id);
 
 <body>
 	<div id="layout">
+			<div id="header">
+			<h1 id="logo">
+				<a href="#" title="#">GeRs<span>ON</span></a>
+			</h1>
+			<hr class="noscreen" />
+			<div id="navigation"></div>
+			<hr class="noscreen" />
+		</div>
+	</div>	
 	<div id="main">
 	
 	<h3>Relatório de Ponto do funcionário - <%=funcionario.getNome() %></h3>
