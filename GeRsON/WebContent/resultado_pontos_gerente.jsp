@@ -142,7 +142,6 @@ PessoaFisica funcionario = business.idPessoaFisica(id);
 	
 	<br><br><br>
 	</div>
-	</div>
 </body>
 	<%
 	}

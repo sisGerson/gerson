@@ -98,7 +98,6 @@
 				
 			</form>
 		</div>
-	</div>
 </body>
 	<%
 	}
