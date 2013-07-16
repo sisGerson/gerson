@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="controller.business.BusinessFerias"%>
 <%@page import="model.funcionarios.pf.PessoaFisica"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -47,6 +48,8 @@
 						BusinessFerias ferias2 = new BusinessFerias();
 						ferias2.buscarFuncionariosFerias();
 						
+						SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+						
 						for(int i=0;i<ferias2.getFuncionariosFerias().length;i++){ 
 						%>
 							<tr>
@@ -54,7 +57,13 @@
 							<td><%=ferias2.getFuncionariosFerias()[i].getNome() %></td>
 							<td><%=ferias2.getFuncionariosFerias()[i].getCargo() %></td>
 							<td><%=ferias2.getFuncionariosFerias()[i].getArea() %></td>
-							<td><%=ferias2.getFuncionariosFerias()[i].getUltimasFerias() %></td>
+							<%
+								String ultimasFerias ="";
+								if(ferias2.getFuncionariosFerias()[i].getUltimasFerias() != null){
+									ultimasFerias = formato.format(ferias2.getFuncionariosFerias()[i].getUltimasFerias());
+								}
+							%>
+							<td><%=ultimasFerias%></td>
 							</tr>
 						<%} %>
 						

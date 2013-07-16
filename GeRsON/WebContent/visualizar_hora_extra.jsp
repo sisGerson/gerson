@@ -36,7 +36,7 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	<h3>Horas Extras - <%=pessoaFisica.getNome() %></h3>
 	<table>
 	<tr>
-	<td><%=session.getAttribute("horaExtra") %></td>
+	<td><%=session.getAttribute("horaExtra") %>hs</td>
 	</tr>
 	</table>
 	<br><br><br>

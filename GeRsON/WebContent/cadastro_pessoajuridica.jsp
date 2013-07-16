@@ -105,6 +105,13 @@
 			<form name="cadastrar_pessoajuridica"
 				action="ServletController" method="post">
 				<h2>Cadastro de Funcionário - Pessoa Jurídica</h2>
+				
+				<%
+				if(session.getAttribute("erroMatricula") != null) {
+				%>
+				<h3><%=session.getAttribute("erroMatricula") %></h3>
+				<%} %>
+				
 				<p>
 					Status do Funcionário: <select name="status_2">
 						<option value="True">Ativo</option>
@@ -190,9 +197,7 @@
 					<tr>
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="" size="20"
-							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Senha: <input type="password" step="1" min="1" max="99999999"
-							name="senha" value="" size="15" maxlength="8" required /></td>
+							maxlength="8" required />
 					</tr>
 					<tr>
 						<td>* Área: <input type="text" name="area" value="" size="40"

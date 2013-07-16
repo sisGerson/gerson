@@ -34,14 +34,6 @@ public class AtualizaPessoaJuridica implements Logica {
 			pessoaJuridica.setArea(request.getParameter("area"));
 		}
 
-		//Recebendo os dados da matricula de verificando se o mesmo está vazio
-		String matricula = request.getParameter("matricula");
-		if ((matricula == null || matricula.equals(""))){
-			throw new RuntimeException();
-		}else{
-			pessoaJuridica.setMatricula(request.getParameter("matricula"));
-		}
-
 		String dataAdmissaoTexto = request.getParameter("dataAdmissao");
 		Date dataAdmissao;
 		try {
@@ -103,14 +95,6 @@ public class AtualizaPessoaJuridica implements Logica {
 			throw new RuntimeException();
 		}else{
 			pessoaJuridica.setEmail(request.getParameter("email"));
-		}		
-		
-		//Recebendo os dados da senha e verificando se o mesmo está vazio
-		String senha = request.getParameter("senha");
-		if ((senha == null || senha.equals(""))){
-			throw new RuntimeException();
-		}else{
-			pessoaJuridica.setSenha(request.getParameter("senha"));
 		}		
 
 		//Recebendo os dados do CEP e verificando se o mesmo está vazio

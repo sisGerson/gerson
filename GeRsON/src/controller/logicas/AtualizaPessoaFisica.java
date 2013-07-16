@@ -34,14 +34,6 @@ public class AtualizaPessoaFisica implements Logica {
 			pessoaFisica.setArea(request.getParameter("area"));
 		}
 		
-		//Recebendo os dados da matrícula e validando se o campo está vazio
-		String matricula = request.getParameter("matricula");
-		if ((matricula == null) || (matricula.equals(""))){
-			throw new RuntimeException();
-		}else{
-			pessoaFisica.setMatricula(request.getParameter("matricula"));
-		}
-		
 		String dataAdmissaoTexto = request.getParameter("dataAdmissao");
 		Date dataAdmissao;
 		try {

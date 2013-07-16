@@ -48,7 +48,12 @@ public class BusinessFerias {
 	
 	//Método que verifica se o funcionário pode ou não pedir férias, e retorna também o periodo trabalhado
 	public void pedidoFeriasPermitido(PessoaFisica pessoaFisica, Date data){
-		if(pessoaFisica.getUltimasFerias() == null){
+		GregorianCalendar dataHoje = new GregorianCalendar();
+		
+		if(data.before(dataHoje.getTime()))
+			this.pedidoFerias = false;
+		
+		else if(pessoaFisica.getUltimasFerias() == null){
 			if((data.getTime() - pessoaFisica.getDataAdmissao().getTime())/3600000 >=1){
 				this.periodoTrabalhado = (data.getTime() - pessoaFisica.getDataAdmissao().getTime())/3600000;
 				
@@ -130,12 +135,8 @@ public class BusinessFerias {
 		for (Ferias ferias : pedidos) {
 			
 			GregorianCalendar calendario = new GregorianCalendar();
-			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
-			System.out.println(ferias.getDataRetorno());
-			System.out.println(ferias.getDataTemp()+"\n\n\n\n\n\n\n\n\n\n\n\n");
-			
 			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
-			String dataFormatada = formatador.format(ferias.getDataTemp());
+			String dataFormatada = formatador.format(calendario.getTime());
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			Date minhaData = format.parse(dataFormatada);
@@ -158,9 +159,8 @@ public class BusinessFerias {
 		for (Ferias ferias : pedidos) {
 			
 			GregorianCalendar calendario = new GregorianCalendar();
-			ferias.setDataTemp(calendario.getTime());//tem q criar esse temporario para converter a data no formato certo
 			SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd"); 
-			String dataFormatada = formatador.format(ferias.getDataTemp());
+			String dataFormatada = formatador.format(calendario.getTime());
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			Date minhaData = format.parse(dataFormatada);

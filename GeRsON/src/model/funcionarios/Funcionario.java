@@ -31,7 +31,6 @@ public class Funcionario {
 	protected String nome;
 	protected String CPF_CNPJ;
 	protected String email;
-	protected String senha;
 	protected String CEPFuncional;
 	protected String cidadeFuncional;
 	protected String UFCidadeFuncional;
@@ -138,14 +137,6 @@ public class Funcionario {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public String getCEPFuncional() {

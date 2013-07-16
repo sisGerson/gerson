@@ -219,9 +219,7 @@
 					<tr>
 						<td><br> * Matrícula: <input type="number" step="1"
 							min="1" max="99999999" name="matricula" value="<%= pessoaJuridica.getMatricula() %>" size="20"
-							maxlength="8" required /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-							Senha: <input type="text" name="senha" 
-							value="<%= pessoaJuridica.getSenha() %>" size="15" maxlength="8" required /></td>
+							maxlength="8" required disabled="disabled"/>
 					</tr>
 					<tr>
 						<td>* Área: <input type="text" name="area" value="<%= pessoaJuridica.getArea() %>" size="40"
@@ -270,9 +268,7 @@
 				
 				<input type="hidden" name="logica" value="AtualizaPessoaJuridica"/>
 				
-				<input type="submit" value="Atualizar dados">
-				<h3><a href="javascript:window.history.go(-1)">Voltar para a página anterior e escolher outra Empresa</a></h3>
-				<input type="button" value="Fechar Janela" onclick="window.close()" />
+				<input type="submit" value="Atualizar dados"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Fechar Janela" onclick="window.close()" />
 			</form>
 		</div>
 	</div>

@@ -60,12 +60,6 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	<td>Valores</td>
 	</tr>
 	
-	<tr>
-	<td>Salário Bruto: </td>
-	<td>R$ <%=pessoaFisica.getSalario() %>
-	</td>
-	</tr>
-	
 	<%
 	DecimalFormat form = new DecimalFormat("0.00");
 	
@@ -76,7 +70,16 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	String planoSaude = form.format(salario.getPlanoSaude());
 	String descontos = form.format(salario.getDescontos());
 	String salarioLiquido = form.format(salario.getSalarioLiquido());
+	double acrescimoHorasExtras = salario.getSalarioHorasTrabalhadas() - pessoaFisica.getSalario();
+	
+	if(acrescimoHorasExtras<0)
+		acrescimoHorasExtras = 0;
 	%>
+	<tr>
+	<td>Salário Bruto: </td>
+	<td>R$ <%=form.format(pessoaFisica.getSalario()) %>
+	</td>
+	</tr>
 	<tr>
 	<td>Salário pelas horas trabalhadas: </td>
 	<td>R$ <%=salariHorasTrabalhadas %>
@@ -84,14 +87,20 @@ BusinessSalario salario = (BusinessSalario)session.getAttribute("salario");
 	</tr>
 	
 	<tr>
+	<td>Acréscimo horas extras: </td>
+	<td>R$ <%=form.format(acrescimoHorasExtras) %>
+	</td>
+	</tr>
+	
+	<tr>
 	<td>INSS: </td>
-	<td>R$<%=INSS %>
+	<td>R$ <%=INSS %>
 	</td>
 	</tr>
 	
 	<tr>
 	<td>Imposto de Renda: </td>
-	<td>R$<%=impostoRenda	%>
+	<td>R$ <%=impostoRenda	%>
 	</td>
 	</tr>
 	

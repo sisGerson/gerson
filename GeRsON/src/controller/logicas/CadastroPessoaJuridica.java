@@ -3,6 +3,7 @@ package controller.logicas;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.funcionarios.pj.PessoaJuridica;
 import controller.interfaces.Logica;
 import dao.CadastroDAO;
+import dao.PesquisaDAO;
 
 
 public class CadastroPessoaJuridica implements Logica {
@@ -21,6 +23,21 @@ public class CadastroPessoaJuridica implements Logica {
 
 	public void executa(HttpServletRequest request,HttpServletResponse response) 
 			throws Exception {
+		
+		//Testar se não está tentando cadastrar uma matrícula já existente
+		String testeMatricula = request.getParameter("matricula");
+		PesquisaDAO pesquisa = new PesquisaDAO();
+		List<PessoaJuridica> pessoas = pesquisa.buscarTodasPessoasJuridicas();
+		
+		for (PessoaJuridica pessoa : pessoas) {
+			if(pessoa.getMatricula().equalsIgnoreCase(testeMatricula)) {
+				String erroMatricula = "Já existe um funcionário com essa matrícula";
+				request.getSession().setAttribute("erroMatricula", erroMatricula);
+				RequestDispatcher dispache = request.getRequestDispatcher("/index.jsp?item=7&situacao=2");
+				dispache.forward(request, response);
+				return;
+			}
+		}
 		
 		PessoaJuridica pessoaJuridica = new PessoaJuridica();
 		
@@ -103,14 +120,6 @@ public class CadastroPessoaJuridica implements Logica {
 			pessoaJuridica.setEmail(request.getParameter("email"));
 		}		
 		
-		//Recebendo os dados da senha e verificando se o mesmo está vazio
-		String senha = request.getParameter("senha");
-		if ((senha == null || senha.equals(""))){
-			throw new RuntimeException();
-		}else{
-			pessoaJuridica.setSenha(request.getParameter("senha"));
-		}		
-
 		//Recebendo os dados do CEP e verificando se o mesmo está vazio
 		String CEPFuncional = request.getParameter("CEPFuncional");
 		if ((CEPFuncional == null || CEPFuncional.equals(""))){

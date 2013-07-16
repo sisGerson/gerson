@@ -59,21 +59,56 @@ public class CadastroPonto implements Logica{
 					//Tentar cadastrar outra entrada com a mesma data
 					erro = "Já existe um ponto de entrada cadastrado hoje!";
 				}
-				else if(ponto.getOpcao().equals("Saida")){
-					pontoAtual.setHoraSaida(calendario.getTime());
-					pontoAtual.setOpcao(request.getParameter("opcao"));
-				}
-				else if(ponto.getOpcao().equals("Início Almoço")){
-					pontoAtual.setHoraInicioAlmoco(calendario.getTime());
-					pontoAtual.setOpcao(request.getParameter("opcao"));
-				}
-				else if(ponto.getOpcao().equals("Fim Almoço") && pontoAtual.getHoraInicioAlmoco() != null){
-					pontoAtual.setHoraFimAlmoco(calendario.getTime());
-					pontoAtual.setOpcao(request.getParameter("opcao"));
-				}
 				else{
-					//Tentar cadastrar fim do almoço sem ter o início almoço
-					erro = "Não existe nenhum ponto de início de almoço cadastrado hoje!";
+					if(pessoaFisica.getTotalHoraSemanal() == 40){
+						if(ponto.getOpcao().equals("Início Almoço")){
+							if(pontoAtual.getHoraInicioAlmoco() != null){
+								erro = "Já existe um ponto de In�cio de Almo�o cadastrado hoje!";
+							}
+							else{
+								pontoAtual.setHoraInicioAlmoco(calendario.getTime());
+								pontoAtual.setOpcao(request.getParameter("opcao"));
+							}
+						}
+						else if(ponto.getOpcao().equals("Fim Almoço")){
+							if(pontoAtual.getHoraFimAlmoco() != null){
+								erro = "Já existe um ponto de Fim de Almoço cadastrado hoje!";
+							}
+							else if(pontoAtual.getHoraInicioAlmoco() == null){
+								erro = "Não existe nenhum ponto de Início de Almoço cadastrado hoje!";
+							}
+							else{
+								pontoAtual.setHoraFimAlmoco(calendario.getTime());
+								pontoAtual.setOpcao(request.getParameter("opcao"));
+							}
+						}
+						else if(ponto.getOpcao().equals("Saida")){
+							if(pontoAtual.getHoraFimAlmoco() == null){
+								erro="Não existe nenhum ponto de Fim de Almoço cadastrado hoje!";
+							}
+							else if(pontoAtual.getHoraSaida() != null){
+								erro="Já existe um ponto de Saída cadastrado hoje!";
+							}
+							else{
+								pontoAtual.setHoraSaida(calendario.getTime());
+								pontoAtual.setOpcao(request.getParameter("opcao"));
+							}
+						}
+						
+					}
+					//condições para funcionários que trabalhas 20 e 30 horas semanais
+					else{
+						if(ponto.getOpcao().equals("Saida")){
+							
+							if(pontoAtual.getHoraSaida() != null){
+								erro="Já existe um ponto de Saída cadastrado hoje!";
+							}
+							else{
+								pontoAtual.setHoraSaida(calendario.getTime());
+								pontoAtual.setOpcao(request.getParameter("opcao"));
+							}
+						}
+					}
 				}
 				//Atualizar este ponto
 				pesquisa.alterarPonto(pontoAtual);

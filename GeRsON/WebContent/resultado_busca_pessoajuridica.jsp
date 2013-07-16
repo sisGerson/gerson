@@ -46,7 +46,7 @@ BusinessController business = (BusinessController)session.getAttribute("pesquisa
 	</div>
 	<div id="main">
 	
-	<h3>Resultado da Pesquisa - Funcionário: Pessoa Física </h3>
+	<h3>Resultado da Pesquisa - Funcionário: Pessoa Jurídica </h3>
 	
 	<table>
 	<tr>
