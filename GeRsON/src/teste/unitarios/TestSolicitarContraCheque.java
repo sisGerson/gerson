@@ -6,7 +6,6 @@ import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
